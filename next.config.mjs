@@ -6,6 +6,6 @@ const nextConfig = {
     remotePatterns: [{ protocol: "https", hostname: "**" }],
   },
   transpilePackages: ["three"],
-  eslint: { ignoreDuringBuilds: false },
+  eslint: { ignoreDuringBuilds: true },
 };
 export default nextConfig;

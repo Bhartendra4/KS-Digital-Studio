@@ -10,7 +10,7 @@ const sections = [
   { h: "Cookies & analytics", p: "We use privacy-friendly analytics to understand traffic. You can accept or decline non-essential cookies via the banner. Declining will not break core functionality." },
   { h: "Data sharing", p: "We only share data with trusted processors (e.g. email and analytics providers) strictly to operate our services, and we require them to protect your data." },
   { h: "Your rights", p: "You may request access to, correction of, or deletion of your personal data at any time by emailing us. We will respond promptly." },
-  { h: "Contact", p: `Questions about this policy? Email ${'hello@ksdigitalstudio.com'}.` },
+  { h: "Contact", p: `Questions about this policy? Email ${site.email}.` },
 ];
 
 export default function PrivacyPage() {

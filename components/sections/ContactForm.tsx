@@ -27,6 +27,15 @@ export default function ContactForm() {
   const onSubmit = async (data: FormData) => {
     if (data.company) return; // bot caught by honeypot
     setStatus("sending");
+    // Store every enquiry in the CRM (fire-and-forget; never blocks the user).
+    fetch("/api/lead", {
+      method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: data.name, contactName: data.name, businessName: data.name,
+        email: data.email, budget: data.budget, projectDescription: data.message,
+        source: "contact_form",
+      }),
+    }).catch(() => {});
     const hasKey = site.web3formsKey && site.web3formsKey !== "YOUR_WEB3FORMS_ACCESS_KEY";
     try {
       if (hasKey) {

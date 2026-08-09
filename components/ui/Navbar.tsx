@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ChevronDown, Search } from "lucide-react";
+import { Menu, X, ChevronDown, Search, Phone } from "lucide-react";
 import { site } from "@/lib/site";
 import { services } from "@/lib/data";
 import Button from "./Button";
@@ -28,6 +28,7 @@ export default function Navbar() {
     ? services.filter((s) => s.title.toLowerCase().includes(q.toLowerCase())).slice(0, 6)
     : [];
 
+  if (pathname.startsWith("/admin")) return null;
   return (
     <motion.header
       initial={{ y: -80, opacity: 0 }} animate={{ y: 0, opacity: 1 }}
@@ -88,6 +89,10 @@ export default function Navbar() {
         </div>
 
         <div className="flex items-center gap-2">
+          <a href={`tel:${site.phone.replace(/\s/g, "")}`} aria-label={`Call ${site.phone}`} data-cursor
+            className="hidden items-center gap-2 rounded-lg px-3 py-2 text-sm text-white/70 transition-colors hover:text-white xl:flex">
+            <Phone className="h-4 w-4 text-accent-cyan" /> {site.phone}
+          </a>
           <button onClick={() => setSearchOpen((v) => !v)} aria-label="Search"
             className="hidden h-9 w-9 items-center justify-center rounded-lg text-white/60 hover:text-white lg:flex focus-ring" data-cursor>
             <Search className="h-4 w-4" />
@@ -131,7 +136,18 @@ export default function Navbar() {
               ))}
               <Link href="/careers" className="text-white/80">Careers</Link>
               <Link href="/contact" className="text-white/80">Contact</Link>
-              <Button href="/contact" className="mt-2 justify-center text-sm">Start Your Project</Button>
+              <div className="mt-2 grid grid-cols-3 gap-2">
+                <a href={`tel:${site.phone.replace(/\s/g, "")}`} className="glass flex items-center justify-center gap-2 rounded-xl py-2.5 text-xs text-accent-blue" data-cursor>
+                  <Phone className="h-4 w-4" /> Call
+                </a>
+                <a href={`https://wa.me/${site.whatsapp}`} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 rounded-xl bg-[#25D366] py-2.5 text-xs font-medium text-white" data-cursor>
+                  WhatsApp
+                </a>
+                <a href={`mailto:${site.email}`} className="glass flex items-center justify-center gap-2 rounded-xl py-2.5 text-xs text-accent-cyan" data-cursor>
+                  Email
+                </a>
+              </div>
+              <Button href="/contact" className="mt-1 justify-center text-sm">Start Your Project</Button>
             </div>
           </motion.div>
         )}

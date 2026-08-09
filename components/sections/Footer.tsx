@@ -1,4 +1,5 @@
 "use client";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 import Link from "next/link";
 import { site } from "@/lib/site";
@@ -7,6 +8,8 @@ import { services } from "@/lib/data";
 export default function Footer() {
   const [email, setEmail] = useState("");
   const [ok, setOk] = useState(false);
+  const pathname = usePathname();
+  if (pathname.startsWith("/admin")) return null;
   return (
     <footer className="relative overflow-hidden border-t border-white/10">
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent-blue/50 to-transparent" />

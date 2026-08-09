@@ -4,16 +4,16 @@
 export const site = {
   name: "KS Digital Studio",
   shortName: "KS",
-  domain: "https://ksdigitalstudio.com",
+  domain: "https://ksdigitalstudio.in",
   tagline: "We Build Digital Experiences That Grow Businesses",
   heroHeadline: "WE BUILD WEBSITES THAT SELL.",
   heroSub:
     "Premium websites engineered for speed, SEO, branding and business growth.",
   description:
     "KS Digital Studio is a premium digital agency crafting cinematic, high-performance websites, web apps, brand identities, UI/UX, SEO and AI automation that grow businesses.",
-  email: "hello@ksdigitalstudio.com",
-  phone: "+91 90000 00000",
-  whatsapp: "919000000000", // digits only, country code first
+  email: "info@ksdigitalstudio.in",
+  phone: "+91 81078 17733",
+  whatsapp: "918107817733", // digits only, country code first
   calendly: "https://calendly.com/ksdigitalstudio/intro",
   // Get a free key at https://web3forms.com — paste your access key here:
   web3formsKey: "YOUR_WEB3FORMS_ACCESS_KEY",

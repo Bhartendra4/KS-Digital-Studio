@@ -1,9 +1,12 @@
 "use client";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
 export default function CookieBanner() {
   const [open, setOpen] = useState(true);
+  const pathname = usePathname();
+  if (pathname.startsWith("/admin")) return null;
   return (
     <AnimatePresence>
       {open && (

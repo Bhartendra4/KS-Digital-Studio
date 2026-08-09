@@ -11,6 +11,7 @@ import Navbar from "@/components/ui/Navbar";
 import Footer from "@/components/sections/Footer";
 import FloatingWidgets from "@/components/ui/FloatingWidgets";
 import CookieBanner from "@/components/ui/CookieBanner";
+import Chatbot from "@/components/chat/Chatbot";
 import Analytics from "@/components/ui/Analytics";
 
 const space = Space_Grotesk({ subsets: ["latin"], variable: "--font-space", display: "swap" });
@@ -51,10 +52,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     name: site.name, description: site.description, url: site.domain,
-    email: site.email, telephone: site.phone, image: `${site.domain}/opengraph-image`,
+    email: site.email, telephone: `+${site.whatsapp}`, image: `${site.domain}/opengraph-image`,
     priceRange: "$$", areaServed: "Worldwide",
     sameAs: site.socials.map((s) => s.href),
     address: { "@type": "PostalAddress", addressLocality: "Remote-first" },
+    contactPoint: [{
+      "@type": "ContactPoint",
+      telephone: `+${site.whatsapp}`,
+      email: site.email,
+      contactType: "customer service",
+      areaServed: "IN",
+      availableLanguage: ["English", "Hindi"],
+    }],
   };
   return (
     <html lang="en" className={`${space.variable} ${inter.variable} dark`} suppressHydrationWarning>
@@ -72,6 +81,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Footer />
         </SmoothScroll>
         <FloatingWidgets />
+        <Chatbot />
         <CookieBanner />
       </body>
     </html>
