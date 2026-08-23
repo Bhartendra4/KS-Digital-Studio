@@ -14,7 +14,7 @@ export const site = {
   email: "info@ksdigitalstudio.in",
   phone: "+91 81078 17733",
   whatsapp: "918107817733", // digits only, country code first
-  calendly: "https://calendly.com/ksdigitalstudio/intro",
+  calendly: process.env.NEXT_PUBLIC_CALENDLY_URL || "https://calendly.com/bhartendrasinghjpr158/30min",
   // Get a free key at https://web3forms.com — paste your access key here:
   web3formsKey: "YOUR_WEB3FORMS_ACCESS_KEY",
   gaId: "", // e.g. G-XXXXXXX

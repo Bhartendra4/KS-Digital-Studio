@@ -9,11 +9,13 @@ export default function Button({
 }: {
   children: ReactNode; href?: string; variant?: "primary" | "ghost"; className?: string; icon?: ReactNode;
 }) {
+  const external = /^https?:\/\//.test(href);
   return (
     <Magnetic>
       <Link
         href={href}
         data-cursor
+        {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
         className={cn(
           "btn-magnetic group relative",
           variant === "primary" ? "btn-primary" : "btn-ghost",
