@@ -24,6 +24,7 @@ export default function Chatbot() {
   const [form, setForm] = useState<any>({ source: "chatbot", servicesNeeded: [] as string[] });
   const [input, setInput] = useState("");
   const [sending, setSending] = useState(false);
+  const [leadId, setLeadId] = useState<string | null>(null);
   const scroller = useRef<HTMLDivElement>(null);
 
   useEffect(() => { scroller.current?.scrollTo({ top: 9e9, behavior: "smooth" }); }, [msgs, step]);
@@ -77,7 +78,10 @@ export default function Chatbot() {
         body: JSON.stringify({ ...payload, source: "chatbot" }),
       });
       const j = await res.json();
-      if (j.ok) say("Perfect — thank you! Our team has your details and will reach out shortly. 🚀");
+      if (j.ok) {
+        if (j.leadId) setLeadId(j.leadId);
+        say("Perfect — thank you! I've saved your requirement. You can pick a time for a consultation below. 🚀");
+      }
       else say("Thanks! Please also reach us directly below.");
     } catch { say("Thanks! Please reach us directly below."); }
     setSending(false);
@@ -125,7 +129,7 @@ export default function Chatbot() {
               {step === "done" && (
                 <div className="grid grid-cols-2 gap-2 pt-2">
                   <a href="/contact" className="btn-magnetic btn-primary justify-center text-xs" data-cursor><ArrowRight className="h-3.5 w-3.5" /> Start Project</a>
-                  <a href={site.calendly} target="_blank" rel="noopener noreferrer" className="btn-magnetic btn-ghost justify-center text-xs" data-cursor><CalendarCheck className="h-3.5 w-3.5" /> Book Call</a>
+                  <a href={leadId ? `${site.bookingUrl}?lead=${leadId}` : site.bookingUrl} className="btn-magnetic btn-ghost justify-center text-xs" data-cursor><CalendarCheck className="h-3.5 w-3.5" /> Book Consultation</a>
                   <a href={`https://wa.me/${site.whatsapp}`} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-1.5 rounded-full bg-[#25D366] py-2 text-xs font-medium text-white" data-cursor><MessageCircle className="h-3.5 w-3.5" /> WhatsApp</a>
                   <a href={`mailto:${site.email}`} className="btn-magnetic btn-ghost justify-center text-xs" data-cursor><Mail className="h-3.5 w-3.5" /> Email</a>
                 </div>

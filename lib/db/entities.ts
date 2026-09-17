@@ -80,3 +80,70 @@ export interface DriverHealth {
   persistent: boolean;
   detail: string;
 }
+
+// ---------- Phase 3: booking / scheduling ----------
+export type LocationType = "google_meet" | "zoom" | "phone" | "whatsapp" | "in_person" | "custom";
+export type BookingStatus = "confirmed" | "cancelled" | "completed" | "no_show" | "rescheduled";
+
+export interface MeetingType {
+  id: string;
+  slug: string;
+  name: string;
+  durationMin: number;
+  description?: string;
+  locationType: LocationType;
+  meetingUrl?: string | null;
+  enabled: boolean;
+  sortOrder: number;
+}
+
+export interface AvailabilityRule {
+  id: string;
+  weekday: number;   // 0=Sun .. 6=Sat
+  startMin: number;  // minutes from local midnight
+  endMin: number;
+  enabled: boolean;
+}
+
+export interface BlockedTime {
+  id: string;
+  startsAt: string;  // ISO
+  endsAt: string;    // ISO
+  reason?: string;
+}
+
+export interface Booking {
+  id: string;
+  publicCode: string;
+  manageToken: string;
+  meetingType: string;      // slug snapshot
+  durationMin: number;
+  leadId?: string | null;
+  name: string;
+  email: string;
+  phone?: string;
+  company?: string;
+  website?: string;
+  requirement?: string;
+  startsAt: string;         // ISO (UTC instant)
+  endsAt: string;
+  timezone: string;
+  locationType: LocationType;
+  meetingUrl?: string | null;
+  status: BookingStatus;
+  notes?: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface BookingSettings {
+  timezone: string;
+  utcOffsetMin: number;
+  minNoticeMin: number;
+  maxWindowDays: number;
+  bufferBeforeMin: number;
+  bufferAfterMin: number;
+  slotStepMin: number;
+  defaultLocation: LocationType;
+  defaultMeetingUrl?: string | null;
+}

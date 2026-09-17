@@ -217,3 +217,110 @@ alter table agent_runs       enable row level security;
 alter table issues           enable row level security;
 alter table website_checks   enable row level security;
 alter table approvals        enable row level security;
+
+-- ============================================================
+--  Phase 3 — Own booking / scheduling system (replaces Calendly)
+-- ============================================================
+
+create table if not exists meeting_types (
+  id            text primary key,
+  slug          text unique not null,
+  name          text not null,
+  duration_min  int  not null default 30,
+  description   text,
+  location_type text not null default 'google_meet', -- google_meet|zoom|phone|whatsapp|in_person|custom
+  meeting_url   text,
+  enabled       boolean not null default true,
+  sort_order    int not null default 0,
+  created_at    timestamptz not null default now()
+);
+
+-- one row per weekday (0=Sun .. 6=Sat); multiple rows allow split shifts
+create table if not exists availability_rules (
+  id          text primary key,
+  weekday     int  not null check (weekday between 0 and 6),
+  start_min   int  not null,  -- minutes from midnight, local timezone
+  end_min     int  not null,
+  enabled     boolean not null default true
+);
+
+create table if not exists blocked_times (
+  id          text primary key,
+  starts_at   timestamptz not null,
+  ends_at     timestamptz not null,
+  reason      text,
+  created_at  timestamptz not null default now()
+);
+create index if not exists blocked_times_range_idx on blocked_times(starts_at, ends_at);
+
+create table if not exists bookings (
+  id              text primary key,
+  public_code     text unique not null,      -- shown to client, e.g. KSD-4F2A9C
+  manage_token    text unique not null,      -- secure reschedule/cancel link
+  meeting_type    text not null,             -- slug snapshot
+  duration_min    int  not null,
+  lead_id         text references leads(id) on delete set null,
+  name            text not null,
+  email           text not null,
+  phone           text,
+  company         text,
+  website         text,
+  requirement     text,
+  starts_at       timestamptz not null,
+  ends_at         timestamptz not null,
+  timezone        text not null default 'Asia/Kolkata',
+  location_type   text not null default 'google_meet',
+  meeting_url     text,
+  status          text not null default 'confirmed', -- confirmed|cancelled|completed|no_show|rescheduled
+  notes           text,
+  created_at      timestamptz not null default now(),
+  updated_at      timestamptz not null default now()
+);
+create index if not exists bookings_start_idx  on bookings(starts_at);
+create index if not exists bookings_status_idx on bookings(status);
+
+-- DOUBLE-BOOKING PROTECTION (database-level):
+-- no two ACTIVE bookings may share the same start instant.
+create unique index if not exists bookings_no_double_book
+  on bookings (starts_at)
+  where status in ('confirmed', 'rescheduled');
+
+create table if not exists booking_settings (
+  id                text primary key default 'default',
+  timezone          text not null default 'Asia/Kolkata',
+  utc_offset_min    int  not null default 330,   -- IST = +5:30
+  min_notice_min    int  not null default 120,
+  max_window_days   int  not null default 30,
+  buffer_before_min int  not null default 0,
+  buffer_after_min  int  not null default 15,
+  slot_step_min     int  not null default 30,
+  default_location  text not null default 'google_meet',
+  default_meeting_url text,
+  updated_at        timestamptz not null default now()
+);
+
+alter table meeting_types      enable row level security;
+alter table availability_rules enable row level security;
+alter table blocked_times      enable row level security;
+alter table bookings           enable row level security;
+alter table booking_settings   enable row level security;
+
+-- Seed defaults (safe to re-run)
+insert into booking_settings (id) values ('default') on conflict (id) do nothing;
+
+insert into meeting_types (id, slug, name, duration_min, description, sort_order) values
+  ('mt_discovery',    'discovery-15',    '15 Minute Discovery',          15, 'A quick intro call to understand your goals.', 1),
+  ('mt_consultation', 'consultation-30', '30 Minute Consultation',       30, 'Discuss your project requirements in detail.', 2),
+  ('mt_project',      'project-60',      '60 Minute Project Consultation',60, 'Deep dive: scope, timeline and investment.',   3)
+on conflict (slug) do nothing;
+
+-- Mon–Fri 09:00–17:00 (540–1020 minutes); weekends unavailable
+insert into availability_rules (id, weekday, start_min, end_min, enabled) values
+  ('av_mon', 1, 540, 1020, true),
+  ('av_tue', 2, 540, 1020, true),
+  ('av_wed', 3, 540, 1020, true),
+  ('av_thu', 4, 540, 1020, true),
+  ('av_fri', 5, 540, 1020, true),
+  ('av_sat', 6, 540, 1020, false),
+  ('av_sun', 0, 540, 1020, false)
+on conflict (id) do nothing;

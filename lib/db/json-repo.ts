@@ -3,7 +3,8 @@ import fs from "fs";
 import os from "os";
 import path from "path";
 import type { Lead, Message, Proposal, Project, FollowUp } from "../crm-types";
-import type { AgentRun, Issue, WebsiteCheck, LeadActivity, Approval, DriverHealth } from "./entities";
+import type { AgentRun, Issue, WebsiteCheck, LeadActivity, Approval, DriverHealth,
+  MeetingType, AvailabilityRule, BlockedTime, Booking, BookingSettings } from "./entities";
 import type { Repo } from "./repo";
 
 /**
@@ -18,10 +19,37 @@ interface Store {
   leads: Lead[]; messages: Message[]; proposals: Proposal[]; projects: Project[];
   followups: FollowUp[]; activities: LeadActivity[]; agentRuns: AgentRun[];
   issues: Issue[]; websiteChecks: WebsiteCheck[]; approvals: Approval[];
+  meetingTypes: MeetingType[]; availability: AvailabilityRule[];
+  blocked: BlockedTime[]; bookings: Booking[]; settings?: BookingSettings;
 }
 const empty: Store = {
   leads: [], messages: [], proposals: [], projects: [], followups: [],
   activities: [], agentRuns: [], issues: [], websiteChecks: [], approvals: [],
+  meetingTypes: [], availability: [], blocked: [], bookings: [],
+};
+
+
+const DEFAULT_TYPES: MeetingType[] = [
+  { id: "mt_discovery", slug: "discovery-15", name: "15 Minute Discovery", durationMin: 15,
+    description: "A quick intro call to understand your goals.", locationType: "google_meet", enabled: true, sortOrder: 1 },
+  { id: "mt_consultation", slug: "consultation-30", name: "30 Minute Consultation", durationMin: 30,
+    description: "Discuss your project requirements in detail.", locationType: "google_meet", enabled: true, sortOrder: 2 },
+  { id: "mt_project", slug: "project-60", name: "60 Minute Project Consultation", durationMin: 60,
+    description: "Deep dive: scope, timeline and investment.", locationType: "google_meet", enabled: true, sortOrder: 3 },
+];
+const DEFAULT_AVAILABILITY: AvailabilityRule[] = [
+  { id: "av_sun", weekday: 0, startMin: 540, endMin: 1020, enabled: false },
+  { id: "av_mon", weekday: 1, startMin: 540, endMin: 1020, enabled: true },
+  { id: "av_tue", weekday: 2, startMin: 540, endMin: 1020, enabled: true },
+  { id: "av_wed", weekday: 3, startMin: 540, endMin: 1020, enabled: true },
+  { id: "av_thu", weekday: 4, startMin: 540, endMin: 1020, enabled: true },
+  { id: "av_fri", weekday: 5, startMin: 540, endMin: 1020, enabled: true },
+  { id: "av_sat", weekday: 6, startMin: 540, endMin: 1020, enabled: false },
+];
+export const DEFAULT_SETTINGS: BookingSettings = {
+  timezone: "Asia/Kolkata", utcOffsetMin: 330, minNoticeMin: 120, maxWindowDays: 30,
+  bufferBeforeMin: 0, bufferAfterMin: 15, slotStepMin: 30,
+  defaultLocation: "google_meet", defaultMeetingUrl: null,
 };
 
 let memory: Store | null = null;
@@ -116,6 +144,55 @@ export const jsonRepo: Repo = {
     if (i < 0) return undefined;
     db.approvals[i] = { ...db.approvals[i], ...patch };
     write(db); return db.approvals[i];
+  },
+
+  // ---------- Phase 3: booking ----------
+  async listMeetingTypes(onlyEnabled = false) {
+    const db = read();
+    const types = db.meetingTypes.length ? db.meetingTypes : DEFAULT_TYPES;
+    const sorted = types.slice().sort((a, b) => a.sortOrder - b.sortOrder);
+    return onlyEnabled ? sorted.filter((t) => t.enabled) : sorted;
+  },
+  async saveMeetingType(t) {
+    const db = read();
+    if (!db.meetingTypes.length) db.meetingTypes = DEFAULT_TYPES.slice();
+    const i = db.meetingTypes.findIndex((x) => x.id === t.id || x.slug === t.slug);
+    if (i >= 0) db.meetingTypes[i] = t; else db.meetingTypes.push(t);
+    write(db); return t;
+  },
+  async getSettings() { return read().settings ?? DEFAULT_SETTINGS; },
+  async saveSettings(s2) { const db = read(); db.settings = s2; write(db); return s2; },
+  async listAvailability() {
+    const db = read();
+    return db.availability.length ? db.availability : DEFAULT_AVAILABILITY;
+  },
+  async saveAvailability(rules) { const db = read(); db.availability = rules; write(db); },
+  async listBlockedTimes(fromISO, toISO) {
+    return read().blocked.filter((b) =>
+      (!fromISO || b.endsAt >= fromISO) && (!toISO || b.startsAt <= toISO));
+  },
+  async addBlockedTime(b) { const db = read(); db.blocked.push(b); write(db); return b; },
+  async removeBlockedTime(id) { const db = read(); db.blocked = db.blocked.filter((b) => b.id !== id); write(db); },
+  async listBookings(fromISO, toISO) {
+    return read().bookings
+      .filter((b) => (!fromISO || b.endsAt >= fromISO) && (!toISO || b.startsAt <= toISO))
+      .sort((a, b) => (a.startsAt < b.startsAt ? -1 : 1));
+  },
+  async getBookingByToken(token) { return read().bookings.find((b) => b.manageToken === token); },
+  async createBooking(b) {
+    const db = read();
+    // double-booking guard: no active booking may share the same start instant
+    const taken = db.bookings.some((x) =>
+      x.startsAt === b.startsAt && (x.status === "confirmed" || x.status === "rescheduled"));
+    if (taken) throw new Error("SLOT_TAKEN");
+    db.bookings.push(b); write(db); return b;
+  },
+  async updateBooking(id, patch2) {
+    const db = read();
+    const i = db.bookings.findIndex((b) => b.id === id);
+    if (i < 0) return undefined;
+    db.bookings[i] = { ...db.bookings[i], ...patch2, updatedAt: new Date().toISOString() };
+    write(db); return db.bookings[i];
   },
   async health(): Promise<DriverHealth> {
     read();

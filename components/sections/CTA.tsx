@@ -18,7 +18,7 @@ export default function CTA() {
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Button href="/contact" icon={<ArrowRight className="h-4 w-4" />}>Start Your Project</Button>
-              <Button href={site.calendly} variant="ghost" icon={<CalendarCheck className="h-4 w-4" />}>Book Free Consultation</Button>
+              <Button href={site.bookingUrl} variant="ghost" icon={<CalendarCheck className="h-4 w-4" />}>Book a Consultation</Button>
             </div>
           </div>
         </div>

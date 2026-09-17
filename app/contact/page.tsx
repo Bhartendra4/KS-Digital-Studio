@@ -27,8 +27,8 @@ export default function ContactPage() {
               <a href={`https://wa.me/${site.whatsapp}`} target="_blank" rel="noopener noreferrer" className="btn-magnetic btn-ghost text-sm" data-cursor>
                 <MessageCircle className="h-4 w-4" /> WhatsApp
               </a>
-              <a href={site.calendly} target="_blank" rel="noopener noreferrer" className="btn-magnetic btn-primary text-sm" data-cursor>
-                <CalendarCheck className="h-4 w-4" /> Book a call
+              <a href={site.bookingUrl} className="btn-magnetic btn-primary text-sm" data-cursor>
+                <CalendarCheck className="h-4 w-4" /> Book a Consultation
               </a>
             </div>
           </div>

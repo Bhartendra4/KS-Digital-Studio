@@ -27,7 +27,7 @@ export async function GET() {
       sessionSecretSet: Boolean(process.env.SESSION_SECRET),
       adminConfigured: Boolean(process.env.ADMIN_USERNAME && process.env.ADMIN_PASSWORD),
       supabaseConfigured: Boolean(process.env.SUPABASE_URL && process.env.SUPABASE_SERVICE_ROLE_KEY),
-      calendly: process.env.NEXT_PUBLIC_CALENDLY_URL ? "env" : "code-default",
+      booking: "own-system (/book)",
     },
     checkedAt: new Date().toISOString(),
   });

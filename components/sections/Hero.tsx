@@ -63,8 +63,8 @@ export default function Hero() {
           <Button href="/contact" icon={<ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />}>
             Start Your Project
           </Button>
-          <Button href={site.calendly} variant="ghost" icon={<CalendarCheck className="h-4 w-4" />}>
-            Book Free Consultation
+          <Button href={site.bookingUrl} variant="ghost" icon={<CalendarCheck className="h-4 w-4" />}>
+            Book a Consultation
           </Button>
         </motion.div>
       </div>
