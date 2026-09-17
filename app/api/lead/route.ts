@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { upsertLead, uid, nowISO, addFollowUps } from "@/lib/crm-db";
+import { upsertLead, uid, nowISO, addFollowUps, logActivity } from "@/lib/crm-db";
 import { scoreLead, heuristicAudit } from "@/lib/crm-scoring";
 import { notifyNewLead } from "@/lib/crm-notify";
 import type { Lead, FollowUp } from "@/lib/crm-types";
@@ -52,7 +52,7 @@ export async function POST(req: Request) {
       createdAt: nowISO(),
       updatedAt: nowISO(),
     };
-    upsertLead(lead);
+    await upsertLead(lead);
 
     // schedule a Day 0/3/7/14 follow-up sequence (pending; never auto-sent)
     const seq: FollowUp[] = [0, 3, 7, 14].map((d, i) => ({
@@ -60,7 +60,8 @@ export async function POST(req: Request) {
       dueDate: new Date(Date.now() + d * 864e5).toISOString(),
       step: i, channel: "email", status: "pending", createdAt: nowISO(),
     }));
-    addFollowUps(seq);
+    await addFollowUps(seq);
+    await logActivity(lead.id, "created", `Lead captured from ${lead.source} — ${tier.toUpperCase()} (${leadScore}/100)`);
 
     await notifyNewLead(lead);
     return NextResponse.json({ ok: true, leadId: lead.id, tier, leadScore });

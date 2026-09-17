@@ -13,24 +13,24 @@ export async function POST(req: Request) {
   const { action, leadId, kind, prompt } = await req.json();
 
   if (action === "outreach") {
-    const lead = getLead(leadId);
+    const lead = await getLead(leadId);
     if (!lead) return NextResponse.json({ ok: false, error: "Lead not found" }, { status: 404 });
     const { subject, body } = await generateOutreach(lead, kind || "cold");
-    const msg = addMessage({ id: uid("msg"), leadId, channel: "email", kind: kind || "cold", subject, body, status: "draft", createdAt: nowISO() });
+    const msg = await addMessage({ id: uid("msg"), leadId, channel: "email", kind: kind || "cold", subject, body, status: "draft", createdAt: nowISO() });
     return NextResponse.json({ ok: true, message: msg, aiEnabled: aiEnabled() });
   }
 
   if (action === "proposal") {
-    const lead = getLead(leadId);
+    const lead = await getLead(leadId);
     if (!lead) return NextResponse.json({ ok: false, error: "Lead not found" }, { status: 404 });
     const p = await generateProposal(lead, { requirements: prompt });
-    const saved = addProposal({ id: uid("prop"), leadId, ...p, createdAt: nowISO() });
+    const saved = await addProposal({ id: uid("prop"), leadId, ...p, createdAt: nowISO() });
     return NextResponse.json({ ok: true, proposal: saved, aiEnabled: aiEnabled() });
   }
 
   if (action === "assistant") {
-    const leads = listLeads();
-    const due = followupsDue();
+    const leads = await listLeads();
+    const due = await followupsDue();
     const ctx = JSON.stringify({
       totalLeads: leads.length,
       hot: leads.filter((l) => l.tier === "hot").map((l) => ({ business: l.businessName, score: l.leadScore, status: l.status })),

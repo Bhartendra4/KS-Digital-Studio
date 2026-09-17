@@ -1,87 +1,48 @@
 import "server-only";
-import fs from "fs";
-import os from "os";
-import path from "path";
-import crypto from "crypto";
-import type { DB, Lead, Message, Proposal, Project, FollowUp } from "./crm-types";
+/**
+ * Backwards-compatible CRM data access.
+ * Phase 1: this now delegates to the pluggable repository layer (lib/db) so the
+ * same code runs on local JSON (dev) or Supabase/Postgres (production).
+ * NOTE: every function is now async.
+ */
+import { getRepo, uid, nowISO, driverName } from "./db";
+import type { Lead, Message, Proposal, Project, FollowUp } from "./crm-types";
+import type { LeadActivity } from "./db/entities";
 
-// Store the CRM data in a SHORT path (home dir) to avoid Windows MAX_PATH issues.
-const DATA_DIR = process.env.CRM_DATA_DIR || path.join(os.homedir(), ".ksds-crm");
-const DATA_FILE = path.join(DATA_DIR, "crm.json");
+export { uid, nowISO, driverName };
 
-const empty: DB = { leads: [], messages: [], proposals: [], projects: [], followups: [] };
+export const listLeads   = (): Promise<Lead[]>              => getRepo().listLeads();
+export const getLead     = (id: string)                     => getRepo().getLead(id);
+export const upsertLead  = (lead: Lead): Promise<Lead>      => getRepo().upsertLead(lead);
+export const deleteLead  = (id: string): Promise<void>      => getRepo().deleteLead(id);
 
-function ensure(): void {
+export const addMessage  = (m: Message): Promise<Message>   => getRepo().addMessage(m);
+export const messagesFor = (leadId: string)                 => getRepo().messagesFor(leadId);
+
+export const addProposal = (p: Proposal): Promise<Proposal> => getRepo().addProposal(p);
+export const addProject  = (p: Project): Promise<Project>   => getRepo().addProject(p);
+
+export const addFollowUps = (f: FollowUp[]): Promise<void>  => getRepo().addFollowUps(f);
+export const followupsDue = (): Promise<FollowUp[]>         => getRepo().followupsDue();
+
+export const addLeadActivity = (a: LeadActivity)            => getRepo().addLeadActivity(a);
+export const activitiesFor   = (leadId: string)             => getRepo().activitiesFor(leadId);
+
+export const dbHealth = () => getRepo().health();
+
+/** Convenience: record a lead activity without building the object by hand. */
+export async function logActivity(
+  leadId: string,
+  type: LeadActivity["type"],
+  summary: string,
+  meta?: Record<string, unknown>,
+  actor = "system",
+): Promise<void> {
   try {
-    if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
-    if (!fs.existsSync(DATA_FILE)) fs.writeFileSync(DATA_FILE, JSON.stringify(empty, null, 2));
+    await getRepo().addLeadActivity({
+      id: uid("act"), leadId, type, summary, meta: meta ?? null, actor, createdAt: nowISO(),
+    });
   } catch {
-    /* fall back to in-memory below */
+    /* activity logging must never break the main flow */
   }
 }
-
-let memory: DB | null = null;
-
-export function read(): DB {
-  ensure();
-  try {
-    const raw = fs.readFileSync(DATA_FILE, "utf8");
-    const parsed = JSON.parse(raw);
-    return { ...empty, ...parsed };
-  } catch {
-    if (!memory) memory = JSON.parse(JSON.stringify(empty));
-    return memory as DB;
-  }
-}
-
-export function write(db: DB): void {
-  memory = db;
-  try {
-    ensure();
-    fs.writeFileSync(DATA_FILE, JSON.stringify(db, null, 2));
-  } catch {
-    /* keep in memory if disk write fails */
-  }
-}
-
-export const uid = (p = "id") =>
-  `${p}_${Date.now().toString(36)}_${crypto.randomBytes(4).toString("hex")}`;
-
-export const nowISO = () => new Date().toISOString();
-
-// ---- Lead helpers ----
-export function listLeads(): Lead[] {
-  return read().leads.sort((a, b) => (a.createdAt < b.createdAt ? 1 : -1));
-}
-export function getLead(id: string): Lead | undefined {
-  return read().leads.find((l) => l.id === id);
-}
-export function upsertLead(lead: Lead): Lead {
-  const db = read();
-  const i = db.leads.findIndex((l) => l.id === lead.id);
-  if (i >= 0) db.leads[i] = { ...lead, updatedAt: nowISO() };
-  else db.leads.push(lead);
-  write(db);
-  return lead;
-}
-export function deleteLead(id: string): void {
-  const db = read();
-  db.leads = db.leads.filter((l) => l.id !== id);
-  db.messages = db.messages.filter((m) => m.leadId !== id);
-  db.followups = db.followups.filter((f) => f.leadId !== id);
-  write(db);
-}
-
-// ---- Generic collection push ----
-export function addMessage(m: Message): Message { const db = read(); db.messages.push(m); write(db); return m; }
-export function addProposal(p: Proposal): Proposal { const db = read(); db.proposals.push(p); write(db); return p; }
-export function addProject(p: Project): Project { const db = read(); db.projects.push(p); write(db); return p; }
-export function addFollowUps(f: FollowUp[]): void { const db = read(); db.followups.push(...f); write(db); }
-
-export function messagesFor(leadId: string): Message[] { return read().messages.filter((m) => m.leadId === leadId); }
-export function followupsDue(): FollowUp[] {
-  const today = new Date().toISOString().slice(0, 10);
-  return read().followups.filter((f) => f.status === "pending" && f.dueDate.slice(0, 10) <= today);
-}
-
-export { DATA_FILE };

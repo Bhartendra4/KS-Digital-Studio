@@ -12,22 +12,22 @@ async function guard() {
 
 export async function GET() {
   if (!(await guard())) return NextResponse.json({ ok: false }, { status: 401 });
-  return NextResponse.json({ ok: true, leads: listLeads() });
+  return NextResponse.json({ ok: true, leads: await listLeads() });
 }
 
 export async function PATCH(req: Request) {
   if (!(await guard())) return NextResponse.json({ ok: false }, { status: 401 });
   const body = await req.json();
-  const existing = getLead(body.id);
+  const existing = await getLead(body.id);
   if (!existing) return NextResponse.json({ ok: false, error: "Not found" }, { status: 404 });
   const updated = { ...existing, ...body };
-  upsertLead(updated);
+  await upsertLead(updated);
   return NextResponse.json({ ok: true, lead: updated });
 }
 
 export async function DELETE(req: Request) {
   if (!(await guard())) return NextResponse.json({ ok: false }, { status: 401 });
   const { id } = await req.json();
-  deleteLead(id);
+  await deleteLead(id);
   return NextResponse.json({ ok: true });
 }
