@@ -7,6 +7,7 @@ import {
   Bot, FileText, Download, Trash2, RefreshCw, Sparkles,
 } from "lucide-react";
 import type { Lead, LeadStatus } from "@/lib/crm-types";
+import { FoldMark } from "@/components/brand/Logo";
 
 const STATUSES: LeadStatus[] = ["new", "contacted", "replied", "qualified", "proposal_sent", "won", "lost"];
 const tierColor: Record<string, string> = { hot: "#F97316", warm: "#F59E0B", cold: "#4F7BFF" };
@@ -92,10 +93,12 @@ export default function Dashboard() {
       {/* header */}
       <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
         <div className="flex items-center gap-3">
-          <span className="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-accent-electric to-accent-purple text-sm font-bold">KS</span>
+          <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl border border-white/10 bg-white/[0.04]">
+            <FoldMark className="h-5 w-5 text-white" />
+          </span>
           <div>
-            <h1 className="font-display text-xl font-semibold">Lead & Sales CRM</h1>
-            <p className="text-xs text-white/50">KS Digital Studio — private dashboard</p>
+            <h1 className="font-display text-xl font-semibold">Lead &amp; Sales CRM</h1>
+            <p className="text-[10px] tracking-[0.25em] text-white/40">KS DIGITAL STUDIO · PRIVATE DASHBOARD</p>
           </div>
         </div>
         <div className="flex items-center gap-2">
@@ -247,8 +250,8 @@ function LeadDrawer({ lead, onClose, onDelete }: { lead: Lead; onClose: () => vo
   };
 
   return (
-    <motion.div className="fixed inset-0 z-[95] flex justify-end bg-black/60" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={onClose}>
-      <motion.aside initial={{ x: 480 }} animate={{ x: 0 }} exit={{ x: 480 }} transition={{ ease: [0.22, 1, 0.36, 1] }}
+    <motion.div data-print-reset className="fixed inset-0 z-[95] flex justify-end bg-black/60" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={onClose}>
+      <motion.aside data-print-reset initial={{ x: 480 }} animate={{ x: 0 }} exit={{ x: 480 }} transition={{ ease: [0.22, 1, 0.36, 1] }}
         onClick={(e) => e.stopPropagation()} className="h-full w-full max-w-md overflow-auto bg-ink-800 p-6">
         <div className="mb-4 flex items-start justify-between">
           <div>
@@ -317,14 +320,28 @@ function LeadDrawer({ lead, onClose, onDelete }: { lead: Lead; onClose: () => vo
             {busy && <p className="text-xs text-white/40">Generating…</p>}
             {proposal && (
               <div id="proposal-print" className="space-y-2 rounded-xl border border-white/10 bg-white/[0.03] p-4 text-sm">
-                <h3 className="font-display text-lg font-semibold text-gradient">Proposal — {proposal.business}</h3>
+                {/* branded letterhead — also printed */}
+                <div className="mb-3 flex items-center justify-between border-b border-white/10 pb-3">
+                  <span className="flex items-center gap-2.5">
+                    <FoldMark className="h-6 w-6 text-white" />
+                    <span className="leading-none">
+                      <span className="block text-[13px] font-bold tracking-tight">KS</span>
+                      <span className="mt-[2px] block text-[7px] tracking-[0.3em] text-white/50">DIGITAL STUDIO</span>
+                    </span>
+                  </span>
+                  <span className="text-[10px] uppercase tracking-[0.2em] text-white/35">Proposal</span>
+                </div>
+                <h3 className="font-display text-lg font-semibold">Proposal — {proposal.business}</h3>
                 <P k="Requirements" v={proposal.requirements} />
                 <P k="Solution" v={proposal.solution} />
                 <P k="Timeline" v={proposal.timeline} />
                 <P k="Investment" v={proposal.investment} />
                 <div><p className="text-xs text-white/40">Features</p><ul className="text-xs text-white/70">{proposal.features.map((f: string, i: number) => <li key={i}>• {f}</li>)}</ul></div>
                 <div><p className="text-xs text-white/40">Deliverables</p><ul className="text-xs text-white/70">{proposal.deliverables.map((f: string, i: number) => <li key={i}>• {f}</li>)}</ul></div>
-                <button onClick={() => window.print()} className="mt-2 rounded-lg bg-white/10 px-3 py-1.5 text-xs">Save as PDF (print)</button>
+                <p className="mt-3 border-t border-white/10 pt-3 text-[10px] text-white/40">
+                  KS Digital Studio · info@ksdigitalstudio.in · ksdigitalstudio.in
+                </p>
+                <button onClick={() => window.print()} data-print-hide className="mt-2 rounded-lg bg-white/10 px-3 py-1.5 text-xs">Save as PDF (print)</button>
               </div>
             )}
           </div>

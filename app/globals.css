@@ -97,3 +97,35 @@ body {
 }
 .card { background: #101010; }
 .focus-ring:focus-visible { outline: 2px solid #4F7BFF; outline-offset: 3px; border-radius: 8px; }
+
+/* ---- Print: branded, ink-on-paper proposal ---- */
+@media print {
+  body { background: #fff !important; }
+  body * { visibility: hidden !important; }
+
+  /* the CRM drawer is a transformed, scrolling overlay - flatten it so the
+     proposal is not clipped or offset on the printed page */
+  [data-print-reset] {
+    position: static !important;
+    transform: none !important;
+    overflow: visible !important;
+    height: auto !important;
+    max-width: none !important;
+    width: 100% !important;
+    background: #fff !important;
+    padding: 0 !important;
+    inset: auto !important;
+    display: block !important;
+  }
+
+  #proposal-print, #proposal-print * { visibility: visible !important; }
+  #proposal-print {
+    background: #fff !important; color: #0B0B0B !important;
+    border: 0 !important; padding: 0 !important; width: 100% !important;
+  }
+  #proposal-print * { color: #0B0B0B !important; border-color: rgba(11,11,11,0.15) !important; }
+  #proposal-print svg { color: #0B0B0B !important; fill: #0B0B0B !important; }
+  #proposal-print [data-print-hide] { display: none !important; }
+
+  @page { margin: 18mm; }
+}

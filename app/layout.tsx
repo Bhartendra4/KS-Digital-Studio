@@ -53,6 +53,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     "@type": "ProfessionalService",
     name: site.name, description: site.description, url: site.domain,
     email: site.email, telephone: `+${site.whatsapp}`, image: `${site.domain}/opengraph-image`,
+    logo: `${site.domain}/brand/app-icon-512.png`,
     priceRange: "$$", areaServed: "Worldwide",
     sameAs: site.socials.map((s) => s.href),
     address: { "@type": "PostalAddress", addressLocality: "Remote-first" },

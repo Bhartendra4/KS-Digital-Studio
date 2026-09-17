@@ -2,7 +2,8 @@
 import { useState, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { motion } from "framer-motion";
-import { Lock, Loader2 } from "lucide-react";
+import { Loader2 } from "lucide-react";
+import { FoldMark } from "@/components/brand/Logo";
 
 function LoginInner() {
   const router = useRouter();
@@ -33,10 +34,12 @@ function LoginInner() {
       <motion.form onSubmit={submit} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
         className="card-border relative z-10 w-full max-w-sm space-y-5 p-8">
         <div className="flex items-center gap-3">
-          <span className="grid h-11 w-11 place-items-center rounded-xl bg-gradient-to-br from-accent-electric to-accent-purple"><Lock className="h-5 w-5" /></span>
+          <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-white/10 bg-white/[0.04]">
+            <FoldMark className="h-6 w-6 text-white" />
+          </span>
           <div>
             <h1 className="font-display text-lg font-semibold">CRM Admin</h1>
-            <p className="text-xs text-white/50">KS Digital Studio — private</p>
+            <p className="text-[10px] tracking-[0.25em] text-white/40">KS DIGITAL STUDIO · PRIVATE</p>
           </div>
         </div>
         {err && <div className="rounded-xl border border-red-500/30 bg-red-500/10 p-3 text-xs text-red-300">{err}</div>}

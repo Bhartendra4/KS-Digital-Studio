@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { site } from "@/lib/site";
 import { services } from "@/lib/data";
+import { LogoLockup } from "@/components/brand/Logo";
 
 export default function Footer() {
   const [email, setEmail] = useState("");
@@ -15,9 +16,8 @@ export default function Footer() {
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent-blue/50 to-transparent" />
       <div className="mx-auto grid max-w-[1440px] gap-12 px-5 py-16 md:grid-cols-[1.4fr_1fr_1fr_1.2fr] md:px-10">
         <div>
-          <Link href="/" className="flex items-center gap-2 font-display text-lg font-semibold">
-            <span className="grid h-8 w-8 place-items-center rounded-lg bg-gradient-to-br from-accent-electric to-accent-purple text-sm font-bold">KS</span>
-            Digital Studio
+          <Link href="/" aria-label={`${site.name} — home`} className="inline-block font-display">
+            <LogoLockup />
           </Link>
           <p className="mt-4 max-w-xs text-sm text-white/50">{site.description}</p>
           <p className="mt-4 text-sm text-white/40">{site.email}<br />{site.phone}</p>

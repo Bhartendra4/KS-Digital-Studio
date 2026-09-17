@@ -7,6 +7,7 @@ import { Menu, X, ChevronDown, Search, Phone } from "lucide-react";
 import { site } from "@/lib/site";
 import { services } from "@/lib/data";
 import Button from "./Button";
+import { FoldMark } from "@/components/brand/Logo";
 import { cn } from "@/lib/utils";
 
 export default function Navbar() {
@@ -39,9 +40,13 @@ export default function Navbar() {
         "flex w-full max-w-[1240px] items-center justify-between rounded-2xl px-4 py-3 transition-all duration-500 md:px-6",
         scrolled ? "glass" : "border border-transparent"
       )}>
-        <Link href="/" className="flex items-center gap-2 font-display text-lg font-semibold focus-ring" data-cursor>
-          <span className="grid h-8 w-8 place-items-center rounded-lg bg-gradient-to-br from-accent-electric to-accent-purple text-sm font-bold">KS</span>
-          <span className="hidden sm:block">Digital Studio</span>
+        <Link href="/" aria-label={`${site.name} — home`} data-cursor
+          className="flex items-center gap-2.5 font-display focus-ring">
+          <FoldMark className="h-7 w-7 shrink-0 text-white transition-opacity hover:opacity-80" />
+          <span className="hidden leading-none sm:block">
+            <span className="block text-[15px] font-bold tracking-tight text-white">KS</span>
+            <span className="mt-[3px] block text-[8px] font-medium tracking-[0.3em] text-white/50">DIGITAL STUDIO</span>
+          </span>
         </Link>
 
         <div className="hidden items-center gap-7 lg:flex">
