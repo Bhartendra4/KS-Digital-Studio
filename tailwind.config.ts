@@ -35,12 +35,17 @@ const config: Config = {
         shimmer: { "0%": { backgroundPosition: "0% 50%" }, "100%": { backgroundPosition: "200% 50%" } },
         "spin-slow": { to: { transform: "rotate(360deg)" } },
         marquee: { "0%": { transform: "translateX(0)" }, "100%": { transform: "translateX(-50%)" } },
+        "hero-reveal": {
+          "0%": { opacity: "0.45", transform: "scale(1.045) translateY(14px)" },
+          "100%": { opacity: "1", transform: "scale(1) translateY(0)" },
+        },
       },
       animation: {
         float: "float 6s ease-in-out infinite",
         shimmer: "shimmer 6s linear infinite",
         "spin-slow": "spin-slow 18s linear infinite",
         marquee: "marquee 28s linear infinite",
+        "hero-reveal": "hero-reveal 1.3s cubic-bezier(0.22,1,0.36,1) both",
       },
     },
   },
