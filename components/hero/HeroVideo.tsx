@@ -19,8 +19,8 @@ import { useEffect, useRef, useState } from "react";
 
 const DESKTOP_SRC = "/video/ks-studio.mp4";
 const MOBILE_SRC = "/video/ks-studio-mobile.mp4";
-const POSTER = "/video/ks-studio-poster.webp";
-const POSTER_MOBILE = "/video/ks-studio-poster-mobile.webp";
+const POSTER = "/video/ks-studio-poster.jpg";
+const POSTER_MOBILE = "/video/ks-studio-poster-mobile.jpg";
 
 export default function HeroVideo({ className = "" }: { className?: string }) {
   const hostRef = useRef<HTMLDivElement>(null);
