@@ -1,0 +1,34 @@
+[
+  {
+    "file": "hero.jpg",
+    "title": "Authentic gujarati thali",
+    "creator": "Dvivektx",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "page": "https://commons.wikimedia.org/w/index.php?curid=146022909"
+  },
+  {
+    "file": "pani-puri.jpg",
+    "title": "Pani Puri - Perfect Street food",
+    "creator": "Zeel Patel",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "page": "https://commons.wikimedia.org/w/index.php?curid=40978578"
+  },
+  {
+    "file": "dabeli.jpg",
+    "title": "Plate of pani puri at Jyoti's",
+    "creator": "BinaryApe",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "page": "https://www.flickr.com/photos/93001633@N00/3849526823"
+  },
+  {
+    "file": "vada-pav.jpg",
+    "title": "Vada Pav-Indian street food",
+    "creator": "Rutvi Mistry",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "page": "https://commons.wikimedia.org/w/index.php?curid=40906979"
+  }
+]

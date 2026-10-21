@@ -20,7 +20,14 @@ export default function CaseStudiesPage() {
               <Link href={`/case-studies/${p.slug}`} className="card-border group relative block h-64 overflow-hidden" data-cursor>
                 <div className="absolute inset-0 opacity-70 transition-transform duration-700 group-hover:scale-110"
                   style={{ background: `radial-gradient(120% 120% at 30% 20%, ${p.accent}44, transparent 60%), linear-gradient(160deg, #0A0A0A, #101010)` }} />
-                <div className="absolute inset-0 bg-grid-lines bg-[size:24px_24px] opacity-30" />
+                {p.image ? (
+                  <>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={p.image} alt={`${p.title} concept website`} loading="lazy"
+                      className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
+                  </>
+                ) : <div className="absolute inset-0 bg-grid-lines bg-[size:24px_24px] opacity-30" />}
                 <div className="relative flex h-full flex-col justify-between p-7">
                   <span className="w-fit rounded-full px-3 py-1 text-xs font-medium" style={{ background: `${p.accent}22`, color: p.accent }}>{p.category} · Concept / demo</span>
                   <div>

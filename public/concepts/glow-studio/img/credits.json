@@ -1,0 +1,26 @@
+[
+  {
+    "file": "hero.jpg",
+    "title": "Hair salon - Arlington, MA",
+    "creator": "Daderot",
+    "license": "CC0",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "page": "https://commons.wikimedia.org/wiki/File:Hair_salon_-_Arlington,_MA.jpg"
+  },
+  {
+    "file": "manicure.jpg",
+    "title": "French tip nail art",
+    "creator": "Kamali mohan kumar",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:French_tip_nail_art.jpg"
+  },
+  {
+    "file": "nail-art.jpg",
+    "title": "Acrylic nail art with crystal",
+    "creator": "Ajls1111",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Acrylic_nail_art_with_crystal.jpg"
+  }
+]
