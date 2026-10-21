@@ -4,7 +4,7 @@
 export const site = {
   name: "KS Digital Studio",
   shortName: "KS",
-  domain: "https://ksdigitalstudio.in",
+  domain: "https://www.ksdigitalstudio.in",
   tagline: "We Build Digital Experiences That Grow Businesses",
   heroHeadline: "WE BUILD WEBSITES THAT SELL.",
   heroSub:
@@ -23,7 +23,7 @@ export const site = {
   address: "Remote-first • Serving clients worldwide",
   map: "https://www.google.com/maps?q=Bengaluru&output=embed",
   socials: [
-    { label: "Instagram", href: "https://instagram.com/" },
+    { label: "Instagram", href: "https://instagram.com/ksdigitalstudio.1" },
     { label: "Dribbble", href: "https://dribbble.com/" },
     { label: "LinkedIn", href: "https://linkedin.com/" },
     { label: "X", href: "https://x.com/" },
