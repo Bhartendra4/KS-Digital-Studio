@@ -23,7 +23,7 @@ export default function Portfolio({
       <div className="absolute inset-0 bg-grid-lines bg-[size:24px_24px] opacity-30" />
       <div className="relative flex h-full flex-col justify-between p-6">
         <span className="w-fit rounded-full px-3 py-1 text-xs font-medium"
-          style={{ background: `${p.accent}22`, color: p.accent }}>{p.tag}</span>
+          style={{ background: `${p.accent}22`, color: p.accent }}>{p.tag} · Concept</span>
         <div>
           <p className="text-xs uppercase tracking-widest text-white/40">{p.category}</p>
           <h3 className="mt-1 flex items-center gap-2 font-display text-2xl font-semibold">{p.title}
@@ -37,8 +37,8 @@ export default function Portfolio({
   return (
     <Section id="work">
       {!hideHeading && (
-        <SectionHeading eyebrow="Selected work" title="Projects we're proud of."
-          subtitle="A glimpse of the premium products we've shipped for founders and teams worldwide." />
+        <SectionHeading eyebrow="Concept / demo projects" title="How we design and build."
+          subtitle="Concept projects that show our style and approach. Real client work will be added here as it launches." />
       )}
       <div className={`${hideHeading ? "" : "mt-10"} flex flex-wrap gap-2`}>
         {categories.map((c) => (

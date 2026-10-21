@@ -3,7 +3,7 @@ import Portfolio from "@/components/sections/Portfolio";
 import CTA from "@/components/sections/CTA";
 import { pageMeta } from "@/lib/seo";
 
-export const metadata = pageMeta("Work", "Selected premium websites and web apps built by KS Digital Studio.", "/portfolio");
+export const metadata = pageMeta("Work", "Concept / demo websites and web apps that show how KS Digital Studio designs and builds.", "/portfolio");
 
 export default function PortfolioPage() {
   return (

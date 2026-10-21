@@ -13,6 +13,7 @@ export default function Testimonials() {
     return () => clearInterval(id);
   }, []);
   const t = testimonials[i];
+  if (!t) return null;
   return (
     <Section id="testimonials">
       <SectionHeading eyebrow="Loved by clients" title="Words from the people we build for." center />

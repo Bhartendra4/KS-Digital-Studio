@@ -32,7 +32,7 @@ export const site = {
   nav: [
     { label: "Services", href: "/services" },
     { label: "Work", href: "/portfolio" },
-    { label: "Case Studies", href: "/case-studies" },
+    { label: "Concepts", href: "/case-studies" },
     { label: "Pricing", href: "/pricing" },
     { label: "Company", href: "/about" },
     { label: "Blog", href: "/blog" },

@@ -6,13 +6,13 @@ import CTA from "@/components/sections/CTA";
 import { portfolio } from "@/lib/data";
 import { pageMeta } from "@/lib/seo";
 
-export const metadata = pageMeta("Case Studies", "In-depth case studies showing how KS Digital Studio grows businesses through premium web work.", "/case-studies");
+export const metadata = pageMeta("Concept Projects", "Concept / demo projects that show how KS Digital Studio designs and builds premium websites.", "/case-studies");
 
 export default function CaseStudiesPage() {
   return (
     <>
-      <PageHero eyebrow="Case studies" title="Results, not just visuals."
-        subtitle="How our design and engineering translated into real business outcomes." />
+      <PageHero eyebrow="Concept / demo projects" title="How we'd build it."
+        subtitle="Concept projects that show our design and engineering approach. These are demos, not paid client work — the figures are design targets, not client results." />
       <section className="mx-auto max-w-[1440px] px-5 pb-8 md:px-10">
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
           {portfolio.map((p, i) => (
@@ -22,7 +22,7 @@ export default function CaseStudiesPage() {
                   style={{ background: `radial-gradient(120% 120% at 30% 20%, ${p.accent}44, transparent 60%), linear-gradient(160deg, #0A0A0A, #101010)` }} />
                 <div className="absolute inset-0 bg-grid-lines bg-[size:24px_24px] opacity-30" />
                 <div className="relative flex h-full flex-col justify-between p-7">
-                  <span className="w-fit rounded-full px-3 py-1 text-xs font-medium" style={{ background: `${p.accent}22`, color: p.accent }}>{p.category}</span>
+                  <span className="w-fit rounded-full px-3 py-1 text-xs font-medium" style={{ background: `${p.accent}22`, color: p.accent }}>{p.category} · Concept / demo</span>
                   <div>
                     <div className="flex flex-wrap gap-4 text-sm text-white/70">
                       {p.results.slice(0, 3).map((r) => (

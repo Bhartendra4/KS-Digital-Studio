@@ -26,7 +26,7 @@ function Counter({ value, suffix }: { value: number; suffix: string }) {
 export default function WhyChooseUs() {
   return (
     <Section id="why">
-      <SectionHeading eyebrow="Why choose us" title="Numbers that speak for themselves." center />
+      <SectionHeading eyebrow="Why choose us" title="Our promises, in numbers." center />
       <div className="mt-14 grid grid-cols-2 gap-4 lg:grid-cols-4">
         {stats.map((s) => (
           <div key={s.label} className="card-border glass-hover p-8 text-center">

@@ -28,11 +28,12 @@ export const services: Service[] = [
   { slug: "maintenance", icon: Wrench, title: "Maintenance & Support", desc: "Proactive care, updates and monitoring.", long: "Ongoing care plans covering updates, monitoring, backups and iterative improvements.", features: ["Monitoring", "Updates & backups", "Security patches", "Priority support"] },
 ];
 
+// Commitments we can stand behind (not vanity numbers). Update with real counts as projects ship.
 export const stats = [
-  { value: 250, suffix: "+", label: "Projects Completed" },
-  { value: 180, suffix: "+", label: "Happy Clients" },
-  { value: 22, suffix: "+", label: "Countries Served" },
-  { value: 24, suffix: "/7", label: "Support" },
+  { value: 24, suffix: "h", label: "Reply time on every enquiry" },
+  { value: 100, suffix: "%", label: "Mobile-first, responsive builds" },
+  { value: 90, suffix: "+", label: "Lighthouse score we aim for" },
+  { value: 7, suffix: " days", label: "Starter website delivery" },
 ];
 
 export const advantages = [
@@ -60,35 +61,25 @@ export const values = [
   { title: "Radical clarity", desc: "Transparent scope, timelines and communication throughout." },
 ];
 
-export const milestones = [
-  { year: "2017", title: "Founded", desc: "KS Digital Studio starts with a single freelance client." },
-  { year: "2019", title: "First 50 projects", desc: "Grew into a small team of designers and developers." },
-  { year: "2021", title: "Went global", desc: "Started serving clients across 3 continents." },
-  { year: "2023", title: "AI & web apps", desc: "Expanded into AI automation, CRMs and SaaS builds." },
-  { year: "2025", title: "250+ launches", desc: "A trusted studio for premium, high-performance products." },
-];
-
 export type Project = {
   slug: string; title: string; category: string; tag: string; accent: string;
   desc: string; year: string; client: string; services: string[];
   results: { label: string; value: string }[]; challenge: string; solution: string;
 };
 
+// These are CONCEPT / DEMO projects that show our approach — not paid client work.
+// "results" are design targets for the concept, never claimed outcomes.
 export const portfolio: Project[] = [
-  { slug: "aether-finance", title: "Aether Finance", category: "Web App", tag: "Dashboard", accent: "#4F7BFF", desc: "Fintech analytics platform with a custom design system.", year: "2025", client: "Aether Inc.", services: ["Web App", "UI/UX", "Dashboards"], results: [{ label: "Demo bookings", value: "+212%" }, { label: "Load time", value: "0.9s" }, { label: "Lighthouse", value: "98" }], challenge: "Aether's legacy dashboard was slow and hard to navigate, hurting trial-to-paid conversion.", solution: "We rebuilt the product on Next.js with a bespoke design system, real-time charts and a sub-second first load." },
-  { slug: "noir-atelier", title: "Noir Atelier", category: "E-commerce", tag: "Shop", accent: "#8B5CF6", desc: "Luxury fashion storefront with immersive product pages.", year: "2024", client: "Noir Atelier", services: ["E-commerce", "Design", "SEO"], results: [{ label: "Revenue", value: "+42%" }, { label: "AOV", value: "+18%" }, { label: "Bounce", value: "-31%" }], challenge: "A premium brand with a storefront that felt generic and undersold the products.", solution: "Immersive product storytelling, a refined checkout and technical SEO lifted revenue and average order value." },
-  { slug: "lumen-studio", title: "Lumen Studio", category: "Portfolio", tag: "Creative", accent: "#22D3EE", desc: "Interactive portfolio for a motion design studio.", year: "2024", client: "Lumen", services: ["Portfolio", "Motion", "3D"], results: [{ label: "Inbound leads", value: "3x" }, { label: "Avg. session", value: "4m12s" }, { label: "Awwwards", value: "Honorable" }], challenge: "Lumen needed a site as impressive as their reels to win enterprise clients.", solution: "A cinematic, GSAP-driven portfolio with 3D reveals that doubled qualified inbound." },
-  { slug: "verde-bistro", title: "Verde Bistro", category: "Restaurant", tag: "Booking", accent: "#34D399", desc: "Fine-dining site with reservations and live menu.", year: "2025", client: "Verde", services: ["Restaurant", "Booking", "Design"], results: [{ label: "Reservations", value: "+64%" }, { label: "Direct orders", value: "+28%" }, { label: "Load time", value: "1.1s" }], challenge: "Verde relied on third-party apps that ate into margins and diluted the brand.", solution: "A branded site with native reservations and ordering brought guests direct and lifted margins." },
-  { slug: "orbit-saas", title: "Orbit SaaS", category: "Landing", tag: "Marketing", accent: "#F59E0B", desc: "Product launch page converting at 9.4%.", year: "2025", client: "Orbit", services: ["Landing", "Copy", "CRO"], results: [{ label: "Conversion", value: "9.4%" }, { label: "Signups (wk1)", value: "6,200" }, { label: "CAC", value: "-37%" }], challenge: "Orbit's launch needed a page that could convert cold paid traffic at scale.", solution: "A tightly-scoped, benefit-led landing page with fast load and clear CTAs hit a 9.4% conversion rate." },
-  { slug: "pulse-health", title: "Pulse Health", category: "Business", tag: "Corporate", accent: "#F472B6", desc: "Healthcare brand refresh and multi-page build.", year: "2024", client: "Pulse", services: ["Business", "Brand", "SEO"], results: [{ label: "Organic traffic", value: "+128%" }, { label: "Leads", value: "+73%" }, { label: "Accessibility", value: "100" }], challenge: "Pulse's outdated site failed accessibility standards and ranked poorly.", solution: "A fully accessible, SEO-optimised rebuild grew organic traffic and inbound leads substantially." },
+  { slug: "aether-finance", title: "Aether Finance", category: "Web App", tag: "Dashboard", accent: "#4F7BFF", desc: "Concept: fintech analytics dashboard with a custom design system.", year: "Concept", client: "Concept / demo project", services: ["Web App", "UI/UX", "Dashboards"], results: [{ label: "Load-time target", value: "<1s" }, { label: "Lighthouse target", value: "95+" }, { label: "Layout", value: "Responsive" }], challenge: "Fintech dashboards are often slow and hard to navigate, which hurts trial-to-paid conversion.", solution: "A Next.js build with a bespoke design system, real-time charts and a sub-second first load as the target." },
+  { slug: "noir-atelier", title: "Noir Atelier", category: "E-commerce", tag: "Shop", accent: "#8B5CF6", desc: "Concept: luxury fashion storefront with immersive product pages.", year: "Concept", client: "Concept / demo project", services: ["E-commerce", "Design", "SEO"], results: [{ label: "Checkout", value: "1-page" }, { label: "Lighthouse target", value: "90+" }, { label: "SEO", value: "Technical" }], challenge: "Premium brands often sit on generic storefronts that undersell their products.", solution: "Immersive product storytelling, a refined one-page checkout and technical SEO built in from day one." },
+  { slug: "lumen-studio", title: "Lumen Studio", category: "Portfolio", tag: "Creative", accent: "#22D3EE", desc: "Concept: interactive portfolio for a motion design studio.", year: "Concept", client: "Concept / demo project", services: ["Portfolio", "Motion", "3D"], results: [{ label: "Motion", value: "GSAP" }, { label: "Reveals", value: "3D" }, { label: "Lighthouse target", value: "90+" }], challenge: "A motion studio needs a site as impressive as its reels to win bigger clients.", solution: "A cinematic, GSAP-driven portfolio with 3D reveals and fast loading on mobile." },
+  { slug: "verde-bistro", title: "Verde Bistro", category: "Restaurant", tag: "Booking", accent: "#34D399", desc: "Concept: fine-dining site with reservations and a live menu.", year: "Concept", client: "Concept / demo project", services: ["Restaurant", "Booking", "Design"], results: [{ label: "Reservations", value: "Built-in" }, { label: "Menu", value: "Live" }, { label: "Load-time target", value: "<1.5s" }], challenge: "Restaurants that rely only on third-party apps lose margin and dilute their brand.", solution: "A branded site with native reservations and direct ordering, so guests can book without commission apps." },
+  { slug: "orbit-saas", title: "Orbit SaaS", category: "Landing", tag: "Marketing", accent: "#F59E0B", desc: "Concept: product launch landing page built for conversion.", year: "Concept", client: "Concept / demo project", services: ["Landing", "Copy", "CRO"], results: [{ label: "Sections", value: "Benefit-led" }, { label: "CTA", value: "Clear" }, { label: "Lighthouse target", value: "95+" }], challenge: "A launch page has to turn cold paid traffic into sign-ups quickly.", solution: "A tightly scoped, benefit-led landing page with fast load and clear calls to action." },
+  { slug: "pulse-health", title: "Pulse Health", category: "Business", tag: "Corporate", accent: "#F472B6", desc: "Concept: healthcare brand refresh and multi-page build.", year: "Concept", client: "Concept / demo project", services: ["Business", "Brand", "SEO"], results: [{ label: "Accessibility target", value: "100" }, { label: "SEO", value: "On-page" }, { label: "Pages", value: "Multi" }], challenge: "Healthcare sites often fail accessibility standards and rank poorly.", solution: "A fully accessible, SEO-optimised multi-page build designed to be easy for every patient to use." },
 ];
 
-export const testimonials = [
-  { name: "Aria Mehta", role: "Founder, Aether Finance", rating: 5, quote: "They delivered a website that genuinely feels years ahead. Our demo bookings tripled in the first month." },
-  { name: "Daniel Cole", role: "CMO, Orbit SaaS", rating: 5, quote: "The most seamless agency experience we've had. Design, speed and communication were flawless." },
-  { name: "Sofia Rossi", role: "Owner, Noir Atelier", rating: 5, quote: "Our store finally looks as premium as our products. Sales are up 42% since launch." },
-  { name: "Ken Watanabe", role: "Director, Lumen Studio", rating: 5, quote: "Every interaction feels intentional. Clients constantly ask who built our site." },
-];
+// Real client testimonials only — add one here (with the client's permission) after each finished project.
+export const testimonials: { name: string; role: string; rating: number; quote: string }[] = [];
 
 export const pricing = [
   { name: "Starter", price: "$1,200", cadence: "one-time", highlight: false, tagline: "For founders getting online fast.", features: ["Up to 5 sections", "Responsive design", "Basic SEO setup", "Contact form", "2 revisions", "7-day delivery"] },

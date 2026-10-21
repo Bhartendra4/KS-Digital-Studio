@@ -21,7 +21,7 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
   if (!p) notFound();
   return (
     <>
-      <PageHero eyebrow={`${p.category} · ${p.year}`} title={p.title} subtitle={p.desc} />
+      <PageHero eyebrow={`${p.category} · Concept / demo project`} title={p.title} subtitle={p.desc} />
       <section className="mx-auto max-w-[1440px] px-5 pb-8 md:px-10">
         <Reveal>
           <div className="relative h-64 overflow-hidden rounded-3xl md:h-96"
@@ -33,9 +33,10 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
           <div className="space-y-8">
             <Reveal><div><h2 className="font-display text-2xl font-semibold text-gradient">The challenge</h2>
               <p className="mt-3 text-white/60">{p.challenge}</p></div></Reveal>
-            <Reveal delay={0.1}><div><h2 className="font-display text-2xl font-semibold text-gradient">Our solution</h2>
+            <Reveal delay={0.1}><div><h2 className="font-display text-2xl font-semibold text-gradient">Our approach</h2>
               <p className="mt-3 text-white/60">{p.solution}</p></div></Reveal>
             <Reveal delay={0.15}>
+              <p className="mb-3 text-xs uppercase tracking-widest text-white/40">Design targets — concept project, not client results</p>
               <div className="grid grid-cols-3 gap-4">
                 {p.results.map((r) => (
                   <div key={r.label} className="card-border p-5 text-center">
@@ -49,11 +50,11 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
           <Reveal delay={0.1}>
             <aside className="glass h-fit rounded-2xl p-6 text-sm">
               <dl className="space-y-4">
-                <div><dt className="text-white/40">Client</dt><dd className="text-white">{p.client}</dd></div>
-                <div><dt className="text-white/40">Year</dt><dd className="text-white">{p.year}</dd></div>
+                <div><dt className="text-white/40">Type</dt><dd className="text-white">{p.client}</dd></div>
+                
                 <div><dt className="text-white/40">Services</dt><dd className="text-white">{p.services.join(", ")}</dd></div>
               </dl>
-              <Link href="/case-studies" className="mt-6 block text-accent-blue hover:text-white">← All case studies</Link>
+              <Link href="/case-studies" className="mt-6 block text-accent-blue hover:text-white">← All concept projects</Link>
             </aside>
           </Reveal>
         </div>
