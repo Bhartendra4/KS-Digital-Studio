@@ -1,8 +1,18 @@
 "use client";
 import Script from "next/script";
+import { useEffect, useState } from "react";
 import { site } from "@/lib/site";
+import { hasAnalyticsConsent } from "@/components/ui/CookieBanner";
 
 export default function Analytics() {
+  const [ok, setOk] = useState(false);
+  useEffect(() => {
+    const check = () => setOk(hasAnalyticsConsent());
+    check();
+    window.addEventListener("ks-consent", check);
+    return () => window.removeEventListener("ks-consent", check);
+  }, []);
+  if (!ok) return null;
   return (
     <>
       {site.gaId && (

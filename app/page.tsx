@@ -5,7 +5,6 @@ import WhyChooseUs from "@/components/sections/WhyChooseUs";
 import Process from "@/components/sections/Process";
 import Showcase from "@/components/sections/Showcase";
 import Portfolio from "@/components/sections/Portfolio";
-import Testimonials from "@/components/sections/Testimonials";
 import Pricing from "@/components/sections/Pricing";
 import FAQ from "@/components/sections/FAQ";
 import Contact from "@/components/sections/Contact";
@@ -20,7 +19,6 @@ export default function Home() {
       <Process />
       <Showcase />
       <Portfolio />
-      <Testimonials />
       <Pricing />
       <FAQ />
       <Contact />

@@ -13,6 +13,8 @@ export async function notifyNewLead(lead: Lead): Promise<boolean> {
     `Budget: ${lead.budget || "-"}  Timeline: ${lead.timeline || "-"}\n` +
     `Source: ${lead.source}\nNotes: ${lead.notes || "-"}`;
 
+  await pushLeadAlert(lead, summary);
+
   const key = process.env.RESEND_API_KEY;
   if (key) {
     try {
@@ -34,4 +36,27 @@ export async function notifyNewLead(lead: Lead): Promise<boolean> {
   }
   console.log("[LEAD NOTIFICATION]\n" + summary);
   return false;
+}
+
+// Phone alert for every new lead — uses the same ntfy / Telegram settings as visitor alerts.
+async function pushLeadAlert(lead: Lead, summary: string): Promise<void> {
+  const topic = process.env.NTFY_TOPIC;
+  if (topic) {
+    const server = (process.env.NTFY_SERVER || "https://ntfy.sh").replace(/\/+$/, "");
+    const headers: Record<string, string> = {
+      "content-type": "text/plain; charset=utf-8",
+      Title: "New lead on ksdigitalstudio.in", Tags: "moneybag", Priority: "high",
+    };
+    if (process.env.NTFY_TOKEN) headers.authorization = `Bearer ${process.env.NTFY_TOKEN}`;
+    try { await fetch(`${server}/${encodeURIComponent(topic)}`, { method: "POST", headers, body: summary }); } catch {}
+  }
+  const tg = process.env.TELEGRAM_BOT_TOKEN, chat = process.env.TELEGRAM_CHAT_ID;
+  if (tg && chat) {
+    try {
+      await fetch(`https://api.telegram.org/bot${tg}/sendMessage`, {
+        method: "POST", headers: { "content-type": "application/json" },
+        body: JSON.stringify({ chat_id: chat, text: `New lead: ${lead.businessName}\n\n${summary}` }),
+      });
+    } catch {}
+  }
 }

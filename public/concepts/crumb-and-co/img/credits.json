@@ -1,0 +1,42 @@
+[
+  {
+    "file": "hero.jpg",
+    "title": "Loaves artisanal bread baguettes Venice",
+    "creator": null,
+    "license": "CC CC0 1.0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "page": "https://www.rawpixel.com/image/3282923/free-photo-image-artisanal-bread-baguettes"
+  },
+  {
+    "file": "croissants.jpg",
+    "title": "Croissant",
+    "creator": "Blarvar",
+    "license": "CC PDM 1.0",
+    "license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "page": "https://www.flickr.com/photos/46583370@N04/4599562280"
+  },
+  {
+    "file": "cookies.jpg",
+    "title": "Browned butter chocolate chip cookies",
+    "creator": "grongar",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "page": "https://www.flickr.com/photos/70757891@N00/7133349441"
+  },
+  {
+    "file": "cinnamon-rolls.jpg",
+    "title": "Cinnamon buns",
+    "creator": "Infomastern",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+    "page": "https://www.flickr.com/photos/55856449@N04/16040236058"
+  },
+  {
+    "file": "breads.jpg",
+    "title": "Challah loaves",
+    "creator": "Ruth and Dave",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "page": "https://www.flickr.com/photos/95142644@N00/671970657"
+  }
+]

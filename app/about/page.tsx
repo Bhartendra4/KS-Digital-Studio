@@ -3,7 +3,7 @@ import Reveal from "@/components/fx/Reveal";
 import WhyChooseUs from "@/components/sections/WhyChooseUs";
 import Process from "@/components/sections/Process";
 import CTA from "@/components/sections/CTA";
-import { values, milestones } from "@/lib/data";
+import { values } from "@/lib/data";
 import { pageMeta } from "@/lib/seo";
 
 export const metadata = pageMeta("About", "Meet KS Digital Studio — a premium, remote-first digital agency building websites that grow businesses.", "/about");
@@ -39,22 +39,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-[1440px] px-5 py-16 md:px-10">
-        <Reveal><span className="eyebrow"><span className="h-px w-8 bg-accent-blue/60" /> Company story</span></Reveal>
-        <div className="mt-8 space-y-4">
-          {milestones.map((m, i) => (
-            <Reveal key={m.year} delay={i * 0.05}>
-              <div className="glass glass-hover flex flex-col gap-2 rounded-2xl p-6 md:flex-row md:items-center md:gap-8">
-                <span className="font-display text-3xl font-bold text-gradient md:w-28">{m.year}</span>
-                <div>
-                  <h3 className="font-display text-lg font-semibold">{m.title}</h3>
-                  <p className="text-sm text-white/55">{m.desc}</p>
-                </div>
-              </div>
-            </Reveal>
-          ))}
-        </div>
-      </section>
 
       <WhyChooseUs />
       <Process />

@@ -20,20 +20,19 @@ export const site = {
   web3formsKey: "YOUR_WEB3FORMS_ACCESS_KEY",
   gaId: "", // e.g. G-XXXXXXX
   clarityId: "", // Microsoft Clarity project id
-  address: "Remote-first • Serving clients worldwide",
-  map: "https://www.google.com/maps?q=Bengaluru&output=embed",
+  address: "Ahmedabad, Gujarat • Serving clients worldwide",
+  city: "Ahmedabad",
+  map: "https://www.google.com/maps?q=Ahmedabad,+Gujarat&output=embed",
   socials: [
     { label: "Instagram", href: "https://instagram.com/ksdigitalstudio.1" },
-    { label: "Dribbble", href: "https://dribbble.com/" },
-    { label: "LinkedIn", href: "https://linkedin.com/" },
-    { label: "X", href: "https://x.com/" },
-    { label: "GitHub", href: "https://github.com/" },
+    { label: "WhatsApp", href: "https://wa.me/918107817733" },
+    // Add LinkedIn / X / Dribbble here once those profiles exist (empty links hurt trust and SEO).
   ],
   // Primary navigation (route-based, multi-page)
   nav: [
     { label: "Services", href: "/services" },
     { label: "Work", href: "/portfolio" },
-    { label: "Case Studies", href: "/case-studies" },
+    { label: "Concepts", href: "/case-studies" },
     { label: "Pricing", href: "/pricing" },
     { label: "Company", href: "/about" },
     { label: "Blog", href: "/blog" },
