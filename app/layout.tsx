@@ -57,7 +57,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     logo: `${site.domain}/brand/app-icon-512.png`,
     priceRange: "$$", areaServed: "Worldwide",
     sameAs: site.socials.map((s) => s.href),
-    address: { "@type": "PostalAddress", addressLocality: "Remote-first" },
+    address: { "@type": "PostalAddress", addressLocality: site.city, addressRegion: "Gujarat", addressCountry: "IN" },
     contactPoint: [{
       "@type": "ContactPoint",
       telephone: `+${site.whatsapp}`,

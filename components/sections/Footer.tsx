@@ -9,6 +9,7 @@ import { LogoLockup } from "@/components/brand/Logo";
 export default function Footer() {
   const [email, setEmail] = useState("");
   const [ok, setOk] = useState(false);
+  const [err, setErr] = useState(false);
   const pathname = usePathname();
   if (pathname.startsWith("/admin")) return null;
   return (
@@ -44,12 +45,23 @@ export default function Footer() {
         <div>
           <h4 className="mb-4 text-xs uppercase tracking-widest text-white/40">Newsletter</h4>
           <p className="text-sm text-white/50">Get occasional insights on premium web & AI.</p>
-          <form onSubmit={(e) => { e.preventDefault(); if (email.includes("@")) setOk(true); }} className="mt-4 flex gap-2">
-            <input value={email} onChange={(e) => setEmail(e.target.value)} placeholder="you@email.com" aria-label="Email"
+          <form onSubmit={async (e) => {
+              e.preventDefault();
+              if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { setErr(true); return; }
+              setErr(false);
+              try {
+                const r = await fetch("/api/lead", { method: "POST", headers: { "Content-Type": "application/json" },
+                  body: JSON.stringify({ email, name: email, businessName: "Newsletter subscriber", source: "newsletter" }) });
+                if (!r.ok) throw new Error("failed");
+                setOk(true); setEmail("");
+              } catch { setErr(true); }
+            }} className="mt-4 flex gap-2">
+            <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="you@email.com" aria-label="Email"
               className="w-full rounded-xl border border-white/10 bg-white/[0.03] px-4 py-2.5 text-sm outline-none focus:border-accent-blue/60" />
             <button className="btn-magnetic btn-primary px-4 py-2.5 text-sm" data-cursor>Join</button>
           </form>
           {ok && <p className="mt-2 text-xs text-accent-cyan">Subscribed — welcome aboard!</p>}
+          {err && <p className="mt-2 text-xs text-red-400">Please enter a valid email and try again.</p>}
           <div className="mt-5 flex flex-wrap gap-3">
             {site.socials.map((s) => (
               <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer"

@@ -27,17 +27,21 @@ export default function ContactForm() {
   const onSubmit = async (data: FormData) => {
     if (data.company) return; // bot caught by honeypot
     setStatus("sending");
-    // Store every enquiry in the CRM (fire-and-forget; never blocks the user).
-    fetch("/api/lead", {
+    // Store every enquiry in the CRM first — this also sends the owner an alert.
+    const saved = await fetch("/api/lead", {
       method: "POST", headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         name: data.name, contactName: data.name, businessName: data.name,
         email: data.email, budget: data.budget, projectDescription: data.message,
         source: "contact_form",
       }),
-    }).catch(() => {});
+    }).then((r) => r.ok).catch(() => false);
     const hasKey = site.web3formsKey && site.web3formsKey !== "YOUR_WEB3FORMS_ACCESS_KEY";
     try {
+      if (saved && !hasKey) {
+        router.push("/thank-you");
+        return;
+      }
       if (hasKey) {
         const res = await fetch("https://api.web3forms.com/submit", {
           method: "POST", headers: { "Content-Type": "application/json" },
@@ -48,7 +52,7 @@ export default function ContactForm() {
         });
         if (!res.ok) throw new Error("failed");
       } else {
-        // Fallback: open the visitor's mail client if no Web3Forms key is set.
+        // Fallback: the CRM save failed and no Web3Forms key is set — open the visitor's mail client.
         const subject = encodeURIComponent(`New project inquiry — ${data.name}`);
         const body = encodeURIComponent(`Name: ${data.name}\nEmail: ${data.email}\nBudget: ${data.budget}\n\n${data.message}`);
         window.location.href = `mailto:${site.email}?subject=${subject}&body=${body}`;
