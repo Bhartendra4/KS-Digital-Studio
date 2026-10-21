@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Lumen Studio — Motion design studio · Concept by KS Digital Studio</title>
+<meta name="description" content="Concept website for a fictional motion design studio — designed and built by KS Digital Studio.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}a{color:inherit}img{display:block;max-width:100%}
+.ribbon{background:#000;color:#ddd;font:500 12.5px/1.4 system-ui,sans-serif;text-align:center;padding:8px 16px}.ribbon a{color:#22d3ee;font-weight:700;text-decoration:none}
+.modal{position:fixed;inset:0;z-index:99;display:none;place-items:center;background:rgba(0,0,0,.65);padding:20px;font-family:system-ui,sans-serif}.modal.on{display:grid}
+.modal .m{background:#fff;color:#111;border-radius:22px;max-width:420px;padding:28px;text-align:center}.modal h3{font-size:23px;margin-bottom:8px}.modal p{color:#555;margin-bottom:20px;line-height:1.55}
+.modal .mb{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}.modal .mb a,.modal .mb button{padding:12px 18px;border-radius:12px;font:600 14px system-ui;text-decoration:none;border:0;cursor:pointer}
+.modal .mb a{background:#111;color:#fff}.modal .mb button{background:#eee;color:#111}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+
+body{font-family:"DM Sans",system-ui,sans-serif;background:#050507;color:#f2f2f5;line-height:1.6;overflow-x:hidden}
+.w{max-width:1240px;margin:0 auto;padding:0 24px}
+header .w{display:flex;align-items:center;justify-content:space-between;height:72px}
+.lg{font:700 20px "Syne",sans-serif;letter-spacing:.06em;text-decoration:none}.lg span{color:#22d3ee}
+nav{display:flex;gap:28px;font-size:14px;color:#a1a1aa;text-transform:uppercase;letter-spacing:.12em}nav a{text-decoration:none}nav a:hover{color:#fff}
+.hero{position:relative;padding:70px 0 90px;min-height:78vh;display:flex;align-items:center}
+.blob{position:absolute;border-radius:50%;filter:blur(60px);opacity:.75;animation:drift 14s ease-in-out infinite alternate}
+.b1{width:420px;height:420px;background:#22d3ee;right:6%;top:4%}.b2{width:360px;height:360px;background:#8b5cf6;right:24%;top:30%;animation-delay:-4s}.b3{width:260px;height:260px;background:#f472b6;right:4%;top:46%;animation-delay:-8s}
+@keyframes drift{to{transform:translate(-60px,40px) scale(1.15)}}
+.hero .w{position:relative;z-index:2}
+h1{font:800 clamp(52px,10vw,150px)/.9 "Syne",sans-serif;letter-spacing:-.03em;text-transform:uppercase}
+h1 em{font-style:normal;-webkit-text-stroke:2px #f2f2f5;color:transparent}
+.hero p{max-width:460px;color:#c4c4cc;font-size:18px;margin-top:26px}
+.b{display:inline-flex;align-items:center;gap:10px;margin-top:30px;padding:15px 26px;border-radius:999px;background:#f2f2f5;color:#050507;font-weight:700;text-decoration:none;border:0;cursor:pointer;font-family:inherit}
+.marq{border-top:1px solid #1f1f25;border-bottom:1px solid #1f1f25;overflow:hidden;white-space:nowrap;padding:18px 0;font:700 28px "Syne";text-transform:uppercase;color:#3f3f46}
+.marq div{display:inline-block;animation:mq 28s linear infinite}.marq span{margin:0 28px}.marq span:nth-child(odd){color:#e4e4e7}
+@keyframes mq{to{transform:translateX(-50%)}}
+section{padding:90px 0}.st{display:flex;justify-content:space-between;align-items:end;margin-bottom:34px;gap:20px;flex-wrap:wrap}
+h2{font:800 clamp(34px,5vw,64px)/1 "Syne";text-transform:uppercase}.st p{color:#a1a1aa;max-width:360px}
+.works{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
+.wk{position:relative;border-radius:22px;overflow:hidden;min-height:340px;background:#111;cursor:pointer}
+.wk .art{position:absolute;inset:0;transition:transform .8s}.wk:hover .art{transform:scale(1.07)}
+.wk .meta{position:absolute;left:20px;bottom:18px;right:20px;display:flex;justify-content:space-between;align-items:end}
+.wk h3{font:700 24px "Syne";text-transform:uppercase}.wk small{color:#d4d4d8;font-size:13px}
+.a1{background:radial-gradient(circle at 30% 30%,#22d3ee,transparent 45%),radial-gradient(circle at 75% 65%,#8b5cf6,transparent 50%),#0b0b12}
+.a2{background:conic-gradient(from 90deg at 50% 50%,#f472b6,#fb923c,#facc15,#f472b6);filter:saturate(1.1)}
+.a3{background:repeating-linear-gradient(120deg,#0b0b12 0 18px,#1e1b4b 18px 36px),#000}
+.a4{background:radial-gradient(circle at 50% 120%,#22d3ee 0,#0ea5e9 20%,#1e3a8a 45%,#050507 70%)}
+.a5{background:linear-gradient(135deg,#111 0,#111 50%,#8b5cf6 50%),#111}
+.ring{position:absolute;left:50%;top:44%;width:150px;height:150px;margin:-75px;border-radius:50%;border:2px solid rgba(255,255,255,.7);animation:spin 9s linear infinite}
+.ring::after{content:"";position:absolute;width:18px;height:18px;border-radius:50%;background:#fff;top:-9px;left:50%;margin-left:-9px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.svc{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid #1f1f25}.sv{padding:28px 22px 30px 0;border-right:1px solid #1f1f25}.sv:last-child{border-right:0}.sv b{font:700 13px "DM Sans";color:#22d3ee;letter-spacing:.14em}.sv h3{font:700 22px "Syne";margin:10px 0 8px;text-transform:uppercase}.sv p{color:#a1a1aa;font-size:15px}
+.ct{text-align:center}.ct h2{font-size:clamp(44px,9vw,130px)}.ct a.mail{display:inline-block;margin-top:24px;font:700 clamp(20px,3vw,32px) "Syne";text-decoration:none;border-bottom:2px solid #22d3ee}
+.kfoot{border-top:1px solid #1f1f25;padding:26px 24px;text-align:center;color:#71717a;font-size:13px}.kfoot a{color:#e4e4e7}
+@media (max-width:900px){.works .wk{grid-column:span 12!important;min-height:260px}.svc{grid-template-columns:1fr 1fr}.sv{border-right:0;border-bottom:1px solid #1f1f25}nav{display:none}.blob{opacity:.5}}
+
+</style>
+</head>
+<body>
+<div class="ribbon">Concept website by <a href="https://www.ksdigitalstudio.in" target="_blank" rel="noopener">KS Digital Studio</a> — Lumen Studio is a fictional brand</div>
+<header><div class="w"><a class="lg" href="#">LUMEN<span>.</span></a><nav><a href="#work">Work</a><a href="#services">Services</a><a href="#contact">Contact</a></nav></div></header>
+<div class="hero"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><div class="w">
+<h1>We make<br><em>brands</em><br>move.</h1>
+<p>Lumen is a motion design studio crafting brand films, product animations and 3D visuals that people stop scrolling for.</p>
+<a class="b" href="#work">See the reel ↓</a></div></div>
+<div class="marq"><div><span>Brand films</span><span>3D product</span><span>Motion identity</span><span>Social content</span><span>Title sequences</span><span>Brand films</span><span>3D product</span><span>Motion identity</span><span>Social content</span><span>Title sequences</span></div></div>
+<section id="work"><div class="w"><div class="st"><h2>Selected<br>work</h2><p>Concept pieces showing the kind of work a real studio site would feature — each tile would play a reel on hover.</p></div>
+<div class="works">
+ <div class="wk reveal" style="grid-column:span 7" data-demo><div class="art a1"></div><div class="ring"></div><div class="meta"><h3>Nova Launch</h3><small>3D · 2026</small></div></div>
+ <div class="wk reveal" style="grid-column:span 5" data-demo><div class="art a2"></div><div class="meta"><h3>Bloom</h3><small>Motion identity</small></div></div>
+ <div class="wk reveal" style="grid-column:span 4" data-demo><div class="art a3"></div><div class="meta"><h3>Signal</h3><small>Title sequence</small></div></div>
+ <div class="wk reveal" style="grid-column:span 4" data-demo><div class="art a4"></div><div class="meta"><h3>Tide</h3><small>Product film</small></div></div>
+ <div class="wk reveal" style="grid-column:span 4" data-demo><div class="art a5"></div><div class="meta"><h3>Split</h3><small>Social series</small></div></div>
+</div></div></section>
+<section id="services" style="padding-top:20px"><div class="w"><div class="st"><h2>What<br>we do</h2></div>
+<div class="svc"><div class="sv"><b>01</b><h3>Brand films</h3><p>Story-led films for launches and campaigns.</p></div><div class="sv"><b>02</b><h3>3D product</h3><p>Photoreal product renders and animations.</p></div><div class="sv"><b>03</b><h3>Motion identity</h3><p>Logos and systems designed to move.</p></div><div class="sv"><b>04</b><h3>Social</h3><p>Scroll-stopping content in every format.</p></div></div></div></section>
+<section id="contact" class="ct"><div class="w"><h2>Let's talk.</h2><a class="mail" href="#" data-demo>hello@lumen.studio →</a></div></section>
+<footer class="kfoot"><div>Lumen Studio — a fictional brand, concept design · Designed &amp; built by <a href="https://www.ksdigitalstudio.in" target="_blank" rel="noopener">KS Digital Studio</a> · <a href="https://wa.me/918107817733?text=Hi%20KS%20Digital%20Studio%21%20I%20saw%20the%20Lumen%20Studio%20concept%20and%20want%20a%20website%20like%20this%20for%20my%20business." target="_blank" rel="noopener">Want one like this?</a></div></footer>
+<div class="modal" id="m"><div class="m"><h3>This is a concept website</h3><p>Lumen Studio is a fictional brand created by KS Digital Studio to show what your website could look like.</p>
+<div class="mb"><a href="https://wa.me/918107817733?text=Hi%20KS%20Digital%20Studio%21%20I%20saw%20the%20Lumen%20Studio%20concept%20and%20want%20a%20website%20like%20this%20for%20my%20business." target="_blank" rel="noopener">I want one like this</a><button id="mc">Keep exploring</button></div></div></div>
+<script>
+(function(){var m=document.getElementById('m');function show(e){if(e)e.preventDefault();m.classList.add('on')}
+document.querySelectorAll('[data-demo]').forEach(function(b){b.addEventListener('click',show)});document.querySelectorAll('form').forEach(function(f){f.addEventListener('submit',show)});
+document.getElementById('mc').onclick=function(){m.classList.remove('on')};m.onclick=function(x){if(x.target===m)m.classList.remove('on')};
+var els=document.querySelectorAll('.reveal');if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.1});els.forEach(function(el){io.observe(el)})}else els.forEach(function(el){el.classList.add('in')});
+var mb=document.getElementById('mbtn'),nv=document.getElementById('nav');if(mb&&nv)mb.onclick=function(){nv.classList.toggle('open')};})();
+</script>
+</body>
+</html>
