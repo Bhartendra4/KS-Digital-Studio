@@ -56,7 +56,7 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
             </Reveal>
           </div>
           <Reveal delay={0.1}>
-            <aside className="glass h-fit rounded-2xl p-6 text-sm">
+            <div className="glass h-fit rounded-2xl p-6 text-sm">
               <dl className="space-y-4">
                 <div><dt className="text-white/55">Type</dt><dd className="text-white">{p.client}</dd></div>
                 
@@ -64,7 +64,7 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
               </dl>
               {p.live && <a href={p.live} target="_blank" rel="noopener" className="mt-6 block text-accent-blue hover:text-white">Open live demo ↗</a>}
               <Link href="/case-studies" className="mt-6 block text-accent-blue hover:text-white">← All concept projects</Link>
-            </aside>
+            </div>
           </Reveal>
         </div>
       </section>

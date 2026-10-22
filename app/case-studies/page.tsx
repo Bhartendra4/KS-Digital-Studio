@@ -14,6 +14,7 @@ export default function CaseStudiesPage() {
       <PageHero eyebrow="Concept / demo projects" title="How we'd build it."
         subtitle="Concept projects that show our design and engineering approach. These are demos, not paid client work — the figures are design targets, not client results." />
       <section className="mx-auto max-w-[1440px] px-5 pb-8 md:px-10">
+        <h2 className="sr-only">Concept projects</h2>
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
           {portfolio.map((p, i) => (
             <Reveal key={p.slug} delay={(i % 2) * 0.08}>

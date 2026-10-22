@@ -45,6 +45,7 @@ export default function Portfolio({
 
   return (
     <Section id="work">
+      {hideHeading && <h2 className="sr-only">Concept projects</h2>}
       {!hideHeading && (
         <SectionHeading eyebrow="Concept / demo projects" title="How we design and build."
           subtitle="Concept projects that show our style and approach. Real client work will be added here as it launches." />

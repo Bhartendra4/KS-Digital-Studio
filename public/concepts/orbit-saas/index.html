@@ -10,7 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}a{color:inherit}img{display:block;max-width:100%}
-.ribbon{background:#1d1406;color:#ddd;font:500 12.5px/1.4 system-ui,sans-serif;text-align:center;padding:8px 16px}.ribbon a{color:#f59e0b;font-weight:700;text-decoration:none}
+.ribbon{background:#1d1406;color:#ddd;font:500 12.5px/1.4 system-ui,sans-serif;text-align:center;padding:8px 16px}.ribbon a{color:#fff;text-decoration:underline;font-weight:700}
 .modal{position:fixed;inset:0;z-index:99;display:none;place-items:center;background:rgba(0,0,0,.65);padding:20px;font-family:system-ui,sans-serif}.modal.on{display:grid}
 .modal .m{background:#fff;color:#111;border-radius:22px;max-width:420px;padding:28px;text-align:center}.modal h3{font-size:23px;margin-bottom:8px}.modal p{color:#555;margin-bottom:20px;line-height:1.55}
 .modal .mb{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}.modal .mb a,.modal .mb button{padding:12px 18px;border-radius:12px;font:600 14px system-ui;text-decoration:none;border:0;cursor:pointer}
@@ -26,18 +26,18 @@ nav{display:flex;gap:26px;font-weight:500;color:#6b5a40;font-size:15px}nav a{tex
 .b{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:999px;font-weight:700;font-size:15px;text-decoration:none;border:0;cursor:pointer;font-family:inherit}
 .bp{background:#1d1406;color:#fff}.bo{background:linear-gradient(135deg,#f59e0b,#ef4444);color:#fff;box-shadow:0 14px 30px -12px #ef4444}
 .hero{padding:60px 0 80px;display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
-.tag{display:inline-flex;gap:8px;align-items:center;background:#fff;border:1px solid #f3dfbf;padding:6px 14px;border-radius:999px;font-size:13px;font-weight:600;color:#9a5b00}.tag b{background:#f59e0b;color:#fff;border-radius:999px;padding:1px 8px;font-size:11px}
+.tag{display:inline-flex;gap:8px;align-items:center;background:#fff;border:1px solid #f3dfbf;padding:6px 14px;border-radius:999px;font-size:13px;font-weight:600;color:#9a5b00}.tag b{background:#b45309;color:#fff;border-radius:999px;padding:1px 8px;font-size:11px}
 h1{font:800 clamp(40px,6vw,70px)/1.02 "Plus Jakarta Sans";letter-spacing:-.03em;margin:20px 0}h1 span{background:linear-gradient(90deg,#f59e0b,#ef4444);-webkit-background-clip:text;background-clip:text;color:transparent}
 .hero p{font-size:18.5px;color:#6b5a40;max-width:520px}
 form.wl{display:flex;gap:10px;margin-top:28px;max-width:480px;background:#fff;border:1px solid #f0dcbc;border-radius:999px;padding:6px}
 form.wl input{flex:1;border:0;outline:0;background:transparent;padding:0 16px;font:inherit;font-size:15px}
-.small{font-size:13px;color:#9a8560;margin-top:10px}
+.small{font-size:13px;color:#6f5b3e;margin-top:10px}
 .dev{position:relative;height:460px}
 .card{position:absolute;background:#fff;border-radius:22px;box-shadow:0 30px 60px -25px rgba(120,60,0,.35);border:1px solid #f3e2c6}
-.c1{inset:20px 40px 60px 0;padding:22px}.c1 h4{font-size:14px;color:#9a8560;font-weight:600}.c1 .big{font:800 40px "Plus Jakarta Sans";margin:6px 0 14px}
+.c1{inset:20px 40px 60px 0;padding:22px}.c1 .ttl{font-size:14px;color:#6f5b3e;font-weight:600}.c1 .big{font:800 40px "Plus Jakarta Sans";margin:6px 0 14px}
 .c1 .ln{height:10px;border-radius:999px;background:#f6ead6;margin:10px 0;overflow:hidden}.c1 .ln i{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,#f59e0b,#ef4444);animation:fill 2s ease both}
 @keyframes fill{from{width:0}}
-.c2{right:0;bottom:0;width:230px;padding:18px;animation:float 5s ease-in-out infinite}.c2 b{font-size:28px}.c2 small{color:#9a8560}
+.c2{right:0;bottom:0;width:230px;padding:18px;animation:float 5s ease-in-out infinite}.c2 b{font-size:28px}.c2 small{color:#6f5b3e}
 .c3{right:24px;top:0;width:190px;padding:14px 16px;font-size:13.5px;animation:float 6s ease-in-out infinite reverse}
 @keyframes float{50%{transform:translateY(-12px)}}
 .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#22c55e;margin-right:6px}
@@ -46,14 +46,15 @@ section{padding:80px 0}h2{font:800 clamp(30px,4vw,46px)/1.1 "Plus Jakarta Sans";
 .feat{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.fx{background:#1d1406;color:#f8ead2;border-radius:20px;padding:24px}.fx b{display:block;font-size:26px;margin-bottom:10px}.fx p{font-size:14.5px;color:#cdb894}
 .faq{max-width:760px;margin:0 auto}.faq details{background:#fff;border:1px solid #f3e2c6;border-radius:16px;padding:18px 22px;margin-bottom:12px}.faq summary{font-weight:700;cursor:pointer}.faq p{color:#6b5a40;margin-top:8px}
 .end{background:linear-gradient(135deg,#f59e0b,#ef4444);color:#fff;border-radius:30px;padding:60px 24px;text-align:center}.end h2{color:#fff}.end p{color:#fff3e0;margin:12px 0 26px}
-.kfoot{padding:26px 22px;text-align:center;color:#9a8560;font-size:13px}.kfoot a{color:#c2410c}
+.kfoot{padding:26px 22px;text-align:center;color:#6f5b3e;font-size:13px}.kfoot a{color:#c2410c}
 @media (max-width:900px){.hero,.steps{grid-template-columns:1fr}.feat{grid-template-columns:repeat(2,1fr)}nav{display:none}.dev{height:400px}}
 
 </style>
 </head>
 <body>
-<div class="ribbon">Concept website by <a href="https://www.ksdigitalstudio.in" target="_blank" rel="noopener">KS Digital Studio</a> — Orbit is a fictional brand</div>
+<aside class="ribbon" aria-label="Concept notice">Concept website by <a href="https://www.ksdigitalstudio.in" target="_blank" rel="noopener">KS Digital Studio</a> — Orbit is a fictional brand</aside>
 <header><div class="w"><a class="lg" href="#"><i></i>Orbit</a><nav><a href="#how">How it works</a><a href="#features">Features</a><a href="#faq">FAQ</a></nav><a class="b bp" href="#" data-demo>Join waitlist</a></div></header>
+<main>
 <div class="w"><div class="hero">
  <div><span class="tag"><b>NEW</b> Launching this season</span>
  <h1>Plan your week in <span>one calm space.</span></h1>
@@ -61,7 +62,7 @@ section{padding:80px 0}h2{font:800 clamp(30px,4vw,46px)/1.1 "Plus Jakarta Sans";
  <form class="wl"><input type="email" placeholder="you@company.com" aria-label="Email"><button class="b bo" type="submit">Get early access</button></form>
  <p class="small">Free during beta · No credit card</p></div>
  <div class="dev">
-  <div class="card c1"><h4>This week</h4><div class="big">18 / 24 tasks</div>
+  <div class="card c1"><div class="ttl">This week</div><div class="big">18 / 24 tasks</div>
    <div>Design review</div><div class="ln"><i style="width:82%"></i></div><div>Client follow-ups</div><div class="ln"><i style="width:64%"></i></div><div>Launch checklist</div><div class="ln"><i style="width:45%"></i></div><div>Hiring</div><div class="ln"><i style="width:30%"></i></div></div>
   <div class="card c2"><small>Focus time saved</small><br><b>6h 40m</b><br><small>this week</small></div>
   <div class="card c3"><span class="dot"></span>Next: Team sync · 11:00</div>
@@ -74,6 +75,7 @@ section{padding:80px 0}h2{font:800 clamp(30px,4vw,46px)/1.1 "Plus Jakarta Sans";
 <section id="faq" style="padding-top:0"><div class="w"><h2>Questions</h2><p class="sub">Answers for this concept product.</p>
 <div class="faq"><details><summary>When does Orbit launch?</summary><p>This is a concept product — a real launch page would show the date here.</p></details><details><summary>Is there a free plan?</summary><p>Early users get free access during beta.</p></details><details><summary>Does it work on mobile?</summary><p>Yes — the page and the product are designed mobile-first.</p></details></div></div></section>
 <section style="padding-top:0"><div class="w"><div class="end reveal"><h2>Be first in orbit.</h2><p>Join the waitlist and get early access.</p><a class="b bp" href="#" data-demo>Join waitlist</a></div></div></section>
+</main>
 <footer class="kfoot"><div>Orbit — a fictional brand, concept design · Designed &amp; built by <a href="https://www.ksdigitalstudio.in" target="_blank" rel="noopener">KS Digital Studio</a> · <a href="https://wa.me/918107817733?text=Hi%20KS%20Digital%20Studio%21%20I%20saw%20the%20Orbit%20concept%20and%20want%20a%20website%20like%20this%20for%20my%20business." target="_blank" rel="noopener">Want one like this?</a></div></footer>
 <div class="modal" id="m"><div class="m"><h3>This is a concept website</h3><p>Orbit is a fictional brand created by KS Digital Studio to show what your website could look like.</p>
 <div class="mb"><a href="https://wa.me/918107817733?text=Hi%20KS%20Digital%20Studio%21%20I%20saw%20the%20Orbit%20concept%20and%20want%20a%20website%20like%20this%20for%20my%20business." target="_blank" rel="noopener">I want one like this</a><button id="mc">Keep exploring</button></div></div></div>

@@ -10,7 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}a{color:inherit}img{display:block;max-width:100%}
-.ribbon{background:#04060f;color:#ddd;font:500 12.5px/1.4 system-ui,sans-serif;text-align:center;padding:8px 16px}.ribbon a{color:#7aa0ff;font-weight:700;text-decoration:none}
+.ribbon{background:#04060f;color:#ddd;font:500 12.5px/1.4 system-ui,sans-serif;text-align:center;padding:8px 16px}.ribbon a{color:#fff;text-decoration:underline;font-weight:700}
 .modal{position:fixed;inset:0;z-index:99;display:none;place-items:center;background:rgba(0,0,0,.65);padding:20px;font-family:system-ui,sans-serif}.modal.on{display:grid}
 .modal .m{background:#fff;color:#111;border-radius:22px;max-width:420px;padding:28px;text-align:center}.modal h3{font-size:23px;margin-bottom:8px}.modal p{color:#555;margin-bottom:20px;line-height:1.55}
 .modal .mb{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}.modal .mb a,.modal .mb button{padding:12px 18px;border-radius:12px;font:600 14px system-ui;text-decoration:none;border:0;cursor:pointer}
@@ -36,7 +36,7 @@ h1 span{background:linear-gradient(90deg,#7aa0ff,#22d3ee);-webkit-background-cli
 .side div{padding:9px 12px;border-radius:10px;margin-bottom:4px}.side .on{background:#16204a;color:#fff}
 .main{padding:22px}.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
 .k{background:#0f1838;border:1px solid #1d2856;border-radius:14px;padding:14px}.k small{color:#8b97c4;font-size:12px}.k b{display:block;font:700 22px "Space Grotesk";margin-top:4px}.k em{font-style:normal;font-size:12px;color:#34d399}
-.charts{display:grid;grid-template-columns:1.6fr 1fr;gap:14px;margin-top:14px}.c{background:#0f1838;border:1px solid #1d2856;border-radius:14px;padding:16px}.c h4{font-size:13px;color:#aab5e0;font-weight:500;margin-bottom:10px}
+.charts{display:grid;grid-template-columns:1.6fr 1fr;gap:14px;margin-top:14px}.c{background:#0f1838;border:1px solid #1d2856;border-radius:14px;padding:16px}.c .ttl{font-size:13px;color:#aab5e0;font-weight:500;margin-bottom:10px}
 .bars{display:flex;align-items:flex-end;gap:10px;height:120px}.bars i{flex:1;border-radius:6px 6px 2px 2px;background:linear-gradient(180deg,#7c5cff,#4f7bff);animation:grow 1.4s ease both}
 @keyframes grow{from{transform:scaleY(.1);transform-origin:bottom}to{transform:scaleY(1);transform-origin:bottom}}
 .tbl{margin-top:14px;font-size:13px}.tbl div{display:grid;grid-template-columns:2fr 1fr 1fr;padding:10px 4px;border-top:1px solid #1b2550;color:#c9d2f5}.tbl div:first-child{border-top:0;color:#7f8bb8;font-size:12px}
@@ -52,8 +52,9 @@ section{padding:90px 0}h2{font:700 clamp(30px,4vw,46px)/1.1 "Space Grotesk";text
 </style>
 </head>
 <body>
-<div class="ribbon">Concept website by <a href="https://www.ksdigitalstudio.in" target="_blank" rel="noopener">KS Digital Studio</a> — Aether Finance is a fictional brand</div>
+<aside class="ribbon" aria-label="Concept notice">Concept website by <a href="https://www.ksdigitalstudio.in" target="_blank" rel="noopener">KS Digital Studio</a> — Aether Finance is a fictional brand</aside>
 <header><div class="w"><a class="lg" href="#"><i></i>Aether</a><nav><a href="#features">Product</a><a href="#pricing">Pricing</a><a href="#cta">Security</a></nav><a class="b bp" href="#" data-demo>Start free trial</a></div></header>
+<main>
 <section class="hero" style="padding-bottom:40px"><div class="w">
 <span class="pill">New · Real-time cash-flow forecasting</span>
 <h1>All your business finance, <span>in one live dashboard.</span></h1>
@@ -64,8 +65,8 @@ section{padding:90px 0}h2{font:700 clamp(30px,4vw,46px)/1.1 "Space Grotesk";text
  <div class="main">
   <div class="kpis"><div class="k"><small>Revenue (MTD)</small><b>₹18.4L</b><em>▲ 12.4%</em></div><div class="k"><small>Expenses</small><b>₹7.9L</b><em style="color:#fbbf24">▲ 3.1%</em></div><div class="k"><small>Cash in bank</small><b>₹42.6L</b><em>▲ 8.0%</em></div><div class="k"><small>Runway</small><b>14 mo</b><em>Healthy</em></div></div>
   <div class="charts">
-   <div class="c"><h4>Cash flow · last 12 months</h4><svg viewBox="0 0 320 90" width="100%" height="130" preserveAspectRatio="none"><defs><linearGradient id="g" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#4f7bff" stop-opacity=".55"/><stop offset="1" stop-color="#4f7bff" stop-opacity="0"/></linearGradient></defs><path d="M0,70 C30,60 50,72 80,52 C110,32 130,48 160,38 C190,28 210,44 240,22 C270,8 290,20 320,12 L320,90 L0,90Z" fill="url(#g)"/><path d="M0,70 C30,60 50,72 80,52 C110,32 130,48 160,38 C190,28 210,44 240,22 C270,8 290,20 320,12" fill="none" stroke="#7aa0ff" stroke-width="2.5"/></svg></div>
-   <div class="c"><h4>Spend by category</h4><div class="bars"><i style="height:78%"></i><i style="height:52%;animation-delay:.1s"></i><i style="height:92%;animation-delay:.2s"></i><i style="height:40%;animation-delay:.3s"></i><i style="height:64%;animation-delay:.4s"></i><i style="height:30%;animation-delay:.5s"></i></div></div>
+   <div class="c"><div class="ttl">Cash flow · last 12 months</div><svg viewBox="0 0 320 90" width="100%" height="130" preserveAspectRatio="none"><defs><linearGradient id="g" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#4f7bff" stop-opacity=".55"/><stop offset="1" stop-color="#4f7bff" stop-opacity="0"/></linearGradient></defs><path d="M0,70 C30,60 50,72 80,52 C110,32 130,48 160,38 C190,28 210,44 240,22 C270,8 290,20 320,12 L320,90 L0,90Z" fill="url(#g)"/><path d="M0,70 C30,60 50,72 80,52 C110,32 130,48 160,38 C190,28 210,44 240,22 C270,8 290,20 320,12" fill="none" stroke="#7aa0ff" stroke-width="2.5"/></svg></div>
+   <div class="c"><div class="ttl">Spend by category</div><div class="bars"><i style="height:78%"></i><i style="height:52%;animation-delay:.1s"></i><i style="height:92%;animation-delay:.2s"></i><i style="height:40%;animation-delay:.3s"></i><i style="height:64%;animation-delay:.4s"></i><i style="height:30%;animation-delay:.5s"></i></div></div>
   </div>
   <div class="c tbl"><div><span>Recent transactions</span><span>Amount</span><span>Status</span></div><div><span>Invoice #1042 · Client payment</span><span class="up">+₹1,20,000</span><span>Paid</span></div><div><span>Cloud hosting</span><span class="dn">−₹18,400</span><span>Cleared</span></div><div><span>Invoice #1043 · Retainer</span><span class="up">+₹65,000</span><span>Pending</span></div></div>
  </div>
@@ -87,6 +88,7 @@ section{padding:90px 0}h2{font:700 clamp(30px,4vw,46px)/1.1 "Space Grotesk";text
  <div class="p reveal"><h3>Scale</h3><b>Custom</b><ul><li>Multi-entity</li><li>API access</li><li>Dedicated support</li></ul><a class="b bg" href="#" data-demo>Talk to sales</a></div>
 </div></div></section>
 <section id="cta" style="padding-top:10px"><div class="w"><div class="cta reveal"><h2>See your numbers clearly — today.</h2><p class="sub" style="margin-bottom:26px">Connect your first account in under two minutes.</p><a class="b bp" href="#" data-demo>Start free trial</a></div></div></section>
+</main>
 <footer class="kfoot"><div>Aether Finance — a fictional brand, concept design · Designed &amp; built by <a href="https://www.ksdigitalstudio.in" target="_blank" rel="noopener">KS Digital Studio</a> · <a href="https://wa.me/918107817733?text=Hi%20KS%20Digital%20Studio%21%20I%20saw%20the%20Aether%20Finance%20concept%20and%20want%20a%20website%20like%20this%20for%20my%20business." target="_blank" rel="noopener">Want one like this?</a></div></footer>
 <div class="modal" id="m"><div class="m"><h3>This is a concept website</h3><p>Aether Finance is a fictional brand created by KS Digital Studio to show what your website could look like.</p>
 <div class="mb"><a href="https://wa.me/918107817733?text=Hi%20KS%20Digital%20Studio%21%20I%20saw%20the%20Aether%20Finance%20concept%20and%20want%20a%20website%20like%20this%20for%20my%20business." target="_blank" rel="noopener">I want one like this</a><button id="mc">Keep exploring</button></div></div></div>

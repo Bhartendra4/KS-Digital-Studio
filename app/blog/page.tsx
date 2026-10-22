@@ -13,6 +13,7 @@ export default function BlogPage() {
       <PageHero eyebrow="Insights" title="The KS Digital Studio blog."
         subtitle="Practical thinking on premium web design, performance, SEO and AI." />
       <section className="mx-auto max-w-[1440px] px-5 pb-8 md:px-10">
+        <h2 className="sr-only">Articles</h2>
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
           {posts.map((p, i) => (
             <Reveal key={p.slug} delay={(i % 3) * 0.06}>
