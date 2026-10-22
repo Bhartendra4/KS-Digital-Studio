@@ -103,7 +103,7 @@ export default function ContactForm() {
       <button type="submit" disabled={status === "sending"} className="btn-magnetic btn-primary w-full justify-center disabled:opacity-60" data-cursor>
         {status === "sending" ? <>Sending <Loader2 className="h-4 w-4 animate-spin" /></> : <>Send inquiry <Send className="h-4 w-4" /></>}
       </button>
-      <p className="text-center text-xs text-white/30">Protected against spam · We reply within 24 hours</p>
+      <p className="text-center text-xs text-white/55">Protected against spam · We reply within 24 hours</p>
     </motion.form>
   );
 }

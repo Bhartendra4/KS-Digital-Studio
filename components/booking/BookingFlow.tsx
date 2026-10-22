@@ -118,7 +118,7 @@ export default function BookingFlow() {
     <div className="grid gap-6 lg:grid-cols-[360px_1fr]">
       {/* left: summary */}
       <div className="card-border h-fit p-6">
-        <p className="text-xs uppercase tracking-widest text-white/40">KS Digital Studio</p>
+        <p className="text-xs uppercase tracking-widest text-white/55">KS Digital Studio</p>
         <h2 className="mt-1 font-display text-xl font-semibold">{type ? type.name : "Choose a meeting"}</h2>
         {type && <p className="mt-2 flex items-center gap-2 text-sm text-white/60"><Clock className="h-4 w-4 text-accent-cyan" /> {type.durationMin} minutes</p>}
         <p className="mt-2 flex items-center gap-2 text-sm text-white/60"><Video className="h-4 w-4 text-accent-cyan" /> Google Meet / phone</p>
@@ -138,7 +138,7 @@ export default function BookingFlow() {
           {step === "type" && (
             <motion.div key="type" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="space-y-3">
               <h3 className="font-display text-lg font-semibold">Select a meeting type</h3>
-              {types.length === 0 && <p className="text-sm text-white/40">Loading meeting types…</p>}
+              {types.length === 0 && <p className="text-sm text-white/55">Loading meeting types…</p>}
               {types.map((t) => (
                 <button key={t.slug} onClick={() => chooseType(t)} data-cursor
                   className="glass glass-hover flex w-full items-center justify-between rounded-2xl p-5 text-left">
@@ -166,8 +166,8 @@ export default function BookingFlow() {
                 ))}
               </div>
               <div className="mt-5">
-                {loadingSlots && <p className="flex items-center gap-2 text-sm text-white/40"><Loader2 className="h-4 w-4 animate-spin" /> Checking availability…</p>}
-                {!loadingSlots && slots.length === 0 && <p className="text-sm text-white/40">No times available on this date. Try another day.</p>}
+                {loadingSlots && <p className="flex items-center gap-2 text-sm text-white/55"><Loader2 className="h-4 w-4 animate-spin" /> Checking availability…</p>}
+                {!loadingSlots && slots.length === 0 && <p className="text-sm text-white/55">No times available on this date. Try another day.</p>}
                 <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 md:grid-cols-4">
                   {slots.map((s) => (
                     <button key={s.startISO} onClick={() => { setSlot(s); setStep("details"); }} data-cursor
@@ -195,7 +195,7 @@ export default function BookingFlow() {
               <button disabled={busy} className="btn-magnetic btn-primary w-full justify-center disabled:opacity-60" data-cursor>
                 {busy ? <>Confirming <Loader2 className="h-4 w-4 animate-spin" /></> : "Confirm booking"}
               </button>
-              <p className="text-center text-[11px] text-white/30">You'll receive a confirmation email. No payment required.</p>
+              <p className="text-center text-[11px] text-white/55">You'll receive a confirmation email. No payment required.</p>
             </motion.form>
           )}
         </AnimatePresence>
@@ -205,5 +205,5 @@ export default function BookingFlow() {
 }
 
 function Row({ k, v }: { k: string; v: string }) {
-  return <div className="flex justify-between gap-4 border-b border-white/5 py-1.5"><span className="text-white/40">{k}</span><span className="text-right text-white/85">{v}</span></div>;
+  return <div className="flex justify-between gap-4 border-b border-white/5 py-1.5"><span className="text-white/55">{k}</span><span className="text-right text-white/85">{v}</span></div>;
 }

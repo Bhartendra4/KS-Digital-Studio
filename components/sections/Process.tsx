@@ -27,7 +27,7 @@ export default function Process() {
               <span className="absolute left-4 top-1 h-3 w-3 -translate-x-1/2 rounded-full bg-accent-blue ring-4 ring-accent-blue/20 md:left-1/2" />
               <div className={`ml-10 w-full md:ml-0 md:w-[45%] ${i % 2 ? "md:pl-12" : "md:pr-12 md:text-right"}`}>
                 <div className="card-border glass-hover p-6">
-                  <span className="font-display text-3xl font-bold text-white/15">{p.step}</span>
+                  <span className="font-display text-3xl font-bold text-white/40">{p.step}</span>
                   <h3 className="mt-1 font-display text-xl font-semibold">{p.title}</h3>
                   <p className="mt-2 text-sm text-white/55">{p.desc}</p>
                 </div>

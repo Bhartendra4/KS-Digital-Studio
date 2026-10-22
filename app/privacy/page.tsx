@@ -25,7 +25,7 @@ export default function PrivacyPage() {
               <p className="mt-2 text-white/60 leading-relaxed">{s.p}</p>
             </div>
           ))}
-          <p className="text-sm text-white/40">This template policy is provided for convenience and is not legal advice. Have it reviewed before publishing.</p>
+          <p className="text-sm text-white/55">This template policy is provided for convenience and is not legal advice. Have it reviewed before publishing.</p>
         </div>
       </article>
     </>

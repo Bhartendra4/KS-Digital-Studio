@@ -103,7 +103,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5 }}
-        className="pointer-events-none absolute bottom-7 left-1/2 hidden -translate-x-1/2 text-[11px] uppercase tracking-[0.3em] text-white/35 lg:block"
+        className="pointer-events-none absolute bottom-7 left-1/2 hidden -translate-x-1/2 text-[11px] uppercase tracking-[0.3em] text-white/55 lg:block"
       >
         <span className="flex flex-col items-center gap-2">
           Scroll

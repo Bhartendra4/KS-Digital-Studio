@@ -76,20 +76,20 @@ export default function Contact() {
             </div>
           )}
           <div>
-            <label className="mb-2 block text-xs uppercase tracking-widest text-white/50">Name</label>
-            <input className={field} placeholder="Jane Doe" value={form.name}
+            <label htmlFor="c-name" className="mb-2 block text-xs uppercase tracking-widest text-white/50">Name</label>
+            <input id="c-name" className={field} placeholder="Jane Doe" value={form.name}
               onChange={(e) => setForm({ ...form, name: e.target.value })} />
             {errors.name && <p className="mt-1 text-xs text-red-400">{errors.name}</p>}
           </div>
           <div>
-            <label className="mb-2 block text-xs uppercase tracking-widest text-white/50">Email</label>
-            <input className={field} placeholder="jane@company.com" value={form.email}
+            <label htmlFor="c-email" className="mb-2 block text-xs uppercase tracking-widest text-white/50">Email</label>
+            <input id="c-email" type="email" className={field} placeholder="jane@company.com" value={form.email}
               onChange={(e) => setForm({ ...form, email: e.target.value })} />
             {errors.email && <p className="mt-1 text-xs text-red-400">{errors.email}</p>}
           </div>
           <div>
-            <label className="mb-2 block text-xs uppercase tracking-widest text-white/50">Budget</label>
-            <select className={field} value={form.budget}
+            <label htmlFor="c-budget" className="mb-2 block text-xs uppercase tracking-widest text-white/50">Budget</label>
+            <select id="c-budget" className={field} value={form.budget}
               onChange={(e) => setForm({ ...form, budget: e.target.value })}>
               <option className="bg-ink">Starter</option>
               <option className="bg-ink">Professional</option>
@@ -97,8 +97,8 @@ export default function Contact() {
             </select>
           </div>
           <div>
-            <label className="mb-2 block text-xs uppercase tracking-widest text-white/50">Project details</label>
-            <textarea rows={4} className={field} placeholder="Tell us what you're building..."
+            <label htmlFor="c-message" className="mb-2 block text-xs uppercase tracking-widest text-white/50">Project details</label>
+            <textarea id="c-message" rows={4} className={field} placeholder="Tell us what you're building..."
               value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} />
             {errors.message && <p className="mt-1 text-xs text-red-400">{errors.message}</p>}
           </div>

@@ -94,8 +94,8 @@ export default function Chatbot() {
   const tel = `tel:${site.phone.replace(/\s/g, "")}`;
 
   return (
-    <>
-      <button onClick={() => setOpen((o) => !o)} data-cursor aria-label="Chat with us"
+    <aside aria-label="Chat assistant">
+      <button onClick={() => setOpen((o) => !o)} data-cursor aria-label={open ? "Close chat" : "Chat with us"} aria-expanded={open}
         className="fixed bottom-6 left-6 z-[86] flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-accent-electric to-accent-purple shadow-[0_14px_40px_-12px_rgba(46,107,255,0.8)] transition-transform hover:scale-110">
         {open ? <X className="h-6 w-6 text-white" /> : <Bot className="h-6 w-6 text-white" />}
       </button>
@@ -105,6 +105,7 @@ export default function Chatbot() {
           <motion.div
             initial={{ opacity: 0, y: 20, scale: 0.96 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, y: 20, scale: 0.96 }}
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            role="dialog" aria-label="KS Digital Studio chat"
             className="glass fixed bottom-24 left-6 z-[86] flex h-[520px] w-[92vw] max-w-sm flex-col overflow-hidden rounded-3xl">
             <div className="flex items-center gap-3 border-b border-white/10 p-4">
               <span className="grid h-9 w-9 place-items-center rounded-full bg-gradient-to-br from-accent-electric to-accent-purple"><Bot className="h-5 w-5" /></span>
@@ -138,14 +139,14 @@ export default function Chatbot() {
 
             {textStep && (
               <form onSubmit={(e) => { e.preventDefault(); submitText(); }} className="flex items-center gap-2 border-t border-white/10 p-3">
-                <input value={input} onChange={(e) => setInput(e.target.value)} placeholder="Type your answer…" disabled={sending}
+                <input value={input} onChange={(e) => setInput(e.target.value)} placeholder="Type your answer…" aria-label="Your answer" disabled={sending}
                   className="flex-1 rounded-xl border border-white/10 bg-white/[0.04] px-3 py-2.5 text-sm outline-none focus:border-accent-blue/60" />
-                <button type="submit" disabled={sending} className="grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-accent-electric to-accent-purple" data-cursor><Send className="h-4 w-4" /></button>
+                <button type="submit" disabled={sending} aria-label="Send" className="grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-accent-electric to-accent-purple" data-cursor><Send className="h-4 w-4" /></button>
               </form>
             )}
           </motion.div>
         )}
       </AnimatePresence>
-    </>
+    </aside>
   );
 }

@@ -19,7 +19,7 @@ export default function BookPage() {
         subtitle="Pick a meeting type and a time that suits you. You'll get an instant confirmation by email."
       />
       <section className="mx-auto max-w-[1440px] px-5 pb-20 md:px-10">
-        <Suspense fallback={<p className="text-sm text-white/40">Loading availability…</p>}>
+        <Suspense fallback={<p className="text-sm text-white/55">Loading availability…</p>}>
           <BookingFlow />
         </Suspense>
       </section>
