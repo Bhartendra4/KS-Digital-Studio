@@ -13,6 +13,7 @@ export default function CareersPage() {
       <PageHero eyebrow="Careers" title="Build the future of the web with us."
         subtitle="We're a small, senior, remote-first team that ships premium work. Come raise the bar with us." />
       <section className="mx-auto max-w-[1440px] px-5 pb-8 md:px-10">
+        <h2 className="sr-only">Our values and open roles</h2>
         <div className="mb-10 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
           {values.map((v, i) => (
             <Reveal key={v.title} delay={i * 0.06}><div className="glass rounded-2xl p-6">

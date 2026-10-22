@@ -9,6 +9,7 @@ import { pricing } from "@/lib/data";
 export default function Pricing({ hideHeading = false }: { hideHeading?: boolean }) {
   return (
     <Section id="pricing">
+      {hideHeading && <h2 className="sr-only">Pricing plans</h2>}
       {!hideHeading && (
         <SectionHeading eyebrow="Pricing" title="Simple, transparent pricing." center
           subtitle="Fixed-scope packages with no surprises. Need something bespoke? Let's talk." />

@@ -14,6 +14,7 @@ export default function ServicesPage() {
       <PageHero eyebrow="What we do" title="Services engineered for growth."
         subtitle="One studio, end to end — from cinematic marketing sites to full-scale web apps, CRMs and AI automation." />
       <section className="mx-auto max-w-[1440px] px-5 pb-8 md:px-10">
+        <h2 className="sr-only">All services</h2>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((s, i) => (
             <Reveal key={s.slug} delay={(i % 3) * 0.06}>
