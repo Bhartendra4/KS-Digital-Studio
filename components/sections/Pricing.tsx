@@ -31,7 +31,7 @@ export default function Pricing({ hideHeading = false }: { hideHeading?: boolean
             <p className="mt-1 text-sm text-white/50">{p.tagline}</p>
             <div className="mt-6 flex items-end gap-2">
               <span className="font-display text-5xl font-bold text-gradient">{p.price}</span>
-              <span className="mb-1.5 text-sm text-white/40">{p.cadence}</span>
+              <span className="mb-1.5 text-sm text-white/55">{p.cadence}</span>
             </div>
             <ul className="mt-6 space-y-3">
               {p.features.map((f) => (

@@ -5,7 +5,7 @@ export default function Marquee() {
     <div className="relative flex overflow-hidden border-y border-white/5 py-6">
       <div className="flex min-w-full shrink-0 animate-marquee items-center justify-around gap-16 whitespace-nowrap">
         {[...items, ...items].map((t, i) => (
-          <span key={i} className="font-display text-2xl font-medium text-white/25 md:text-3xl">{t}</span>
+          <span key={i} className="font-display text-2xl font-medium text-white/40 md:text-3xl" aria-hidden={i >= items.length || undefined}>{t}</span>
         ))}
       </div>
     </div>

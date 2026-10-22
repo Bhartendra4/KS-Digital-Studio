@@ -23,7 +23,7 @@ export default async function Article({ params }: { params: Promise<{ slug: stri
     <>
       <PageHero eyebrow={`${p.category} · ${p.read}`} title={p.title} />
       <article className="mx-auto max-w-3xl px-5 pb-16 md:px-10">
-        <p className="text-sm text-white/40">{date}</p>
+        <p className="text-sm text-white/55">{date}</p>
         <div className="mt-6 space-y-5 text-white/70 leading-relaxed">
           {p.body.map((para, i) => <p key={i}>{para}</p>)}
         </div>

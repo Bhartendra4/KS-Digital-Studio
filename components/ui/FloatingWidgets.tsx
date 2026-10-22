@@ -16,7 +16,7 @@ export default function FloatingWidgets() {
   if (pathname.startsWith("/admin")) return null;
   const tel = `tel:${site.phone.replace(/\s/g, "")}`;
   return (
-    <div className="fixed bottom-6 right-6 z-[85] flex flex-col items-end gap-3">
+    <aside aria-label="Quick contact" className="fixed bottom-6 right-6 z-[85] flex flex-col items-end gap-3">
       <a href={`mailto:${site.email}`} data-cursor aria-label="Email us"
         className="glass flex h-12 w-12 items-center justify-center rounded-full text-accent-cyan transition-transform hover:scale-110">
         <Mail className="h-5 w-5" />
@@ -45,6 +45,6 @@ export default function FloatingWidgets() {
           </motion.button>
         )}
       </AnimatePresence>
-    </div>
+    </aside>
   );
 }

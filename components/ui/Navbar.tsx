@@ -69,7 +69,7 @@ export default function Navbar() {
                         <s.icon className="mt-0.5 h-4 w-4 shrink-0 text-accent-cyan" />
                         <span>
                           <span className="block text-sm font-medium text-white">{s.title}</span>
-                          <span className="block text-xs text-white/45">{s.desc}</span>
+                          <span className="block text-xs text-white/55">{s.desc}</span>
                         </span>
                       </Link>
                     ))}
@@ -123,7 +123,7 @@ export default function Navbar() {
               {results.map((r) => (
                 <Link key={r.slug} href={`/services/${r.slug}`} className="block rounded-lg px-3 py-2 text-sm text-white/70 hover:bg-white/5">{r.title}</Link>
               ))}
-              {q.length > 1 && results.length === 0 && <p className="px-3 py-2 text-sm text-white/40">No matches.</p>}
+              {q.length > 1 && results.length === 0 && <p className="px-3 py-2 text-sm text-white/55">No matches.</p>}
             </div>
           </motion.div>
         )}

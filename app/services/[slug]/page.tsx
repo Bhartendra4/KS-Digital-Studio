@@ -45,7 +45,7 @@ export default async function ServiceDetail({ params }: { params: Promise<{ slug
         </Reveal>
         <Reveal delay={0.1}>
           <div className="glass h-full rounded-2xl p-8">
-            <h3 className="text-xs uppercase tracking-widest text-white/40">Related services</h3>
+            <h3 className="text-xs uppercase tracking-widest text-white/55">Related services</h3>
             <ul className="mt-4 space-y-3">
               {others.map((o) => (
                 <li key={o.slug}>

@@ -58,7 +58,7 @@ export default function ManageBooking({ token, booking }: { token: string; booki
       {cancelled && (
         <a href="/book" className="btn-magnetic btn-primary mt-7 text-sm" data-cursor>Book a new consultation</a>
       )}
-      <p className="mt-4 text-[11px] text-white/30">
+      <p className="mt-4 text-[11px] text-white/55">
         To reschedule, cancel this booking and pick a new time — your old slot is released immediately.
       </p>
     </div>
@@ -66,5 +66,5 @@ export default function ManageBooking({ token, booking }: { token: string; booki
 }
 
 function Row({ k, v }: { k: string; v: string }) {
-  return <div className="flex justify-between gap-4 border-b border-white/5 py-2"><span className="text-white/40">{k}</span><span className="text-right text-white/85">{v}</span></div>;
+  return <div className="flex justify-between gap-4 border-b border-white/5 py-2"><span className="text-white/55">{k}</span><span className="text-right text-white/85">{v}</span></div>;
 }

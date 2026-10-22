@@ -19,6 +19,7 @@ export default function Loader() {
     <AnimatePresence>
       {!done && (
         <motion.div
+          aria-hidden
           className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-ink"
           exit={{ y: "-100%" }}
           transition={{ duration: 0.9, ease: [0.76, 0, 0.24, 1] }}

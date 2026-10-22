@@ -34,7 +34,7 @@ export default function Portfolio({
         <span className="w-fit rounded-full px-3 py-1 text-xs font-medium"
           style={{ background: `${p.accent}22`, color: p.accent }}>{p.tag} · Concept</span>
         <div>
-          <p className="text-xs uppercase tracking-widest text-white/40">{p.category}</p>
+          <p className="text-xs uppercase tracking-widest text-white/55">{p.category}</p>
           <h3 className="mt-1 flex items-center gap-2 font-display text-2xl font-semibold">{p.title}
             <ArrowUpRight className="h-5 w-5 -translate-x-2 opacity-0 transition-all group-hover:translate-x-0 group-hover:opacity-100" /></h3>
           <p className="mt-2 max-h-0 overflow-hidden text-sm text-white/60 transition-all duration-500 group-hover:max-h-24">{p.desc}</p>

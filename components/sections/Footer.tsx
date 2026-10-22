@@ -21,10 +21,10 @@ export default function Footer() {
             <LogoLockup />
           </Link>
           <p className="mt-4 max-w-xs text-sm text-white/50">{site.description}</p>
-          <p className="mt-4 text-sm text-white/40">{site.email}<br />{site.phone}</p>
+          <p className="mt-4 text-sm text-white/55">{site.email}<br />{site.phone}</p>
         </div>
         <div>
-          <h4 className="mb-4 text-xs uppercase tracking-widest text-white/40">Company</h4>
+          <h2 className="mb-4 text-xs uppercase tracking-widest text-white/55">Company</h2>
           <ul className="space-y-2 text-sm">
             {site.company.map((n) => (
               <li key={n.href}><Link href={n.href} className="text-white/60 hover:text-white">{n.label}</Link></li>
@@ -34,7 +34,7 @@ export default function Footer() {
           </ul>
         </div>
         <div>
-          <h4 className="mb-4 text-xs uppercase tracking-widest text-white/40">Services</h4>
+          <h2 className="mb-4 text-xs uppercase tracking-widest text-white/55">Services</h2>
           <ul className="space-y-2 text-sm">
             {services.slice(0, 7).map((s) => (
               <li key={s.slug}><Link href={`/services/${s.slug}`} className="text-white/60 hover:text-white">{s.title}</Link></li>
@@ -43,7 +43,7 @@ export default function Footer() {
           </ul>
         </div>
         <div>
-          <h4 className="mb-4 text-xs uppercase tracking-widest text-white/40">Newsletter</h4>
+          <h2 className="mb-4 text-xs uppercase tracking-widest text-white/55">Newsletter</h2>
           <p className="text-sm text-white/50">Get occasional insights on premium web & AI.</p>
           <form onSubmit={async (e) => {
               e.preventDefault();
@@ -71,7 +71,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="border-t border-white/10 px-5 py-6 md:px-10">
-        <div className="mx-auto flex max-w-[1440px] flex-col items-center justify-between gap-3 text-xs text-white/40 md:flex-row">
+        <div className="mx-auto flex max-w-[1440px] flex-col items-center justify-between gap-3 text-xs text-white/55 md:flex-row">
           <p>© {new Date().getFullYear()} {site.name}. All rights reserved.</p>
           <div className="flex gap-5">
             {site.legal.map((l) => (

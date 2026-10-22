@@ -44,7 +44,7 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
             <Reveal delay={0.1}><div><h2 className="font-display text-2xl font-semibold text-gradient">Our approach</h2>
               <p className="mt-3 text-white/60">{p.solution}</p></div></Reveal>
             <Reveal delay={0.15}>
-              <p className="mb-3 text-xs uppercase tracking-widest text-white/40">Design targets — concept project, not client results</p>
+              <p className="mb-3 text-xs uppercase tracking-widest text-white/55">Design targets — concept project, not client results</p>
               <div className="grid grid-cols-3 gap-4">
                 {p.results.map((r) => (
                   <div key={r.label} className="card-border p-5 text-center">
@@ -58,9 +58,9 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
           <Reveal delay={0.1}>
             <aside className="glass h-fit rounded-2xl p-6 text-sm">
               <dl className="space-y-4">
-                <div><dt className="text-white/40">Type</dt><dd className="text-white">{p.client}</dd></div>
+                <div><dt className="text-white/55">Type</dt><dd className="text-white">{p.client}</dd></div>
                 
-                <div><dt className="text-white/40">Services</dt><dd className="text-white">{p.services.join(", ")}</dd></div>
+                <div><dt className="text-white/55">Services</dt><dd className="text-white">{p.services.join(", ")}</dd></div>
               </dl>
               {p.live && <a href={p.live} target="_blank" rel="noopener" className="mt-6 block text-accent-blue hover:text-white">Open live demo ↗</a>}
               <Link href="/case-studies" className="mt-6 block text-accent-blue hover:text-white">← All concept projects</Link>

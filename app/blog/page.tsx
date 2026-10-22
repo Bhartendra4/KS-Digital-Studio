@@ -17,7 +17,7 @@ export default function BlogPage() {
           {posts.map((p, i) => (
             <Reveal key={p.slug} delay={(i % 3) * 0.06}>
               <Link href={`/blog/${p.slug}`} className="card-border glass-hover group flex h-full flex-col p-6" data-cursor>
-                <div className="mb-4 flex items-center gap-3 text-xs text-white/40">
+                <div className="mb-4 flex items-center gap-3 text-xs text-white/55">
                   <span className="rounded-full bg-white/5 px-3 py-1 text-accent-cyan">{p.category}</span>
                   <span>{p.read}</span>
                 </div>
