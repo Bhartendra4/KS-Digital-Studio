@@ -61,8 +61,8 @@ footer{color:var(--muted);font-size:12.5px;padding:30px 0}
  <div class="card">
   <h2>1 · Upload data</h2>
   <div class="grid g2">
-   <div><label>Vendor master (.xlsx / .csv)</label><div class="drop" id="dropV">Click or drop vendor file</div><input type="file" id="fileV" accept=".csv,.xlsx,.xls" class="hide"></div>
-   <div><label>Purchase bills (.xlsx / .csv)</label><div class="drop" id="dropB">Click or drop bills file</div><input type="file" id="fileB" accept=".csv,.xlsx,.xls" class="hide"></div>
+   <div><label>Vendor master (.xlsx / .csv)</label><div class="drop" id="dropV">Click or drop vendor file</div><input type="file" id="fileV" aria-label="Vendor master file" accept=".csv,.xlsx,.xls" class="hide"></div>
+   <div><label>Purchase bills (.xlsx / .csv)</label><div class="drop" id="dropB">Click or drop bills file</div><input type="file" id="fileB" aria-label="Purchase bills file" accept=".csv,.xlsx,.xls" class="hide"></div>
   </div>
   <div class="row" style="margin-top:12px"><button class="btn" id="sampleBtn">Try with sample data</button><button class="btn ghost" id="tplBtn">Download templates</button></div>
   <p class="note" style="margin-top:10px">Vendor columns: <code>vendor, pan, udyam_no, category</code> (micro/small/medium/none), <code>activity</code> (manufacturer/service/trader), <code>agreed_days</code> (blank = no written agreement).<br>Bill columns: <code>vendor, bill_no, bill_date, accepted_date</code> (optional), <code>amount, paid_date, paid_amount</code>. Dates as YYYY-MM-DD or DD-MM-YYYY.</p>
@@ -70,12 +70,12 @@ footer{color:var(--muted);font-size:12.5px;padding:30px 0}
  <div class="card">
   <h2>2 · Settings</h2>
   <div class="grid g2">
-   <div><label>Financial year ending</label><input type="date" id="fyEnd"></div>
-   <div><label>Report as on</label><input type="date" id="asOf"></div>
-   <div><label>Tax rate on disallowance (%)</label><input type="number" id="taxRate" step="0.01" value="25.17"></div>
-   <div><label>RBI bank rate (%) — check RBI</label><input type="number" id="bankRate" step="0.01" value="5.75"></div>
-   <div><label>"Due soon" window (days)</label><input type="number" id="soonDays" value="7"></div>
-   <div><label>Company name (for exports)</label><input id="coName" placeholder="Your company"></div>
+   <div><label for="fyEnd">Financial year ending</label><input type="date" id="fyEnd"></div>
+   <div><label for="asOf">Report as on</label><input type="date" id="asOf"></div>
+   <div><label for="taxRate">Tax rate on disallowance (%)</label><input type="number" id="taxRate" step="0.01" value="25.17"></div>
+   <div><label for="bankRate">RBI bank rate (%) — check RBI</label><input type="number" id="bankRate" step="0.01" value="5.75"></div>
+   <div><label for="soonDays">"Due soon" window (days)</label><input type="number" id="soonDays" value="7"></div>
+   <div><label for="coName">Company name (for exports)</label><input id="coName" placeholder="Your company"></div>
   </div>
   <div class="row" style="margin-top:12px"><button class="btn" id="runBtn">Calculate</button><span class="note" id="status"></span></div>
  </div>
@@ -98,7 +98,7 @@ footer{color:var(--muted);font-size:12.5px;padding:30px 0}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 <dialog id="licDlg" style="border:1px solid var(--line);border-radius:14px;padding:20px;max-width:520px;width:92vw;background:var(--card);color:var(--ink)">
  <h2 style="margin-top:0">Enter licence key</h2><p class="note">Paste the key you received after purchase (starts with PG1.).</p>
- <textarea id="licIn" rows="4" style="width:100%;padding:10px;border-radius:9px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:13px monospace"></textarea>
+ <textarea id="licIn" aria-label="Licence key" rows="4" style="width:100%;padding:10px;border-radius:9px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:13px monospace"></textarea>
  <p class="note" id="licMsg"></p><div class="row" style="justify-content:flex-end"><button class="btn ghost" id="licCancel">Close</button><button class="btn" id="licSave">Activate</button></div>
 </dialog>
 <script>
