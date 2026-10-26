@@ -41,6 +41,7 @@ export const site = {
     { label: "About", href: "/about" },
     { label: "Careers", href: "/careers" },
     { label: "Blog", href: "/blog" },
+    { label: "PayGuard (software)", href: "/payguard" },
     { label: "Contact", href: "/contact" },
   ],
   legal: [
