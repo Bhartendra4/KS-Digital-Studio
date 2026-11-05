@@ -11,13 +11,13 @@ const config: Config = {
     container: { center: true, padding: "1.25rem", screens: { "2xl": "1440px" } },
     extend: {
       colors: {
-        ink: { DEFAULT: "#050505", 900: "#050505", 800: "#0A0A0A", 700: "#101010", 600: "#141414" },
-        card: "#101010",
+        ink: { DEFAULT: "#0F0D0B", 900: "#0F0D0B", 800: "#15120F", 700: "#1B1713", 600: "#221D18" },
+        card: "#1B1713",
         accent: {
-          blue: "#4F7BFF",
-          electric: "#2E6BFF",
-          purple: "#8B5CF6",
-          cyan: "#22D3EE",
+          blue: "#E3B868",      // champagne gold (main accent)
+          electric: "#CC5500",  // burnt amber
+          purple: "#9A5B2E",    // bronze / mocha
+          cyan: "#F4D9A0",      // light champagne
         },
       },
       fontFamily: {
@@ -26,7 +26,7 @@ const config: Config = {
       },
       backgroundImage: {
         "radial-glow":
-          "radial-gradient(60% 60% at 50% 40%, rgba(79,123,255,0.18) 0%, rgba(11,11,11,0) 70%)",
+          "radial-gradient(60% 60% at 50% 40%, rgba(227,184,104,0.16) 0%, rgba(11,11,11,0) 70%)",
         "grid-lines":
           "linear-gradient(to right, rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.04) 1px, transparent 1px)",
       },

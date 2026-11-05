@@ -19,7 +19,7 @@ const space = Space_Grotesk({ subsets: ["latin"], variable: "--font-space", disp
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
 
 export const viewport: Viewport = {
-  themeColor: "#0B0B0B",
+  themeColor: "#0F0D0B",
   width: "device-width",
   initialScale: 1,
 };

@@ -14,7 +14,7 @@ export default function Showcase() {
           initial={{ opacity: 0, y: 40, rotateX: 12 }} whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
           viewport={{ once: true }} transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
           className="relative z-10 w-full max-w-3xl" style={{ perspective: 1000 }}>
-          <div className="rounded-t-2xl border border-white/10 bg-ink-800 p-3 shadow-[0_40px_120px_-30px_rgba(46,107,255,0.5)]">
+          <div className="rounded-t-2xl border border-white/10 bg-ink-800 p-3 shadow-[0_40px_120px_-30px_rgba(204,85,0,0.40)]">
             <div className="mb-2 flex gap-1.5">
               <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
               <span className="h-2.5 w-2.5 rounded-full bg-white/20" />

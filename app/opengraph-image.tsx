@@ -14,7 +14,7 @@ export default function OG() {
         style={{
           width: "100%", height: "100%", display: "flex", flexDirection: "column",
           alignItems: "center", justifyContent: "center", background: "#0B0B0B", color: "white",
-          backgroundImage: "radial-gradient(60% 60% at 50% 40%, rgba(79,123,255,0.30), rgba(11,11,11,0))",
+          backgroundImage: "radial-gradient(60% 60% at 50% 40%, rgba(227,184,104,0.30), rgba(11,11,11,0))",
         }}
       >
         {/* "The Fold" mark + wordmark lockup */}
@@ -36,7 +36,7 @@ export default function OG() {
         </div>
 
         {/* electric accent rule */}
-        <div style={{ display: "flex", width: 180, height: 3, marginTop: 40, background: "#4F7BFF", borderRadius: 2 }} />
+        <div style={{ display: "flex", width: 180, height: 3, marginTop: 40, background: "#E3B868", borderRadius: 2 }} />
       </div>
     ),
     { ...size }

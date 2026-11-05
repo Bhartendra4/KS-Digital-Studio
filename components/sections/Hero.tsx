@@ -20,7 +20,7 @@ export default function Hero() {
       className="relative flex min-h-[100svh] items-center overflow-hidden pt-28 lg:pt-0"
     >
       <div className="pointer-events-none absolute inset-0 bg-radial-glow" />
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-[linear-gradient(to_bottom,rgba(5,5,5,0),#050505_92%)]" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-[linear-gradient(to_bottom,rgba(15,13,11,0),#0F0D0B_92%)]" />
 
       <div className="mx-auto grid w-full max-w-[1240px] items-center gap-10 px-5 md:px-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-6">
         {/* ---------------- LEFT: the message ---------------- */}
