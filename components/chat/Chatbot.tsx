@@ -96,7 +96,7 @@ export default function Chatbot() {
   return (
     <aside aria-label="Chat assistant">
       <button onClick={() => setOpen((o) => !o)} data-cursor aria-label={open ? "Close chat" : "Chat with us"} aria-expanded={open}
-        className="fixed bottom-6 left-6 z-[86] flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-accent-electric to-accent-purple shadow-[0_14px_40px_-12px_rgba(46,107,255,0.8)] transition-transform hover:scale-110">
+        className="fixed bottom-6 left-6 z-[86] flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-accent-electric to-accent-purple shadow-[0_14px_40px_-12px_rgba(204,85,0,0.6)] transition-transform hover:scale-110">
         {open ? <X className="h-6 w-6 text-white" /> : <Bot className="h-6 w-6 text-white" />}
       </button>
 

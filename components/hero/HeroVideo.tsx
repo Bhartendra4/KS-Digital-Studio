@@ -90,13 +90,13 @@ export default function HeroVideo({ className = "" }: { className?: string }) {
     >
       {/* soft blue spill behind the frame, so it sits in the page rather than on it */}
       <div
-        className={`pointer-events-none absolute -inset-6 rounded-[2rem] bg-[radial-gradient(60%_60%_at_50%_45%,rgba(79,123,255,0.28),rgba(5,7,13,0)_70%)] blur-xl transition-opacity duration-[1400ms] ${
+        className={`pointer-events-none absolute -inset-6 rounded-[2rem] bg-[radial-gradient(60%_60%_at_50%_45%,rgba(227,184,104,0.24),rgba(15,13,11,0)_70%)] blur-xl transition-opacity duration-[1400ms] ${
           playing ? "opacity-100" : "opacity-0"
         }`}
       />
 
       <div
-        className={`relative h-full w-full overflow-hidden rounded-2xl border border-white/10 bg-[#05070D] shadow-[0_40px_120px_-40px_rgba(79,123,255,0.55)] ${
+        className={`relative h-full w-full overflow-hidden rounded-2xl border border-white/10 bg-[#0F0D0B] shadow-[0_40px_120px_-40px_rgba(204,85,0,0.40)] ${
           revealed ? "animate-hero-reveal" : ""
         }`}
       >
@@ -130,9 +130,9 @@ export default function HeroVideo({ className = "" }: { className?: string }) {
         />
 
         {/* inner vignette — melts the edges into the page */}
-        <div className="pointer-events-none absolute inset-0 shadow-[inset_0_0_90px_28px_rgba(5,7,13,0.85)]" />
+        <div className="pointer-events-none absolute inset-0 shadow-[inset_0_0_90px_28px_rgba(15,13,11,0.85)]" />
         {/* bottom scrim, so the frame hands off to the section background */}
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-b from-transparent to-[#05070D]/70" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-b from-transparent to-[#0F0D0B]/70" />
         {/* one slow highlight sweep on reveal — the only effect over the footage */}
         <div
           className={`pointer-events-none absolute inset-y-0 -left-1/3 w-1/3 skew-x-12 bg-gradient-to-r from-transparent via-white/[0.07] to-transparent transition-transform duration-[2200ms] ease-out ${

@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --bg: #050505;
-  --panel: #101010;
+  --bg: #0F0D0B;
+  --panel: #1B1713;
 }
 
 * { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
@@ -16,18 +16,18 @@ html.lenis, html.lenis body { height: auto; }
 
 body {
   background: var(--bg);
-  color: #EAEAF0;
+  color: #F2ECE4;
   overflow-x: hidden;
   cursor: none;
 }
 @media (max-width: 768px) { body { cursor: auto; } }
 
-::selection { background: rgba(79,123,255,0.35); color: #fff; }
+::selection { background: rgba(244,217,160,0.35); color: #0F0D0B; }
 
 ::-webkit-scrollbar { width: 10px; }
-::-webkit-scrollbar-track { background: #050505; }
-::-webkit-scrollbar-thumb { background: #1f2937; border-radius: 999px; }
-::-webkit-scrollbar-thumb:hover { background: #2E6BFF; }
+::-webkit-scrollbar-track { background: #0F0D0B; }
+::-webkit-scrollbar-thumb { background: #3B2A20; border-radius: 999px; }
+::-webkit-scrollbar-thumb:hover { background: #CC5500; }
 
 @layer components {
   .glass {
@@ -37,26 +37,26 @@ body {
   }
   .glass-hover { transition: border-color .4s ease, transform .4s ease, box-shadow .4s ease; }
   .glass-hover:hover {
-    border-color: rgba(79,123,255,0.45);
-    box-shadow: 0 0 0 1px rgba(79,123,255,0.15), 0 30px 80px -40px rgba(79,123,255,0.6);
+    border-color: rgba(227,184,104,0.45);
+    box-shadow: 0 0 0 1px rgba(227,184,104,0.15), 0 30px 80px -40px rgba(204,85,0,0.45);
     transform: translateY(-4px);
   }
   .text-gradient {
-    background: linear-gradient(92deg, #fff 0%, #9db4ff 45%, #22D3EE 100%);
+    background: linear-gradient(92deg, #FFF8EC 0%, #F4D9A0 45%, #E08A3C 100%);
     -webkit-background-clip: text; background-clip: text; color: transparent;
   }
-  .text-glow { text-shadow: 0 0 40px rgba(79,123,255,0.35); }
+  .text-glow { text-shadow: 0 0 40px rgba(227,184,104,0.30); }
   .btn-magnetic {
     position: relative; display: inline-flex; align-items: center; gap: .5rem;
     border-radius: 999px; padding: .9rem 1.5rem; font-weight: 600; letter-spacing: -0.01em;
     isolation: isolate; overflow: hidden;
   }
   .btn-primary {
-    background: linear-gradient(92deg, #2E6BFF, #8B5CF6);
-    color: white; box-shadow: 0 20px 60px -20px rgba(46,107,255,0.7);
+    background: linear-gradient(92deg, #F4D9A0, #E3B868 45%, #D98A3D);
+    color: #1A1208; box-shadow: 0 20px 60px -20px rgba(204,85,0,0.55);
   }
   .btn-ghost { border: 1px solid rgba(255,255,255,0.14); color: #EAEAF0; }
-  .btn-ghost:hover { border-color: rgba(79,123,255,0.5); }
+  .btn-ghost:hover { border-color: rgba(227,184,104,0.55); }
   .card-border {
     position: relative; border-radius: 1.5rem;
     background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.015));
@@ -64,7 +64,7 @@ body {
   }
   .eyebrow {
     display: inline-flex; align-items: center; gap: .5rem;
-    font-size: .75rem; letter-spacing: .2em; text-transform: uppercase; color: #8fa2c8;
+    font-size: .75rem; letter-spacing: .2em; text-transform: uppercase; color: #C9B28F;
   }
   .noise::before {
     content: ""; position: fixed; inset: 0; z-index: 60; pointer-events: none; opacity: .05;
@@ -85,9 +85,9 @@ body {
   position: absolute; inset: -20% -10% auto -10%; height: 70vh; z-index: 0; pointer-events: none;
   filter: blur(60px); opacity: 0.5;
   background:
-    radial-gradient(40% 50% at 20% 30%, rgba(46,107,255,0.55), transparent 60%),
-    radial-gradient(45% 55% at 80% 20%, rgba(139,92,246,0.45), transparent 60%),
-    radial-gradient(40% 45% at 60% 70%, rgba(34,211,238,0.4), transparent 60%);
+    radial-gradient(40% 50% at 20% 30%, rgba(204,85,0,0.45), transparent 60%),
+    radial-gradient(45% 55% at 80% 20%, rgba(154,91,46,0.45), transparent 60%),
+    radial-gradient(40% 45% at 60% 70%, rgba(244,217,160,0.30), transparent 60%);
   background-size: 200% 200%;
   animation: aurora 18s ease-in-out infinite;
 }
@@ -95,8 +95,8 @@ body {
   0%,100% { background-position: 0% 50%, 100% 0%, 50% 100%; }
   50% { background-position: 100% 50%, 0% 100%, 50% 0%; }
 }
-.card { background: #101010; }
-.focus-ring:focus-visible { outline: 2px solid #4F7BFF; outline-offset: 3px; border-radius: 8px; }
+.card { background: #1B1713; }
+.focus-ring:focus-visible { outline: 2px solid #E3B868; outline-offset: 3px; border-radius: 8px; }
 
 /* ---- Print: branded, ink-on-paper proposal ---- */
 @media print {

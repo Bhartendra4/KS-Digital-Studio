@@ -30,7 +30,7 @@ export default function Cursor() {
         ref={ring}
         className="fixed left-0 top-0 h-10 w-10 rounded-full border border-white/40 transition-[width,height,opacity] duration-300"
         style={{
-          background: "radial-gradient(circle, rgba(79,123,255,0.25), transparent 60%)",
+          background: "radial-gradient(circle, rgba(227,184,104,0.22), transparent 60%)",
           transform: "translate(-100px,-100px)",
           scale: hover ? "1.6" : "1",
           opacity: hover ? 1 : 0.7,
