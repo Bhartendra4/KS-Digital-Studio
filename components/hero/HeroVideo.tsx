@@ -26,7 +26,7 @@ const POSTER_MOBILE_WEBP = "/video/ks-studio-poster-mobile.webp";
 export default function HeroVideo({ className = "" }: { className?: string }) {
   const hostRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [revealed, setRevealed] = useState(false); // play the reveal once, on mount
+  // the reveal is a CSS animation that starts with the first paint (no JS needed)
   const [playing, setPlaying] = useState(false); // first frame painted
   // video poster is set after mount (right size for the screen) — the <picture> below
   // already covers first paint, so nothing is downloaded twice
@@ -37,7 +37,6 @@ export default function HeroVideo({ className = "" }: { className?: string }) {
     const video = videoRef.current;
     if (!host) return;
 
-    setRevealed(true);
 
     const mqSmall = window.matchMedia("(max-width: 767px)");
     const mqReduce = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -99,9 +98,7 @@ export default function HeroVideo({ className = "" }: { className?: string }) {
       />
 
       <div
-        className={`relative h-full w-full overflow-hidden rounded-2xl border border-white/10 bg-[#0F0D0B] shadow-[0_40px_120px_-40px_rgba(204,85,0,0.40)] ${
-          revealed ? "animate-hero-reveal" : ""
-        }`}
+        className={`relative h-full w-full overflow-hidden rounded-2xl border border-white/10 bg-[#0F0D0B] shadow-[0_40px_120px_-40px_rgba(204,85,0,0.40)] animate-hero-reveal`}
       >
         <video
           ref={videoRef}
