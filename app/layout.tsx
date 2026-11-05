@@ -4,16 +4,9 @@ import Script from "next/script";
 import "./globals.css";
 import { site } from "@/lib/site";
 import SmoothScroll from "@/components/fx/SmoothScroll";
-import Cursor from "@/components/fx/Cursor";
-import ScrollProgress from "@/components/fx/ScrollProgress";
-import Loader from "@/components/ui/Loader";
 import Navbar from "@/components/ui/Navbar";
 import Footer from "@/components/sections/Footer";
-import FloatingWidgets from "@/components/ui/FloatingWidgets";
-import CookieBanner from "@/components/ui/CookieBanner";
-import Chatbot from "@/components/chat/Chatbot";
-import Analytics from "@/components/ui/Analytics";
-import VisitPing from "@/components/ui/VisitPing";
+import DeferredExtras from "@/components/ui/DeferredExtras";
 
 const space = Space_Grotesk({ subsets: ["latin"], variable: "--font-space", display: "swap" });
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
@@ -73,19 +66,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Script id="ld-json" type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         <a href="#content" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[200] focus:rounded-lg focus:bg-white focus:px-4 focus:py-2 focus:text-ink">Skip to content</a>
-        <Analytics />
-        <VisitPing />
-        <Loader />
-        <ScrollProgress />
-        <Cursor />
         <Navbar />
         <SmoothScroll>
           <main id="content">{children}</main>
           <Footer />
         </SmoothScroll>
-        <FloatingWidgets />
-        <Chatbot />
-        <CookieBanner />
+        <DeferredExtras />
       </body>
     </html>
   );

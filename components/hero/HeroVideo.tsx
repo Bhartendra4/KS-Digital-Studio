@@ -20,25 +20,27 @@ import { useEffect, useRef, useState } from "react";
 const DESKTOP_SRC = "/video/ks-studio.mp4";
 const MOBILE_SRC = "/video/ks-studio-mobile.mp4";
 const POSTER = "/video/ks-studio-poster.jpg";
-const POSTER_MOBILE = "/video/ks-studio-poster-mobile.jpg";
+const POSTER_WEBP = "/video/ks-studio-poster.webp";
+const POSTER_MOBILE_WEBP = "/video/ks-studio-poster-mobile.webp";
 
 export default function HeroVideo({ className = "" }: { className?: string }) {
   const hostRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [revealed, setRevealed] = useState(false); // play the reveal once, on mount
+  // the reveal is a CSS animation that starts with the first paint (no JS needed)
   const [playing, setPlaying] = useState(false); // first frame painted
-  const [poster, setPoster] = useState(POSTER);
+  // video poster is set after mount (right size for the screen) — the <picture> below
+  // already covers first paint, so nothing is downloaded twice
+  const [poster, setPoster] = useState<string | undefined>(undefined);
 
   useEffect(() => {
     const host = hostRef.current;
     const video = videoRef.current;
     if (!host) return;
 
-    setRevealed(true);
 
     const mqSmall = window.matchMedia("(max-width: 767px)");
     const mqReduce = window.matchMedia("(prefers-reduced-motion: reduce)");
-    setPoster(mqSmall.matches ? POSTER_MOBILE : POSTER);
+    setPoster(mqSmall.matches ? POSTER_MOBILE_WEBP : POSTER_WEBP);
 
     let loaded = false;
     let inView = false;
@@ -96,9 +98,7 @@ export default function HeroVideo({ className = "" }: { className?: string }) {
       />
 
       <div
-        className={`relative h-full w-full overflow-hidden rounded-2xl border border-white/10 bg-[#0F0D0B] shadow-[0_40px_120px_-40px_rgba(204,85,0,0.40)] ${
-          revealed ? "animate-hero-reveal" : ""
-        }`}
+        className={`relative h-full w-full overflow-hidden rounded-2xl border border-white/10 bg-[#0F0D0B] shadow-[0_40px_120px_-40px_rgba(204,85,0,0.40)] animate-hero-reveal`}
       >
         <video
           ref={videoRef}
@@ -118,8 +118,13 @@ export default function HeroVideo({ className = "" }: { className?: string }) {
 
         {/* poster stand-in: shown until the first video frame is actually painted,
             and permanently for reduced-motion / refused-autoplay */}
-        <img
-          src={poster}
+        <picture>
+          <source media="(max-width: 767px)" srcSet={POSTER_MOBILE_WEBP} type="image/webp" />
+          <source srcSet={POSTER_WEBP} type="image/webp" />
+          <img
+          src={POSTER}
+          width={1280}
+          height={720}
           alt=""
           className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ${
             playing ? "opacity-0" : "opacity-100"
@@ -127,7 +132,8 @@ export default function HeroVideo({ className = "" }: { className?: string }) {
           loading="eager"
           decoding="async"
           fetchPriority="high"
-        />
+          />
+        </picture>
 
         {/* inner vignette — melts the edges into the page */}
         <div className="pointer-events-none absolute inset-0 shadow-[inset_0_0_90px_28px_rgba(15,13,11,0.85)]" />

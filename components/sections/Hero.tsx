@@ -1,5 +1,5 @@
-"use client";
-import { motion } from "framer-motion";
+// Entrance animations are plain CSS so they start with the first paint — with
+// framer-motion the headline stayed hidden until the JavaScript had loaded.
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import Button from "@/components/ui/Button";
 
@@ -25,15 +25,10 @@ export default function Hero() {
       <div className="mx-auto grid w-full max-w-[1240px] items-center gap-10 px-5 md:px-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-6">
         {/* ---------------- LEFT: the message ---------------- */}
         <div className="relative z-10 max-w-xl">
-          <motion.p
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.35, duration: 0.7 }}
-            className="eyebrow mb-6"
-          >
+          <p className="eyebrow mb-6 animate-fade-up [animation-delay:150ms]">
             <span className="h-px w-8 bg-accent-blue" />
             KS Digital Studio
-          </motion.p>
+          </p>
 
           {/* Below sm the size tracks the column width (viewport minus the
               px-5 gutters) so "WE BUILD DIGITAL" — about 7.9em wide — stays on
@@ -41,33 +36,25 @@ export default function Hero() {
           <h1 className="font-display text-[length:min(calc((100vw_-_2.5rem)/8.3),3.75rem)] font-semibold leading-[0.94] tracking-tight sm:text-6xl md:text-7xl lg:text-[4.6rem] xl:text-[5.2rem]">
             {HEADLINE.map((line, i) => (
               <span key={line} className="block overflow-hidden">
-                <motion.span
-                  className="inline-block"
-                  initial={{ y: "110%" }}
-                  animate={{ y: "0%" }}
-                  transition={{ delay: 0.45 + i * 0.12, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+                <span
+                  className="inline-block animate-rise"
+                  style={{ animationDelay: `${150 + i * 110}ms` }}
                 >
                   <span className={i === 2 ? "text-gradient text-glow" : ""}>{line}</span>
-                </motion.span>
+                </span>
               </span>
             ))}
           </h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.9, duration: 0.7 }}
-            className="mt-7 max-w-md text-base leading-relaxed text-white/60 md:text-lg"
+          <p
+            className="animate-fade-up [animation-delay:450ms] mt-7 max-w-md text-base leading-relaxed text-white/60 md:text-lg"
           >
             Websites, AI-powered solutions and automation built to turn ideas into
             real business.
-          </motion.p>
+          </p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.05, duration: 0.7 }}
-            className="mt-9 flex flex-col gap-3.5 sm:flex-row sm:items-center"
+          <div
+            className="animate-fade-up [animation-delay:550ms] mt-9 flex flex-col gap-3.5 sm:flex-row sm:items-center"
           >
             <Button
               href="/contact"
@@ -82,34 +69,28 @@ export default function Hero() {
             >
               View Our Work
             </Button>
-          </motion.div>
+          </div>
         </div>
 
         {/* ---------------- RIGHT: the studio showreel ----------------
             Its own grid cell, so it can never sit on top of the copy or the
             CTAs. Height is reserved up front — the canvas mounting causes no
             layout shift. pointer-events stay off throughout.               */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.55, duration: 1.1 }}
-          className="relative z-0 aspect-video w-full lg:aspect-auto lg:h-[70vh] lg:min-h-[480px]"
+        <div
+          className="animate-fade-in [animation-delay:200ms] relative z-0 aspect-video w-full lg:aspect-auto lg:h-[70vh] lg:min-h-[480px]"
         >
           <HeroVideo className="h-full w-full" />
-        </motion.div>
+        </div>
       </div>
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5 }}
-        className="pointer-events-none absolute bottom-7 left-1/2 hidden -translate-x-1/2 text-[11px] uppercase tracking-[0.3em] text-white/55 lg:block"
+      <div
+        className="animate-fade-in [animation-delay:1200ms] pointer-events-none absolute bottom-7 left-1/2 hidden -translate-x-1/2 text-[11px] uppercase tracking-[0.3em] text-white/55 lg:block"
       >
         <span className="flex flex-col items-center gap-2">
           Scroll
           <span className="h-10 w-px animate-pulse bg-gradient-to-b from-white/50 to-transparent" />
         </span>
-      </motion.div>
+      </div>
     </section>
   );
 }
