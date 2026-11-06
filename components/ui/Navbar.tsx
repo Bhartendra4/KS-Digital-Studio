@@ -139,7 +139,6 @@ export default function Navbar() {
               {site.nav.map((n) => (
                 <Link key={n.href} href={n.href} className="text-white/80">{n.label}</Link>
               ))}
-              <Link href="/careers" className="text-white/80">Careers</Link>
               <Link href="/contact" className="text-white/80">Contact</Link>
               <div className="mt-2 grid grid-cols-3 gap-2">
                 <a href={`tel:${site.phone.replace(/\s/g, "")}`} className="glass flex items-center justify-center gap-2 rounded-xl py-2.5 text-xs text-accent-blue" data-cursor>

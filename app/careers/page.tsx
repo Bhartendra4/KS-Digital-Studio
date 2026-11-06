@@ -1,3 +1,4 @@
+import Link from "next/link";
 import PageHero from "@/components/ui/PageHero";
 import Reveal from "@/components/fx/Reveal";
 import Button from "@/components/ui/Button";
@@ -5,13 +6,13 @@ import CTA from "@/components/sections/CTA";
 import { jobs, values } from "@/lib/data";
 import { pageMeta } from "@/lib/seo";
 
-export const metadata = pageMeta("Careers", "Join KS Digital Studio — a remote-first team building award-winning digital experiences.", "/careers");
+export const metadata = pageMeta("Careers", "Work with KS Digital Studio — freelance designers and developers welcome.", "/careers");
 
 export default function CareersPage() {
   return (
     <>
-      <PageHero eyebrow="Careers" title="Build the future of the web with us."
-        subtitle="We're a small, senior, remote-first team that ships premium work. Come raise the bar with us." />
+      <PageHero eyebrow="Careers" title="Work with us."
+        subtitle="KS Digital Studio is founder-led. There are no full-time openings right now, but we work with freelance designers and developers on projects." />
       <section className="mx-auto max-w-[1440px] px-5 pb-8 md:px-10">
         <h2 className="sr-only">Our values and open roles</h2>
         <div className="mb-10 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
@@ -24,6 +25,12 @@ export default function CareersPage() {
         </div>
         <h2 className="font-display text-2xl font-semibold text-gradient">Open roles</h2>
         <div className="mt-6 space-y-3">
+          {jobs.length === 0 && (
+            <div className="glass rounded-2xl p-6 text-white/70">
+              No open roles right now. If you&apos;re a freelance designer or developer, send your portfolio through the{" "}
+              <Link href="/contact" className="text-accent-blue underline">contact page</Link> and we&apos;ll reach out when a project fits.
+            </div>
+          )}
           {jobs.map((j, i) => (
             <Reveal key={j.slug} delay={i * 0.05}>
               <div className="glass glass-hover flex flex-col gap-4 rounded-2xl p-6 md:flex-row md:items-center md:justify-between">
