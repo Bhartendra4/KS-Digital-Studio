@@ -12,7 +12,7 @@ export default function AboutPage() {
   return (
     <>
       <PageHero eyebrow="Our story" title="A studio obsessed with premium craft."
-        subtitle="We're a remote-first team of designers, engineers and strategists building digital experiences that make businesses grow." />
+        subtitle="A founder-led studio from Ahmedabad. Bhartendra personally handles every project, from first call to launch, building websites that help businesses grow." />
 
       <section className="mx-auto max-w-[1440px] px-5 py-16 md:px-10">
         <div className="grid gap-6 md:grid-cols-2">
@@ -22,7 +22,7 @@ export default function AboutPage() {
           </div></Reveal>
           <Reveal delay={0.1}><div className="card-border glass-hover h-full p-8">
             <h2 className="font-display text-2xl font-semibold text-gradient">Our Vision</h2>
-            <p className="mt-3 text-white/60">To be the studio the world&apos;s most ambitious brands call when only award-winning quality will do.</p>
+            <p className="mt-3 text-white/60">To be the studio businesses call when they want quality work, honest timelines and someone who actually picks up the phone.</p>
           </div></Reveal>
         </div>
       </section>
