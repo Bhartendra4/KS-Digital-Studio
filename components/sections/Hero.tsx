@@ -11,7 +11,7 @@ import Button from "@/components/ui/Button";
  */
 import HeroVideo from "@/components/hero/HeroVideo";
 
-const HEADLINE = ["A WEBSITE THAT", "BRINGS YOU", "CUSTOMERS."];
+const HEADLINE = ["A WEBSITE", "THAT BRINGS", "CUSTOMERS."];
 
 export default function Hero() {
   return (
@@ -31,9 +31,10 @@ export default function Hero() {
           </p>
 
           {/* Below sm the size tracks the column width (viewport minus the
-              px-5 gutters) so "WE BUILD DIGITAL" — about 7.9em wide — stays on
-              one line from 320px up; capped at sm's 3.75rem so nothing jumps. */}
-          <h1 className="font-display text-[length:min(calc((100vw_-_2.5rem)/8.3),3.75rem)] font-semibold leading-[0.94] tracking-tight sm:text-6xl md:text-7xl lg:text-[4.6rem] xl:text-[5.2rem]">
+              px-5 gutters) so the longest line, "THAT BRINGS" (about 5.85em wide),
+              stays on one line from 320px up; capped at sm's 3.75rem so nothing
+              jumps. lg is sized so that line also fits the left column at 1024px. */}
+          <h1 className="font-display text-[length:min(calc((100vw_-_2.5rem)/6.2),3.75rem)] font-semibold leading-[0.94] tracking-tight sm:text-6xl md:text-7xl lg:text-[4.3rem] xl:text-[5.2rem]">
             {HEADLINE.map((line, i) => (
               <span key={line} className="block overflow-hidden">
                 <span

@@ -40,7 +40,7 @@ export default async function ServiceDetail({ params }: { params: Promise<{ slug
                 </li>
               ))}
             </ul>
-            <div className="mt-8"><Button href="/contact">Start Your Project</Button></div>
+            <div className="mt-8"><Button href="/contact">Get a free demo</Button></div>
           </div>
         </Reveal>
         <Reveal delay={0.1}>
