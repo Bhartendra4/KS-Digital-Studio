@@ -19,7 +19,7 @@ export default function Chatbot() {
   const [open, setOpen] = useState(false);
   const [step, setStep] = useState<Step>("service");
   const [msgs, setMsgs] = useState<Msg[]>([
-    { from: "bot", text: "Hi! 👋 I'm the KS Digital Studio assistant. What can we help you build?" },
+    { from: "bot", text: "Hi! 👋 I'm the KS Digital Studio assistant. What does your business need: a website, an online store, or something else?" },
   ]);
   const [form, setForm] = useState<any>({ source: "chatbot", servicesNeeded: [] as string[] });
   const [input, setInput] = useState("");

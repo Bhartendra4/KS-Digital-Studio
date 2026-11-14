@@ -29,10 +29,10 @@ export default function OG() {
         </div>
 
         <div style={{ fontSize: 72, fontWeight: 700, marginTop: 44, textAlign: "center", maxWidth: 900, lineHeight: 1.12 }}>
-          We Build Websites That Grow Businesses.
+          Websites that bring you customers.
         </div>
         <div style={{ fontSize: 26, marginTop: 26, opacity: 0.65 }}>
-          Premium Web · UI/UX · SEO · AI Automation
+          Websites for small businesses · Ahmedabad
         </div>
 
         {/* electric accent rule */}

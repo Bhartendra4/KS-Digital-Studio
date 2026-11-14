@@ -11,7 +11,7 @@ import Button from "@/components/ui/Button";
  */
 import HeroVideo from "@/components/hero/HeroVideo";
 
-const HEADLINE = ["WE BUILD DIGITAL", "PRODUCTS", "THAT GROW."];
+const HEADLINE = ["A WEBSITE THAT", "BRINGS YOU", "CUSTOMERS."];
 
 export default function Hero() {
   return (
@@ -49,8 +49,9 @@ export default function Hero() {
           <p
             className="animate-fade-up [animation-delay:450ms] mt-7 max-w-md text-base leading-relaxed text-white/60 md:text-lg"
           >
-            Websites, AI-powered solutions and automation built to turn ideas into
-            real business.
+            Hi, I&apos;m Bhartendra. I build fast, clear websites for shops, clinics,
+            cafés and growing businesses. You get a free demo first, and you only
+            pay if you like it.
           </p>
 
           <div
@@ -60,14 +61,14 @@ export default function Hero() {
               href="/contact"
               icon={<ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />}
             >
-              Start a Project
+              Get a free demo
             </Button>
             <Button
               href="/portfolio"
               variant="ghost"
               icon={<ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />}
             >
-              View Our Work
+              See my work
             </Button>
           </div>
         </div>

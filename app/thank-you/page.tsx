@@ -15,10 +15,10 @@ export default function ThankYouPage() {
         </div>
         <h1 className="font-display text-4xl font-semibold tracking-tight text-gradient md:text-6xl">Thank you!</h1>
         <p className="mx-auto mt-4 max-w-md text-white/60">
-          Your message is on its way. We&apos;ll get back to you within 24 hours. Meanwhile, explore our work.
+          Your message has reached me. I&apos;ll reply within 24 hours. Meanwhile, have a look at some sample sites.
         </p>
         <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <Button href="/portfolio">View our work</Button>
+          <Button href="/portfolio">See sample sites</Button>
           <Button href="/" variant="ghost">Back home</Button>
         </div>
       </div>

@@ -9,7 +9,7 @@ import { site } from "@/lib/site";
 type Errors = Partial<Record<"name" | "email" | "message", string>>;
 
 export default function Contact() {
-  const [form, setForm] = useState({ name: "", email: "", budget: "Professional", message: "" });
+  const [form, setForm] = useState({ name: "", email: "", budget: "Business", message: "" });
   const [errors, setErrors] = useState<Errors>({});
   const [sent, setSent] = useState(false);
 
@@ -38,8 +38,8 @@ export default function Contact() {
     <Section id="contact">
       <div className="grid gap-12 lg:grid-cols-2">
         <div>
-          <SectionHeading eyebrow="Contact" title="Let's build something premium."
-            subtitle="Tell us about your project and we'll get back within 24 hours." />
+          <SectionHeading eyebrow="Contact" title="Tell me about your business."
+            subtitle="Write a few lines about what you need. I read every message myself and reply within 24 hours." />
           <div className="mt-8 space-y-4">
             <a href={`mailto:${site.email}`} className="glass glass-hover flex items-center gap-4 rounded-2xl p-4" data-cursor>
               <Mail className="h-5 w-5 text-accent-cyan" /><span className="text-sm text-white/70">{site.email}</span>
@@ -88,12 +88,12 @@ export default function Contact() {
             {errors.email && <p className="mt-1 text-xs text-red-400">{errors.email}</p>}
           </div>
           <div>
-            <label htmlFor="c-budget" className="mb-2 block text-xs uppercase tracking-widest text-white/50">Budget</label>
+            <label htmlFor="c-budget" className="mb-2 block text-xs uppercase tracking-widest text-white/50">Package</label>
             <select id="c-budget" className={field} value={form.budget}
               onChange={(e) => setForm({ ...form, budget: e.target.value })}>
               <option className="bg-ink">Starter</option>
-              <option className="bg-ink">Professional</option>
-              <option className="bg-ink">Enterprise</option>
+              <option className="bg-ink">Business</option>
+              <option className="bg-ink">Custom</option>
             </select>
           </div>
           <div>

@@ -11,8 +11,8 @@ export default function Pricing({ hideHeading = false }: { hideHeading?: boolean
     <Section id="pricing">
       {hideHeading && <h2 className="sr-only">Pricing plans</h2>}
       {!hideHeading && (
-        <SectionHeading eyebrow="Pricing" title="Simple, transparent pricing." center
-          subtitle="Fixed-scope packages with no surprises. Need something bespoke? Let's talk." />
+        <SectionHeading eyebrow="Pricing" title="Clear prices. No surprises." center
+          subtitle="Fixed prices, written down before I start. You see a free demo first. Outside India, starter sites begin at about USD 300." />
       )}
       <div className={`${hideHeading ? "" : "mt-14"} grid grid-cols-1 gap-6 lg:grid-cols-3 lg:items-center`}>
         {pricing.map((p, i) => (
@@ -24,7 +24,7 @@ export default function Pricing({ hideHeading = false }: { hideHeading?: boolean
               <>
                 <div className="absolute inset-0 -z-10 rounded-3xl bg-gradient-to-b from-accent-blue/15 to-transparent blur-xl" />
                 <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-accent-electric to-accent-purple px-4 py-1 text-xs font-semibold">
-                  <Sparkles className="mr-1 inline h-3 w-3" /> Most Popular
+                  <Sparkles className="mr-1 inline h-3 w-3" /> Best value
                 </span>
               </>
             )}
@@ -43,7 +43,7 @@ export default function Pricing({ hideHeading = false }: { hideHeading?: boolean
             </ul>
             <div className="mt-8">
               <Button href="/contact" variant={p.highlight ? "primary" : "ghost"} className="w-full justify-center">
-                {p.name === "Enterprise" ? "Contact Sales" : "Get Started"}
+                {p.name === "Custom" ? "Talk to me" : "Get a free demo"}
               </Button>
             </div>
           </motion.div>

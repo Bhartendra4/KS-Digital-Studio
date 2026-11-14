@@ -11,8 +11,8 @@ export default function Process() {
   const h = useSpring(scrollYProgress, { stiffness: 100, damping: 30 });
   return (
     <Section id="process">
-      <SectionHeading eyebrow="How we work" title="A process built for excellence."
-        subtitle="Eight deliberate stages that turn ambitious ideas into flawless, high-performing products." />
+      <SectionHeading eyebrow="How it works" title="From first message to live website."
+        subtitle="Simple steps, and you see the work at every one of them." />
       <div ref={ref} className="relative mt-16 pl-4 md:pl-0">
         {/* center line */}
         <div className="absolute left-4 top-0 h-full w-px bg-white/10 md:left-1/2 md:-translate-x-1/2" />

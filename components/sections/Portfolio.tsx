@@ -47,8 +47,8 @@ export default function Portfolio({
     <Section id="work">
       {hideHeading && <h2 className="sr-only">Concept projects</h2>}
       {!hideHeading && (
-        <SectionHeading eyebrow="Concept / demo projects" title="How we design and build."
-          subtitle="Concept projects that show our style and approach. Real client work will be added here as it launches." />
+        <SectionHeading eyebrow="Concept / demo projects" title="Sample sites I have built."
+          subtitle="Sample projects for real kinds of businesses, so you can see the quality before we talk. Real client work will be added here as it launches." />
       )}
       <div className={`${hideHeading ? "" : "mt-10"} flex flex-wrap gap-2`}>
         {categories.map((c) => (

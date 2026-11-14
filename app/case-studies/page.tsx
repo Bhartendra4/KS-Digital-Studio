@@ -6,13 +6,13 @@ import CTA from "@/components/sections/CTA";
 import { portfolio } from "@/lib/data";
 import { pageMeta } from "@/lib/seo";
 
-export const metadata = pageMeta("Concept Projects", "Concept / demo projects that show how KS Digital Studio designs and builds premium websites.", "/case-studies");
+export const metadata = pageMeta("Concept Projects", "Concept / demo projects that show how KS Digital Studio designs and builds websites.", "/case-studies");
 
 export default function CaseStudiesPage() {
   return (
     <>
       <PageHero eyebrow="Concept / demo projects" title="How we'd build it."
-        subtitle="Concept projects that show our design and engineering approach. These are demos, not paid client work — the figures are design targets, not client results." />
+        subtitle="Sample projects that show how I design and build. These are demos, not paid client work — the figures are design targets, not client results." />
       <section className="mx-auto max-w-[1440px] px-5 pb-8 md:px-10">
         <h2 className="sr-only">Concept projects</h2>
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2">

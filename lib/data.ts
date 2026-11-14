@@ -10,55 +10,55 @@ export type Service = {
 };
 
 export const services: Service[] = [
-  { slug: "website-design", icon: Palette, title: "Website Design", desc: "Cinematic, brand-first interfaces designed to convert.", long: "We craft distinctive, on-brand visual designs that make your business unforgettable — from wireframes to polished, motion-ready UI.", features: ["Custom design system", "Motion & micro-interactions", "Conversion-focused layouts", "Figma handoff"] },
-  { slug: "website-development", icon: Code2, title: "Website Development", desc: "Blazing-fast Next.js builds engineered to scale.", long: "Production-grade front-end engineering with Next.js, TypeScript and clean architecture that stays fast as you grow.", features: ["Next.js + TypeScript", "90+ Lighthouse", "SEO-ready", "CMS integration"] },
-  { slug: "ecommerce", icon: ShoppingBag, title: "E-commerce Websites", desc: "Storefronts that feel premium and sell more.", long: "High-converting online stores with premium product pages, fast checkout and analytics baked in.", features: ["Shopify / headless", "Premium product pages", "Fast checkout", "Analytics"] },
-  { slug: "restaurant", icon: UtensilsCrossed, title: "Restaurant Websites", desc: "Mouth-watering menus, reservations & ordering.", long: "Beautiful restaurant sites with live menus, reservations and online ordering that fill tables.", features: ["Live menu", "Reservations", "Online ordering", "Google presence"] },
-  { slug: "business", icon: Briefcase, title: "Business Websites", desc: "Corporate presence that builds instant trust.", long: "Professional multi-page corporate websites that establish authority and generate qualified leads.", features: ["Multi-page", "Lead capture", "Trust signals", "Blog & CMS"] },
-  { slug: "portfolio", icon: FolderKanban, title: "Portfolio Websites", desc: "Showcase your work so the right clients notice it.", long: "Immersive portfolios that make creatives and studios stand out and win better clients.", features: ["Interactive galleries", "Case studies", "Motion reveals", "Fast loading"] },
-  { slug: "landing-pages", icon: MousePointerClick, title: "Landing Pages", desc: "Conversion-optimised pages for every campaign.", long: "Single-purpose, high-converting landing pages tuned for your ad and launch campaigns.", features: ["A/B ready", "Fast load", "Clear CTAs", "Analytics events"] },
-  { slug: "ui-ux", icon: Layout, title: "UI/UX Design", desc: "Clear user flows and consistent design systems.", long: "End-to-end product design: research, flows, wireframes and polished, accessible interfaces.", features: ["User research", "Wireframes", "Design systems", "Prototypes"] },
-  { slug: "seo", icon: Search, title: "SEO Optimization", desc: "Technical + on-page SEO that ranks and stays.", long: "Technical, on-page and content SEO that grows organic traffic and keeps you ranking.", features: ["Technical audit", "On-page SEO", "Schema markup", "Content strategy"] },
-  { slug: "speed", icon: Gauge, title: "Speed Optimization", desc: "90+ Lighthouse, Core Web Vitals in the green.", long: "We diagnose and fix performance bottlenecks to hit green Core Web Vitals across the board.", features: ["Core Web Vitals", "Image optimization", "Code splitting", "Caching"] },
-  { slug: "ai-automation", icon: Bot, title: "AI Automation", desc: "Workflows and agents that save you hours.", long: "Custom AI workflows and agents that automate repetitive work and unlock new capabilities.", features: ["Workflow automation", "AI agents", "Integrations", "Custom models"] },
-  { slug: "chatbot", icon: MessageSquare, title: "Chatbot Development", desc: "24/7 AI assistants trained on your business.", long: "Conversational AI trained on your data to support customers and capture leads around the clock.", features: ["Trained on your data", "Lead capture", "Multi-channel", "Human handoff"] },
-  { slug: "custom-crm", icon: Database, title: "Custom CRM", desc: "Tailored CRM systems built around your workflow.", long: "Bespoke CRM platforms that match exactly how your team sells and supports customers.", features: ["Custom pipelines", "Automations", "Role-based access", "Reporting"] },
-  { slug: "admin-panels", icon: LayoutDashboard, title: "Admin Panel Development", desc: "Secure, role-based dashboards for your platform.", long: "Powerful admin panels and dashboards your team actually enjoys using.", features: ["Role-based access", "Data tables & charts", "Audit logs", "Fast UX"] },
-  { slug: "web-applications", icon: AppWindow, title: "Web Applications", desc: "Full-scale SaaS and web apps built to scale.", long: "Complex, scalable web applications and SaaS products engineered end to end.", features: ["Scalable architecture", "Auth & payments", "Real-time features", "APIs"] },
-  { slug: "maintenance", icon: Wrench, title: "Maintenance & Support", desc: "Proactive care, updates and monitoring.", long: "Ongoing care plans covering updates, monitoring, backups and iterative improvements.", features: ["Monitoring", "Updates & backups", "Security patches", "Priority support"] },
+  { slug: "website-design", icon: Palette, title: "Website Design", desc: "A look that fits your business, not a template.", long: "I design the site around your business: your colours, your photos, your way of talking. You see the design and ask for changes before anything is built.", features: ["Custom design system", "Motion & micro-interactions", "Conversion-focused layouts", "Figma handoff"] },
+  { slug: "website-development", icon: Code2, title: "Website Development", desc: "Fast websites that open quickly on any phone.", long: "I build with Next.js and TypeScript, so pages open quickly even on slow mobile data and stay easy to update as you grow.", features: ["Next.js + TypeScript", "90+ Lighthouse", "SEO-ready", "CMS integration"] },
+  { slug: "ecommerce", icon: ShoppingBag, title: "E-commerce Websites", desc: "An online shop that is easy to buy from.", long: "Clear product pages, a short checkout and order alerts on your phone, so selling online does not turn into extra work.", features: ["Shopify / headless", "Premium product pages", "Fast checkout", "Analytics"] },
+  { slug: "restaurant", icon: UtensilsCrossed, title: "Restaurant Websites", desc: "Your menu, table booking and orders in one place.", long: "A site with your menu, photos, timings and location, plus table booking or WhatsApp ordering, so customers stop asking the same questions on call.", features: ["Live menu", "Reservations", "Online ordering", "Google presence"] },
+  { slug: "business", icon: Briefcase, title: "Business Websites", desc: "A proper online address people can trust.", long: "A clean multi-page site that explains what you do, shows proof and makes it easy to call, message or send an enquiry.", features: ["Multi-page", "Lead capture", "Trust signals", "Blog & CMS"] },
+  { slug: "portfolio", icon: FolderKanban, title: "Portfolio Websites", desc: "Show your work so the right clients notice it.", long: "A simple, good-looking place for your projects and photos that loads fast and makes it easy to contact you.", features: ["Interactive galleries", "Case studies", "Motion reveals", "Fast loading"] },
+  { slug: "landing-pages", icon: MousePointerClick, title: "Landing Pages", desc: "One page, one goal, for your ad or launch.", long: "A single focused page for a campaign or offer, with one clear button and tracking so you know what worked.", features: ["A/B ready", "Fast load", "Clear CTAs", "Analytics events"] },
+  { slug: "ui-ux", icon: Layout, title: "UI/UX Design", desc: "Screens people understand without a manual.", long: "User flows, wireframes and finished screens for apps and dashboards, designed so people get it the first time.", features: ["User research", "Wireframes", "Design systems", "Prototypes"] },
+  { slug: "seo", icon: Search, title: "SEO Optimization", desc: "Help the right people find you on Google.", long: "I fix the technical basics, write clear page titles and set up Google Business Profile and Search Console, so you show up for searches near you.", features: ["Technical audit", "On-page SEO", "Schema markup", "Content strategy"] },
+  { slug: "speed", icon: Gauge, title: "Speed Optimization", desc: "Make a slow website fast again.", long: "I find what is slowing your site down (heavy images, extra scripts, slow hosting) and fix it, then show you the before and after.", features: ["Core Web Vitals", "Image optimization", "Code splitting", "Caching"] },
+  { slug: "ai-automation", icon: Bot, title: "AI Automation", desc: "Let software handle the repetitive work.", long: "Small automations for things you do every day: replying to enquiries, sending reminders, moving data between sheets and apps.", features: ["Workflow automation", "AI agents", "Integrations", "Custom models"] },
+  { slug: "chatbot", icon: MessageSquare, title: "Chatbot Development", desc: "A chat assistant that answers customers at 2 AM.", long: "A chatbot trained on your own services, prices and FAQs that answers common questions and passes real enquiries to you.", features: ["Trained on your data", "Lead capture", "Multi-channel", "Human handoff"] },
+  { slug: "custom-crm", icon: Database, title: "Custom CRM", desc: "Keep every enquiry and follow-up in one place.", long: "A simple CRM built around how you actually work, so no enquiry gets lost in WhatsApp or a notebook.", features: ["Custom pipelines", "Automations", "Role-based access", "Reporting"] },
+  { slug: "admin-panels", icon: LayoutDashboard, title: "Admin Panel Development", desc: "A dashboard your staff can use on day one.", long: "Admin panels with the right access for each person, clear tables and reports, and nothing extra to confuse people.", features: ["Role-based access", "Data tables & charts", "Audit logs", "Fast UX"] },
+  { slug: "web-applications", icon: AppWindow, title: "Web Applications", desc: "Your idea, built into a working web app.", long: "Login, payments, dashboards and APIs: I plan it with you, build it in stages and show you progress every week.", features: ["Scalable architecture", "Auth & payments", "Real-time features", "APIs"] },
+  { slug: "maintenance", icon: Wrench, title: "Maintenance & Support", desc: "I look after the site so you do not have to.", long: "Updates, backups, security fixes and small changes each month, with one person to message when something is needed.", features: ["Monitoring", "Updates & backups", "Security patches", "Priority support"] },
 ];
 
 // Commitments we can stand behind (not vanity numbers). Update with real counts as projects ship.
 export const stats = [
   { value: 24, suffix: "h", label: "Reply time on every enquiry" },
   { value: 100, suffix: "%", label: "Mobile-first, responsive builds" },
-  { value: 90, suffix: "+", label: "Lighthouse score we aim for" },
+  { value: 90, suffix: "+", label: "Speed score I aim for" },
   { value: 7, suffix: " days", label: "Starter website delivery" },
 ];
 
 export const advantages = [
-  { title: "Fast Delivery", desc: "Tight, predictable timelines without cutting corners." },
-  { title: "Modern Technology", desc: "Next.js, React, Three.js and the latest tooling." },
-  { title: "Premium Quality", desc: "Awwwards-level craft on every single pixel." },
-  { title: "Real Results", desc: "Sites built to grow traffic, leads and revenue." },
+  { title: "You talk to me", desc: "No account manager in between. The person you message is the person building your site." },
+  { title: "Free demo first", desc: "I build a sample of your site before you pay, so you can judge the work, not the promises." },
+  { title: "Fast on mobile data", desc: "Most of your customers are on a phone. Every site is built and tested for that first." },
+  { title: "Fixed price", desc: "The price is written down before I start, and it does not change halfway." },
 ];
 
 export const process = [
-  { step: "01", title: "Discovery", desc: "We learn your goals, audience and brand." },
-  { step: "02", title: "Research", desc: "Competitor, market and UX research." },
-  { step: "03", title: "Wireframe", desc: "Structure, flows and content strategy." },
-  { step: "04", title: "UI Design", desc: "High-fidelity, on-brand visual design." },
-  { step: "05", title: "Development", desc: "Clean, scalable, animated front-end build." },
-  { step: "06", title: "Testing", desc: "Cross-device QA, accessibility & speed." },
-  { step: "07", title: "Deployment", desc: "Launch, monitor and hand over the keys." },
-  { step: "08", title: "Support", desc: "Ongoing care, iteration and growth." },
+  { step: "01", title: "We talk", desc: "A short call or WhatsApp chat about your business and what you need." },
+  { step: "02", title: "I look around", desc: "I check your competitors and what your customers search for." },
+  { step: "03", title: "Rough layout", desc: "You see the pages and what goes where, before any design work." },
+  { step: "04", title: "Design", desc: "Your colours, photos and wording, shown to you for changes." },
+  { step: "05", title: "Build", desc: "I turn the design into a fast, working website." },
+  { step: "06", title: "Testing", desc: "Checked on phones, tablets and laptops, and for speed." },
+  { step: "07", title: "Go live", desc: "I connect your domain and hand over everything, including logins." },
+  { step: "08", title: "After launch", desc: "Small fixes and questions are welcome. Care plans if you want ongoing help." },
 ];
 
 export const values = [
-  { title: "Craft over templates", desc: "Every project is designed from scratch to feel one-of-a-kind." },
-  { title: "Speed is a feature", desc: "We obsess over performance because fast sites convert." },
-  { title: "Business first", desc: "Beautiful is the baseline — results are the goal." },
-  { title: "Radical clarity", desc: "Transparent scope, timelines and communication throughout." },
+  { title: "Made for you", desc: "Your site is designed around your business, not picked from a template." },
+  { title: "Speed matters", desc: "A slow site loses customers, so I check loading time on every build." },
+  { title: "Business first", desc: "Looking good is the start. The site has to bring calls, messages and orders." },
+  { title: "Plain talk", desc: "Clear scope, clear dates, and I tell you early if something will take longer." },
 ];
 
 export type Project = {
@@ -87,26 +87,26 @@ export const portfolio: Project[] = [
 export const testimonials: { name: string; role: string; rating: number; quote: string }[] = [];
 
 export const pricing = [
-  { name: "Starter", price: "$1,200", cadence: "one-time", highlight: false, tagline: "For founders getting online fast.", features: ["Up to 5 sections", "Responsive design", "Basic SEO setup", "Contact form", "2 revisions", "7-day delivery"] },
-  { name: "Professional", price: "$3,500", cadence: "one-time", highlight: true, tagline: "Our most popular premium build.", features: ["Up to 12 sections", "Custom animations (GSAP)", "3D / motion hero", "Advanced SEO", "CMS integration", "Speed optimization", "5 revisions", "Priority support"] },
-  { name: "Enterprise", price: "Custom", cadence: "let's talk", highlight: false, tagline: "For platforms & scaling teams.", features: ["Unlimited sections", "Web app / dashboards", "AI automation & chatbot", "Direct access to the founder", "SLA & maintenance", "Ongoing growth retainer"] },
+  { name: "Starter", price: "₹8,000", cadence: "from, one-time", highlight: false, tagline: "For a shop, café, clinic or freelancer who needs to be found online.", features: ["1 to 5 pages", "Looks right on every phone", "Call and WhatsApp buttons", "Google Maps and basic SEO", "2 rounds of changes", "Live in about 7 days"] },
+  { name: "Business", price: "₹15,000", cadence: "from, one-time", highlight: true, tagline: "For businesses that take bookings or orders.", features: ["Everything in Starter", "Online booking or WhatsApp ordering", "Menu, gallery or price list", "Google Business Profile setup", "Tuned for slow mobile data", "3 rounds of changes"] },
+  { name: "Custom", price: "Let's talk", cadence: "quote in 24h", highlight: false, tagline: "Online stores, web apps and automation.", features: ["Online store with payments", "Web app or dashboard", "AI chatbot or automation", "You talk to me directly", "Care plan from ₹1,000/month", "Paid in milestones"] },
 ];
 
 export const faqs = [
-  { q: "How long does a project take?", a: "Most premium websites ship in 2–4 weeks. Larger web apps run 6–10 weeks. We share a clear timeline after discovery." },
-  { q: "Do you design and develop?", a: "Yes — we own the full journey from strategy and UI design through development, SEO and launch." },
-  { q: "Will my site be fast and SEO-ready?", a: "Absolutely. We target 90+ Lighthouse scores, Core Web Vitals in the green, and full technical SEO on every build." },
-  { q: "Can you work with my existing brand?", a: "Of course. We can build on your current identity or craft a brand-new one — your call." },
-  { q: "Do you offer maintenance?", a: "Yes, we offer monthly care plans covering updates, monitoring, backups and iterative improvements." },
-  { q: "How do payments work?", a: "Typically 50% to start and 50% on launch. Enterprise engagements can be milestone-based." },
+  { q: "Do I have to pay before I see anything?", a: "No. I build a free demo of your site first. If you like it, we agree a price and I finish it. If you don't, you owe nothing." },
+  { q: "How long does a website take?", a: "A starter site is usually live in about a week. A site with booking or ordering takes 2 to 3 weeks. Web apps take longer, and I give you dates before starting." },
+  { q: "I don't have photos or text. Is that a problem?", a: "No. Send me what you have, even phone photos and a few voice notes. I write the text, pick the best photos and show you everything before it goes live." },
+  { q: "Will people find my site on Google?", a: "I set up the basics that matter for local search: fast pages, proper titles, Google Business Profile and Search Console. Ranking takes time, and I won't promise a number one spot." },
+  { q: "What happens after the site is live?", a: "You get all the logins. Small fixes in the first weeks are free. If you want ongoing updates, care plans start at ₹1,000 a month." },
+  { q: "How do payments work?", a: "Usually half to start the final build and half when the site goes live. Bigger projects are split into milestones." },
 ];
 
 export type Post = { slug: string; title: string; excerpt: string; category: string; date: string; read: string; body: string[] };
 export const posts: Post[] = [
-  { slug: "why-fast-websites-convert", title: "Why Fast Websites Convert More Customers", excerpt: "Slow pages lose visitors. Here's how we hit sub-second loads on premium sites.", category: "Performance", date: "2026-06-18", read: "6 min", body: ["Speed isn't a nice-to-have — it's a revenue lever. Studies consistently show that faster sites convert better, rank higher and retain users longer.", "At KS Digital Studio we treat Core Web Vitals as a first-class requirement. We optimise images, split code, stream server components and cache aggressively.", "The result: sites that feel instant on any device, which directly lifts conversion and SEO."] },
-  { slug: "anatomy-of-a-premium-hero", title: "The Anatomy of a Premium Hero Section", excerpt: "What separates a forgettable hero from one that makes visitors trust you instantly.", category: "Design", date: "2026-05-30", read: "5 min", body: ["The hero is the first impression — and you only get one. A premium hero balances a bold message, restrained motion and a single clear action.", "We combine cinematic 3D, staggered text reveals and magnetic CTAs, always in service of the message, never as decoration.", "Done right, the hero communicates quality before a single word is read."] },
-  { slug: "seo-in-2026", title: "Technical SEO in 2026: A Practical Checklist", excerpt: "The technical foundations that still move the needle for organic growth.", category: "SEO", date: "2026-05-02", read: "8 min", body: ["Great content needs a technically sound foundation. In 2026, that means fast Core Web Vitals, clean semantic HTML, structured data and a crawlable architecture.", "We ship every site with metadata, Open Graph, schema.org markup, a sitemap and canonical URLs by default.", "These fundamentals compound over time into durable organic growth."] },
-  { slug: "ai-automation-for-agencies", title: "Where AI Automation Actually Saves Time", excerpt: "Practical AI workflows that eliminate busywork without the hype.", category: "AI", date: "2026-04-15", read: "7 min", body: ["AI is most valuable when it quietly removes repetitive work. We build automations for lead routing, content drafting, support triage and reporting.", "The goal isn't novelty — it's giving teams their time back so they can focus on high-value work.", "Start with one repetitive task, measure the time it takes today, and automate only that. If it saves real hours, expand from there."] },
+  { slug: "why-fast-websites-convert", title: "Why Fast Websites Convert More Customers", excerpt: "Slow pages lose visitors. Here is what I do to make a site open fast.", category: "Performance", date: "2026-06-18", read: "6 min", body: ["Speed is not decoration. People leave a page that takes too long to open, and Google ranks slow pages lower.", "On every site I build, I compress images, load only the code a page needs and cache whatever can be cached. Then I test it on an ordinary phone, not just my laptop.", "The result is a site that opens quickly on any device, which helps both sales and Google ranking."] },
+  { slug: "anatomy-of-a-premium-hero", title: "What Makes a Good First Screen on a Website", excerpt: "What separates a forgettable hero from one that makes visitors trust you instantly.", category: "Design", date: "2026-05-30", read: "5 min", body: ["The first screen of your site is your first impression. A good one says what you do in one line, shows one strong picture and offers one clear button.", "Animation can help, but only when it supports the message. If it slows the page or distracts from the button, I leave it out.", "When it works, a visitor understands who you are and what to do next within a few seconds."] },
+  { slug: "seo-in-2026", title: "Technical SEO in 2026: A Practical Checklist", excerpt: "The technical foundations that still move the needle for organic growth.", category: "SEO", date: "2026-05-02", read: "8 min", body: ["Great content needs a technically sound foundation. In 2026, that means fast Core Web Vitals, clean semantic HTML, structured data and a crawlable architecture.", "Every site I build includes proper titles and descriptions, Open Graph tags, schema.org markup, a sitemap and canonical URLs.", "None of this is exciting, but it keeps adding up month after month."] },
+  { slug: "ai-automation-for-agencies", title: "Where AI Automation Actually Saves Time", excerpt: "Practical AI workflows that eliminate busywork without the hype.", category: "AI", date: "2026-04-15", read: "7 min", body: ["AI is most useful when it quietly removes repetitive work: replying to common enquiries, drafting posts, sorting support messages and preparing reports.", "The point is not to look modern. The point is to get hours back for the work only you can do.", "Start with one repetitive task, measure the time it takes today, and automate only that. If it saves real hours, expand from there."] },
 ];
 
 export type Job = { slug: string; title: string; type: string; location: string; team: string; summary: string };

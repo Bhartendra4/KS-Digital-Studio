@@ -4,13 +4,13 @@ import ContactForm from "@/components/sections/ContactForm";
 import { site } from "@/lib/site";
 import { pageMeta } from "@/lib/seo";
 
-export const metadata = pageMeta("Contact", "Start your premium website project with KS Digital Studio. We reply within 24 hours.", "/contact");
+export const metadata = pageMeta("Contact", "Tell Bhartendra at KS Digital Studio about your business. You get a reply within 24 hours and a free demo before you pay.", "/contact");
 
 export default function ContactPage() {
   return (
     <>
-      <PageHero eyebrow="Contact" title="Let's build something premium."
-        subtitle="Tell us about your project and we'll get back within 24 hours." />
+      <PageHero eyebrow="Contact" title="Tell me about your business."
+        subtitle="Write a few lines about what you need. I read every message myself and reply within 24 hours." />
       <section className="mx-auto grid max-w-[1440px] gap-12 px-5 pb-16 md:px-10 lg:grid-cols-2">
         <div>
           <div className="space-y-4">
