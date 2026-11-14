@@ -5,12 +5,12 @@ export const site = {
   name: "KS Digital Studio",
   shortName: "KS",
   domain: "https://www.ksdigitalstudio.in",
-  tagline: "We Build Digital Experiences That Grow Businesses",
-  heroHeadline: "WE BUILD WEBSITES THAT SELL.",
+  tagline: "Websites that bring small businesses more customers",
+  heroHeadline: "A WEBSITE THAT BRINGS YOU CUSTOMERS.",
   heroSub:
-    "Premium websites engineered for speed, SEO, branding and business growth.",
+    "Fast, good-looking websites for shops, clinics, cafés and growing businesses. You see a free demo before you pay anything.",
   description:
-    "KS Digital Studio is a premium digital agency crafting cinematic, high-performance websites, web apps, brand identities, UI/UX, SEO and AI automation that grow businesses.",
+    "KS Digital Studio is a one-person web studio in Ahmedabad. Bhartendra designs and builds fast, clear websites, online stores and simple automations for small businesses, and you talk to him directly from the first call to launch.",
   email: "info@ksdigitalstudio.in",
   phone: "+91 81078 17733",
   whatsapp: "918107817733", // digits only, country code first

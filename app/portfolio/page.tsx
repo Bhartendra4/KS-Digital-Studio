@@ -8,7 +8,7 @@ export const metadata = pageMeta("Work", "Concept / demo websites and web apps t
 export default function PortfolioPage() {
   return (
     <>
-      <PageHero eyebrow="Concept / demo projects" title="See what we can build."
+      <PageHero eyebrow="Concept / demo projects" title="See what I can build for you."
         subtitle="Live concept websites for fictional brands — open any of them to try it on your phone. Real client work will be added as it launches." />
       <Portfolio hideHeading linkTo="/case-studies" />
       <CTA />

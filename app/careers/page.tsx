@@ -12,7 +12,7 @@ export default function CareersPage() {
   return (
     <>
       <PageHero eyebrow="Careers" title="Work with us."
-        subtitle="KS Digital Studio is founder-led. There are no full-time openings right now, but we work with freelance designers and developers on projects." />
+        subtitle="KS Digital Studio is one person right now. There are no full-time openings, but I do work with freelance designers and developers on bigger projects." />
       <section className="mx-auto max-w-[1440px] px-5 pb-8 md:px-10">
         <h2 className="sr-only">Our values and open roles</h2>
         <div className="mb-10 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">

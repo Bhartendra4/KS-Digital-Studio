@@ -16,7 +16,7 @@ export default function Testimonials() {
   if (!t) return null;
   return (
     <Section id="testimonials">
-      <SectionHeading eyebrow="Loved by clients" title="Words from the people we build for." center />
+      <SectionHeading eyebrow="Clients" title="What clients say." center />
       <div className="relative mx-auto mt-14 max-w-3xl">
         <Quote className="mx-auto h-10 w-10 text-accent-blue/40" />
         <AnimatePresence mode="wait">

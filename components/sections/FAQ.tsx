@@ -12,7 +12,7 @@ export default function FAQ({ hideHeading = false }: { hideHeading?: boolean }) 
     <Section id="faq">
       <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
         <SectionHeading eyebrow="FAQ" title="Questions, answered."
-          subtitle="Everything you need to know before we start building together." />
+          subtitle="The things people usually ask me before we start." />
         <div className="divide-y divide-white/10">
           {faqs.map((f, i) => (
             <div key={i} className="py-5">

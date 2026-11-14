@@ -44,7 +44,7 @@ export default function Footer() {
         </div>
         <div>
           <h2 className="mb-4 text-xs uppercase tracking-widest text-white/55">Newsletter</h2>
-          <p className="text-sm text-white/50">Get occasional insights on premium web & AI.</p>
+          <p className="text-sm text-white/50">An occasional email with tips for getting customers online. No spam.</p>
           <form onSubmit={async (e) => {
               e.preventDefault();
               if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { setErr(true); return; }

@@ -41,7 +41,7 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
           <div className="space-y-8">
             <Reveal><div><h2 className="font-display text-2xl font-semibold text-gradient">The challenge</h2>
               <p className="mt-3 text-white/60">{p.challenge}</p></div></Reveal>
-            <Reveal delay={0.1}><div><h2 className="font-display text-2xl font-semibold text-gradient">Our approach</h2>
+            <Reveal delay={0.1}><div><h2 className="font-display text-2xl font-semibold text-gradient">My approach</h2>
               <p className="mt-3 text-white/60">{p.solution}</p></div></Reveal>
             <Reveal delay={0.15}>
               <p className="mb-3 text-xs uppercase tracking-widest text-white/55">Design targets — concept project, not client results</p>

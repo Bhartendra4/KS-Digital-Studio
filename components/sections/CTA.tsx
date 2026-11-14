@@ -11,14 +11,14 @@ export default function CTA() {
           <div className="aurora !opacity-40" />
           <div className="relative">
             <h2 className="mx-auto max-w-2xl font-display text-3xl font-semibold tracking-tight md:text-5xl text-gradient">
-              Ready to build something premium?
+              Want to see your website before you pay?
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-white/60">
-              Tell us about your project — we&apos;ll reply within 24 hours with next steps.
+              Tell me about your business. I&apos;ll reply within 24 hours, and I can build a free demo so you can judge the work yourself.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Button href="/contact" icon={<ArrowRight className="h-4 w-4" />}>Start Your Project</Button>
-              <Button href={site.bookingUrl} variant="ghost" icon={<CalendarCheck className="h-4 w-4" />}>Book a Consultation</Button>
+              <Button href="/contact" icon={<ArrowRight className="h-4 w-4" />}>Get a free demo</Button>
+              <Button href={site.bookingUrl} variant="ghost" icon={<CalendarCheck className="h-4 w-4" />}>Book a call</Button>
             </div>
           </div>
         </div>

@@ -11,7 +11,7 @@ import { site } from "@/lib/site";
 const schema = z.object({
   name: z.string().min(2, "Please enter your name"),
   email: z.string().email("Enter a valid email"),
-  budget: z.enum(["Starter", "Professional", "Enterprise"]),
+  budget: z.enum(["Starter", "Business", "Custom"]),
   message: z.string().min(10, "Tell us a bit more (10+ characters)"),
   company: z.string().max(0).optional(), // honeypot — must stay empty
 });
@@ -21,7 +21,7 @@ export default function ContactForm() {
   const router = useRouter();
   const [status, setStatus] = useState<"idle" | "sending" | "error">("idle");
   const { register, handleSubmit, formState: { errors } } = useForm<FormData>({
-    resolver: zodResolver(schema), defaultValues: { budget: "Professional" },
+    resolver: zodResolver(schema), defaultValues: { budget: "Business" },
   });
 
   const onSubmit = async (data: FormData) => {
@@ -88,11 +88,11 @@ export default function ContactForm() {
         {errors.email && <p className="mt-1 text-xs text-red-400">{errors.email.message}</p>}
       </div>
       <div>
-        <label htmlFor="budget" className="mb-2 block text-xs uppercase tracking-widest text-white/50">Budget</label>
+        <label htmlFor="budget" className="mb-2 block text-xs uppercase tracking-widest text-white/50">Package</label>
         <select id="budget" className={field} {...register("budget")}>
           <option className="bg-ink">Starter</option>
-          <option className="bg-ink">Professional</option>
-          <option className="bg-ink">Enterprise</option>
+          <option className="bg-ink">Business</option>
+          <option className="bg-ink">Custom</option>
         </select>
       </div>
       <div>
@@ -103,7 +103,7 @@ export default function ContactForm() {
       <button type="submit" disabled={status === "sending"} className="btn-magnetic btn-primary w-full justify-center disabled:opacity-60" data-cursor>
         {status === "sending" ? <>Sending <Loader2 className="h-4 w-4 animate-spin" /></> : <>Send inquiry <Send className="h-4 w-4" /></>}
       </button>
-      <p className="text-center text-xs text-white/55">Protected against spam · We reply within 24 hours</p>
+      <p className="text-center text-xs text-white/55">Protected against spam · I reply within 24 hours</p>
     </motion.form>
   );
 }

@@ -7,7 +7,7 @@ export default function Showcase() {
   return (
     <Section id="showcase">
       <SectionHeading eyebrow="Feature showcase" title="Looks right on every device." center
-        subtitle="Every build is engineered to feel premium from 320px phones to 2560px displays." />
+        subtitle="Every site is checked on small phones, tablets and big screens before it goes live." />
       <div className="relative mx-auto mt-16 flex max-w-4xl items-end justify-center">
         {/* laptop */}
         <motion.div

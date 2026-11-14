@@ -5,13 +5,13 @@ import CTA from "@/components/sections/CTA";
 import { posts } from "@/lib/data";
 import { pageMeta } from "@/lib/seo";
 
-export const metadata = pageMeta("Blog", "Insights on premium web design, performance, SEO and AI from KS Digital Studio.", "/blog");
+export const metadata = pageMeta("Blog", "Plain-language notes on websites, speed, SEO and AI for small businesses, from KS Digital Studio.", "/blog");
 
 export default function BlogPage() {
   return (
     <>
       <PageHero eyebrow="Insights" title="The KS Digital Studio blog."
-        subtitle="Practical thinking on premium web design, performance, SEO and AI." />
+        subtitle="Plain-language notes on websites, speed, Google and AI for small businesses." />
       <section className="mx-auto max-w-[1440px] px-5 pb-8 md:px-10">
         <h2 className="sr-only">Articles</h2>
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">

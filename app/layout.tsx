@@ -19,10 +19,10 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.domain),
-  title: { default: `${site.name} — Premium Web Design & Development`, template: `%s — ${site.name}` },
+  title: { default: `${site.name} — Websites for small businesses, Ahmedabad`, template: `%s — ${site.name}` },
   description: site.description,
   keywords: [
-    "web design agency", "premium website development", "Next.js agency", "UI UX design",
+    "website designer Ahmedabad", "small business website", "restaurant website", "clinic website", "UI UX design",
     "SEO", "AI automation", "creative studio", "KS Digital Studio",
   ],
   authors: [{ name: site.name }],
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
   openGraph: {
     type: "website", url: site.domain, siteName: site.name,
-    title: `${site.name} — We Build Websites That Grow Businesses`,
+    title: `${site.name} — Websites that bring you customers`,
     description: site.description, images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: site.name }],
   },
   twitter: {

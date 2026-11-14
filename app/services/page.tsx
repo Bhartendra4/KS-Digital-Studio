@@ -6,13 +6,13 @@ import CTA from "@/components/sections/CTA";
 import { services } from "@/lib/data";
 import { pageMeta } from "@/lib/seo";
 
-export const metadata = pageMeta("Services", "Premium web design, development, e-commerce, SEO, AI automation and more from KS Digital Studio.", "/services");
+export const metadata = pageMeta("Services", "Website design and development, online stores, SEO and simple AI automation for small businesses, from KS Digital Studio.", "/services");
 
 export default function ServicesPage() {
   return (
     <>
-      <PageHero eyebrow="What we do" title="Services engineered for growth."
-        subtitle="One studio, end to end — from cinematic marketing sites to full-scale web apps, CRMs and AI automation." />
+      <PageHero eyebrow="What I do" title="What I can build for you."
+        subtitle="From a one-page site for your shop to an online store or a booking system. One person does it all, so nothing gets lost in between." />
       <section className="mx-auto max-w-[1440px] px-5 pb-8 md:px-10">
         <h2 className="sr-only">All services</h2>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">

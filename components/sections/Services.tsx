@@ -8,9 +8,9 @@ export default function Services() {
   return (
     <Section id="services">
       <SectionHeading
-        eyebrow="What we do"
-        title="Services engineered for growth."
-        subtitle="From cinematic marketing sites to full-scale web apps and AI automation — one studio, end to end."
+        eyebrow="What I do"
+        title="What I can build for you."
+        subtitle="From a one-page site for your shop to an online store or a booking system. One person does it all."
       />
       <div className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {services.map((s, i) => (
