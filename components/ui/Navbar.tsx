@@ -103,7 +103,7 @@ export default function Navbar() {
             <Search className="h-4 w-4" />
           </button>
           <div className="hidden lg:block">
-            <Button href="/contact" className="px-5 py-2.5 text-sm">Start Your Project</Button>
+            <Button href="/contact" className="px-5 py-2.5 text-sm">Get a free demo</Button>
           </div>
           <button onClick={() => setOpen(!open)} className="lg:hidden focus-ring" aria-label="Menu" data-cursor>
             {open ? <X /> : <Menu />}
@@ -151,7 +151,7 @@ export default function Navbar() {
                   Email
                 </a>
               </div>
-              <Button href="/contact" className="mt-1 justify-center text-sm">Start Your Project</Button>
+              <Button href="/contact" className="mt-1 justify-center text-sm">Get a free demo</Button>
             </div>
           </motion.div>
         )}
